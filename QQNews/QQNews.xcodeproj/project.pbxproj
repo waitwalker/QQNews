@@ -3,233 +3,181 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09BDB50FD40BFF537152F806 /* Pods_QQNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FEB3D8595D82D055D05518 /* Pods_QQNews.framework */; };
-		1ACDF35A1EF1797A00F53DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDF3591EF1797A00F53DD0 /* AppDelegate.swift */; };
-		1ACDF35C1EF1797A00F53DD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDF35B1EF1797A00F53DD0 /* ViewController.swift */; };
-		1ACDF35F1EF1797A00F53DD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACDF35D1EF1797A00F53DD0 /* Main.storyboard */; };
-		1ACDF3611EF1797A00F53DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ACDF3601EF1797A00F53DD0 /* Assets.xcassets */; };
-		1ACDF3641EF1797A00F53DD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ACDF3621EF1797A00F53DD0 /* LaunchScreen.storyboard */; };
-		1ACDF3721EF17CD600F53DD0 /* ETTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDF3711EF17CD600F53DD0 /* ETTTabBarController.swift */; };
-		1ACDF3751EF17DDC00F53DD0 /* ETTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDF3741EF17DDC00F53DD0 /* ETTNavigationController.swift */; };
-		1ACDF3781EF17E4000F53DD0 /* ETTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDF3771EF17E4000F53DD0 /* ETTViewController.swift */; };
-		1ACDF37A1EF17E4C00F53DD0 /* ETTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACDF3791EF17E4C00F53DD0 /* ETTView.swift */; };
+		CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434021EF24CD500A76EFC /* AppDelegate.swift */; };
+		CA1434051EF24CD500A76EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434041EF24CD500A76EFC /* ViewController.swift */; };
+		CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1434061EF24CD500A76EFC /* Main.storyboard */; };
+		CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1434091EF24CD500A76EFC /* Assets.xcassets */; };
+		CA14340D1EF24CD500A76EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA14340B1EF24CD500A76EFC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1ACDF3561EF1797A00F53DD0 /* QQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1ACDF3591EF1797A00F53DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1ACDF35B1EF1797A00F53DD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1ACDF35E1EF1797A00F53DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1ACDF3601EF1797A00F53DD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1ACDF3631EF1797A00F53DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1ACDF3651EF1797A00F53DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1ACDF3711EF17CD600F53DD0 /* ETTTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETTTabBarController.swift; sourceTree = "<group>"; };
-		1ACDF3741EF17DDC00F53DD0 /* ETTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETTNavigationController.swift; sourceTree = "<group>"; };
-		1ACDF3771EF17E4000F53DD0 /* ETTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETTViewController.swift; sourceTree = "<group>"; };
-		1ACDF3791EF17E4C00F53DD0 /* ETTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETTView.swift; sourceTree = "<group>"; };
-		25FEB3D8595D82D055D05518 /* Pods_QQNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QQNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E8F97BBFFBA5877D6802A50 /* Pods-QQNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.release.xcconfig"; sourceTree = "<group>"; };
-		6CFC33D18DC85227E16FB077 /* Pods-QQNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.debug.xcconfig"; sourceTree = "<group>"; };
+		CA1433FF1EF24CD500A76EFC /* QQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1434021EF24CD500A76EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CA1434041EF24CD500A76EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA1434071EF24CD500A76EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA1434091EF24CD500A76EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA14340C1EF24CD500A76EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA14340E1EF24CD500A76EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1ACDF3531EF1797A00F53DD0 /* Frameworks */ = {
+		CA1433FC1EF24CD500A76EFC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09BDB50FD40BFF537152F806 /* Pods_QQNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1ACDF34D1EF1797A00F53DD0 = {
+		CA1433F61EF24CD500A76EFC = {
 			isa = PBXGroup;
 			children = (
-				1ACDF3581EF1797A00F53DD0 /* QQNews */,
-				1ACDF3571EF1797A00F53DD0 /* Products */,
-				811E2D8BD5BDD955A76731BB /* Pods */,
-				1D285F382A8A930B0DCEC7C2 /* Frameworks */,
+				CA1434011EF24CD500A76EFC /* QQNews */,
+				CA1434001EF24CD500A76EFC /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1ACDF3571EF1797A00F53DD0 /* Products */ = {
+		CA1434001EF24CD500A76EFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1ACDF3561EF1797A00F53DD0 /* QQNews.app */,
+				CA1433FF1EF24CD500A76EFC /* QQNews.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1ACDF3581EF1797A00F53DD0 /* QQNews */ = {
+		CA1434011EF24CD500A76EFC /* QQNews */ = {
 			isa = PBXGroup;
 			children = (
-				1ACDF36F1EF17B3E00F53DD0 /* Main(主) */,
-				1ACDF3701EF17B9900F53DD0 /* Common(公共) */,
-				1ACDF36E1EF17AD600F53DD0 /* Me(我) */,
-				1ACDF36D1EF17ACA00F53DD0 /* Live(直播) */,
-				1ACDF36C1EF17A8800F53DD0 /* Recommend(推荐) */,
-				1ACDF36B1EF17A7F00F53DD0 /* News(新闻) */,
-				1ACDF3591EF1797A00F53DD0 /* AppDelegate.swift */,
-				1ACDF35B1EF1797A00F53DD0 /* ViewController.swift */,
-				1ACDF35D1EF1797A00F53DD0 /* Main.storyboard */,
-				1ACDF3601EF1797A00F53DD0 /* Assets.xcassets */,
-				1ACDF3621EF1797A00F53DD0 /* LaunchScreen.storyboard */,
-				1ACDF3651EF1797A00F53DD0 /* Info.plist */,
+				CA1434151EF24DB300A76EFC /* Common(公共) */,
+				CA1434201EF24DB300A76EFC /* Live(直播) */,
+				CA1434141EF24DB300A76EFC /* Main(主) */,
+				CA14341D1EF24DB300A76EFC /* Me(我) */,
+				CA14341E1EF24DB300A76EFC /* News(新闻) */,
+				CA14341F1EF24DB300A76EFC /* Recommend(推荐) */,
+				CA1434021EF24CD500A76EFC /* AppDelegate.swift */,
+				CA1434041EF24CD500A76EFC /* ViewController.swift */,
+				CA1434061EF24CD500A76EFC /* Main.storyboard */,
+				CA1434091EF24CD500A76EFC /* Assets.xcassets */,
+				CA14340B1EF24CD500A76EFC /* LaunchScreen.storyboard */,
+				CA14340E1EF24CD500A76EFC /* Info.plist */,
 			);
 			path = QQNews;
 			sourceTree = "<group>";
 		};
-		1ACDF36B1EF17A7F00F53DD0 /* News(新闻) */ = {
+		CA1434141EF24DB300A76EFC /* Main(主) */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "News(新闻)";
-			path = News;
+			path = "Main(主)";
 			sourceTree = "<group>";
 		};
-		1ACDF36C1EF17A8800F53DD0 /* Recommend(推荐) */ = {
+		CA1434151EF24DB300A76EFC /* Common(公共) */ = {
 			isa = PBXGroup;
 			children = (
+				CA1434161EF24DB300A76EFC /* BaseClass */,
+				CA1434171EF24DB300A76EFC /* Category */,
+				CA1434181EF24DB300A76EFC /* Const */,
+				CA1434191EF24DB300A76EFC /* DataBase */,
+				CA14341A1EF24DB300A76EFC /* Extension */,
+				CA14341B1EF24DB300A76EFC /* Libs */,
+				CA14341C1EF24DB300A76EFC /* Network */,
 			);
-			name = "Recommend(推荐)";
-			path = Recommend;
+			path = "Common(公共)";
 			sourceTree = "<group>";
 		};
-		1ACDF36D1EF17ACA00F53DD0 /* Live(直播) */ = {
+		CA1434161EF24DB300A76EFC /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Live(直播)";
-			path = Live;
-			sourceTree = "<group>";
-		};
-		1ACDF36E1EF17AD600F53DD0 /* Me(我) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Me(我)";
-			path = Me;
-			sourceTree = "<group>";
-		};
-		1ACDF36F1EF17B3E00F53DD0 /* Main(主) */ = {
-			isa = PBXGroup;
-			children = (
-				1ACDF3711EF17CD600F53DD0 /* ETTTabBarController.swift */,
-				1ACDF3741EF17DDC00F53DD0 /* ETTNavigationController.swift */,
-			);
-			name = "Main(主)";
-			path = Main;
-			sourceTree = "<group>";
-		};
-		1ACDF3701EF17B9900F53DD0 /* Common(公共) */ = {
-			isa = PBXGroup;
-			children = (
-				1ACDF37F1EF17FA200F53DD0 /* Libs(三方库) */,
-				1ACDF37E1EF17F7200F53DD0 /* DataBase(数据库) */,
-				1ACDF37D1EF17F2F00F53DD0 /* Const(常量) */,
-				1ACDF37C1EF17EC500F53DD0 /* Category(类别) */,
-				1ACDF37B1EF17EA700F53DD0 /* Extension(扩展) */,
-				1ACDF3761EF17DF900F53DD0 /* BaseClass(基类) */,
-				1ACDF3731EF17D9F00F53DD0 /* Network(网络) */,
-			);
-			name = "Common(公共)";
-			path = Common;
-			sourceTree = "<group>";
-		};
-		1ACDF3731EF17D9F00F53DD0 /* Network(网络) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Network(网络)";
-			path = Network;
-			sourceTree = "<group>";
-		};
-		1ACDF3761EF17DF900F53DD0 /* BaseClass(基类) */ = {
-			isa = PBXGroup;
-			children = (
-				1ACDF3771EF17E4000F53DD0 /* ETTViewController.swift */,
-				1ACDF3791EF17E4C00F53DD0 /* ETTView.swift */,
-			);
-			name = "BaseClass(基类)";
 			path = BaseClass;
 			sourceTree = "<group>";
 		};
-		1ACDF37B1EF17EA700F53DD0 /* Extension(扩展) */ = {
+		CA1434171EF24DB300A76EFC /* Category */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Extension(扩展)";
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		1ACDF37C1EF17EC500F53DD0 /* Category(类别) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Category(类别)";
 			path = Category;
 			sourceTree = "<group>";
 		};
-		1ACDF37D1EF17F2F00F53DD0 /* Const(常量) */ = {
+		CA1434181EF24DB300A76EFC /* Const */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Const(常量)";
 			path = Const;
 			sourceTree = "<group>";
 		};
-		1ACDF37E1EF17F7200F53DD0 /* DataBase(数据库) */ = {
+		CA1434191EF24DB300A76EFC /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "DataBase(数据库)";
 			path = DataBase;
 			sourceTree = "<group>";
 		};
-		1ACDF37F1EF17FA200F53DD0 /* Libs(三方库) */ = {
+		CA14341A1EF24DB300A76EFC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "Libs(三方库)";
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		CA14341B1EF24DB300A76EFC /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
 			path = Libs;
 			sourceTree = "<group>";
 		};
-		1D285F382A8A930B0DCEC7C2 /* Frameworks */ = {
+		CA14341C1EF24DB300A76EFC /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				25FEB3D8595D82D055D05518 /* Pods_QQNews.framework */,
 			);
-			name = Frameworks;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		811E2D8BD5BDD955A76731BB /* Pods */ = {
+		CA14341D1EF24DB300A76EFC /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
-				6CFC33D18DC85227E16FB077 /* Pods-QQNews.debug.xcconfig */,
-				3E8F97BBFFBA5877D6802A50 /* Pods-QQNews.release.xcconfig */,
 			);
-			name = Pods;
+			path = "Me(我)";
+			sourceTree = "<group>";
+		};
+		CA14341E1EF24DB300A76EFC /* News(新闻) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "News(新闻)";
+			sourceTree = "<group>";
+		};
+		CA14341F1EF24DB300A76EFC /* Recommend(推荐) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Recommend(推荐)";
+			sourceTree = "<group>";
+		};
+		CA1434201EF24DB300A76EFC /* Live(直播) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Live(直播)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1ACDF3551EF1797A00F53DD0 /* QQNews */ = {
+		CA1433FE1EF24CD500A76EFC /* QQNews */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1ACDF3681EF1797A00F53DD0 /* Build configuration list for PBXNativeTarget "QQNews" */;
+			buildConfigurationList = CA1434111EF24CD500A76EFC /* Build configuration list for PBXNativeTarget "QQNews" */;
 			buildPhases = (
-				4144CE56BC3088DDCAD885BE /* [CP] Check Pods Manifest.lock */,
-				1ACDF3521EF1797A00F53DD0 /* Sources */,
-				1ACDF3531EF1797A00F53DD0 /* Frameworks */,
-				1ACDF3541EF1797A00F53DD0 /* Resources */,
-				C780D26B9D041BB30CDFA0AF /* [CP] Embed Pods Frameworks */,
-				A064BFF80D90FDECC348DE34 /* [CP] Copy Pods Resources */,
+				CA1433FB1EF24CD500A76EFC /* Sources */,
+				CA1433FC1EF24CD500A76EFC /* Frameworks */,
+				CA1433FD1EF24CD500A76EFC /* Resources */,
 			);
 			buildRules = (
 			);
@@ -237,135 +185,80 @@
 			);
 			name = QQNews;
 			productName = QQNews;
-			productReference = 1ACDF3561EF1797A00F53DD0 /* QQNews.app */;
+			productReference = CA1433FF1EF24CD500A76EFC /* QQNews.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1ACDF34E1EF1797A00F53DD0 /* Project object */ = {
+		CA1433F71EF24CD500A76EFC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = ETT;
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = waitWalker;
 				TargetAttributes = {
-					1ACDF3551EF1797A00F53DD0 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = NV5J27ZQZQ;
-						ProvisioningStyle = Automatic;
+					CA1433FE1EF24CD500A76EFC = {
+						CreatedOnToolsVersion = 9.0;
 					};
 				};
 			};
-			buildConfigurationList = 1ACDF3511EF1797A00F53DD0 /* Build configuration list for PBXProject "QQNews" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = CA1433FA1EF24CD500A76EFC /* Build configuration list for PBXProject "QQNews" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 1ACDF34D1EF1797A00F53DD0;
-			productRefGroup = 1ACDF3571EF1797A00F53DD0 /* Products */;
+			mainGroup = CA1433F61EF24CD500A76EFC;
+			productRefGroup = CA1434001EF24CD500A76EFC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1ACDF3551EF1797A00F53DD0 /* QQNews */,
+				CA1433FE1EF24CD500A76EFC /* QQNews */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1ACDF3541EF1797A00F53DD0 /* Resources */ = {
+		CA1433FD1EF24CD500A76EFC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ACDF3641EF1797A00F53DD0 /* LaunchScreen.storyboard in Resources */,
-				1ACDF3611EF1797A00F53DD0 /* Assets.xcassets in Resources */,
-				1ACDF35F1EF1797A00F53DD0 /* Main.storyboard in Resources */,
+				CA14340D1EF24CD500A76EFC /* LaunchScreen.storyboard in Resources */,
+				CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */,
+				CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		4144CE56BC3088DDCAD885BE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A064BFF80D90FDECC348DE34 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQNews/Pods-QQNews-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C780D26B9D041BB30CDFA0AF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQNews/Pods-QQNews-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		1ACDF3521EF1797A00F53DD0 /* Sources */ = {
+		CA1433FB1EF24CD500A76EFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ACDF37A1EF17E4C00F53DD0 /* ETTView.swift in Sources */,
-				1ACDF35C1EF1797A00F53DD0 /* ViewController.swift in Sources */,
-				1ACDF3751EF17DDC00F53DD0 /* ETTNavigationController.swift in Sources */,
-				1ACDF35A1EF1797A00F53DD0 /* AppDelegate.swift in Sources */,
-				1ACDF3721EF17CD600F53DD0 /* ETTTabBarController.swift in Sources */,
-				1ACDF3781EF17E4000F53DD0 /* ETTViewController.swift in Sources */,
+				CA1434051EF24CD500A76EFC /* ViewController.swift in Sources */,
+				CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1ACDF35D1EF1797A00F53DD0 /* Main.storyboard */ = {
+		CA1434061EF24CD500A76EFC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1ACDF35E1EF1797A00F53DD0 /* Base */,
+				CA1434071EF24CD500A76EFC /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1ACDF3621EF1797A00F53DD0 /* LaunchScreen.storyboard */ = {
+		CA14340B1EF24CD500A76EFC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1ACDF3631EF1797A00F53DD0 /* Base */,
+				CA14340C1EF24CD500A76EFC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -373,17 +266,19 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1ACDF3661EF1797A00F53DD0 /* Debug */ = {
+		CA14340F1EF24CD500A76EFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -392,15 +287,18 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -414,27 +312,28 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1ACDF3671EF1797A00F53DD0 /* Release */ = {
+		CA1434101EF24CD500A76EFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -443,15 +342,18 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -459,64 +361,63 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		1ACDF3691EF1797A00F53DD0 /* Debug */ = {
+		CA1434121EF24CD500A76EFC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CFC33D18DC85227E16FB077 /* Pods-QQNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NV5J27ZQZQ;
+				DEVELOPMENT_TEAM = 4XP6U9X87N;
 				INFOPLIST_FILE = QQNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = waitwalker.QQNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.etiantian.QQNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1ACDF36A1EF1797A00F53DD0 /* Release */ = {
+		CA1434131EF24CD500A76EFC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3E8F97BBFFBA5877D6802A50 /* Pods-QQNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NV5J27ZQZQ;
+				DEVELOPMENT_TEAM = 4XP6U9X87N;
 				INFOPLIST_FILE = QQNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = waitwalker.QQNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.etiantian.QQNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1ACDF3511EF1797A00F53DD0 /* Build configuration list for PBXProject "QQNews" */ = {
+		CA1433FA1EF24CD500A76EFC /* Build configuration list for PBXProject "QQNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1ACDF3661EF1797A00F53DD0 /* Debug */,
-				1ACDF3671EF1797A00F53DD0 /* Release */,
+				CA14340F1EF24CD500A76EFC /* Debug */,
+				CA1434101EF24CD500A76EFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1ACDF3681EF1797A00F53DD0 /* Build configuration list for PBXNativeTarget "QQNews" */ = {
+		CA1434111EF24CD500A76EFC /* Build configuration list for PBXNativeTarget "QQNews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1ACDF3691EF1797A00F53DD0 /* Debug */,
-				1ACDF36A1EF1797A00F53DD0 /* Release */,
+				CA1434121EF24CD500A76EFC /* Debug */,
+				CA1434131EF24CD500A76EFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1ACDF34E1EF1797A00F53DD0 /* Project object */;
+	rootObject = CA1433F71EF24CD500A76EFC /* Project object */;
 }
