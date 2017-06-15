@@ -45,11 +45,8 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
-        var cell = tableView.dequeueReusableCell(withIdentifier: reusedIdentify);
-        if (cell == nil) {
-            cell = ETTMeCell.init(style: .default, reuseIdentifier: reusedIdentify);
-        }
-        return cell!;
+        let cell = ETTMeCell.init(style: .default, reuseIdentifier: reusedIdentify);
+        return cell;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
