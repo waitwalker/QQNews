@@ -16,6 +16,10 @@ class ETTMeCell: ETTTableViewCell
     var subNameLabel:UILabel?
     var narrowImageView :UIImageView?
     
+    let kMargin     = 15.0 * (414.0 / kScreenWidth);
+    let kWidthScale = (414.0 / kScreenWidth);
+    
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) 
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,7 +28,16 @@ class ETTMeCell: ETTTableViewCell
     
     func setupSubviews() -> Void 
     {
-        nameLabel = UILabel.init(frame: CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>))
+        let nameLabelWidth:CGFloat  = 120.0 * kWidthScale;
+        let nameLabelHeight:CGFloat = 30.0;
+        let nameLabelX:CGFloat = kMargin;
+        let nameLabelY:CGFloat = (self.contentView.frame.size.height - nameLabelHeight) / 2.0;
+        nameLabel = UILabel.init(frame: CGRect(x: nameLabelX, y: nameLabelY, width: nameLabelWidth, height: nameLabelHeight));
+        nameLabel?.text = "我的消息";
+        nameLabel?.textAlignment = NSTextAlignment.left;
+        nameLabel?.textColor = UIColor.black;
+        nameLabel?.font = UIFont.systemFont(ofSize: 15.0)
+        self.contentView.addSubview(nameLabel!)
         
     }
     

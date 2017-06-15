@@ -13,6 +13,7 @@ class ETTNewsViewController: ETTViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
+        NSLog("屏幕frame: %@", NSStringFromCGRect(self.view.frame));
         // Do any additional setup after loading the view.
     }
 
