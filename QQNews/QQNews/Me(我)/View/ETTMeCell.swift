@@ -28,6 +28,7 @@ class ETTMeCell: ETTTableViewCell
     
     func setupSubviews() -> Void 
     {
+        //nameLabel
         let nameLabelWidth:CGFloat  = 120.0 * kWidthScale;
         let nameLabelHeight:CGFloat = 30.0;
         let nameLabelX:CGFloat = kMargin;
@@ -38,6 +39,8 @@ class ETTMeCell: ETTTableViewCell
         nameLabel?.textColor = UIColor.black;
         nameLabel?.font = UIFont.systemFont(ofSize: 15.0)
         self.contentView.addSubview(nameLabel!)
+        
+        
         
     }
     

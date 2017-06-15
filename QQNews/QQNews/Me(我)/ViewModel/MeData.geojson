@@ -1,0 +1,54 @@
+{
+    "message": "恭喜你",
+    "result":200,
+    "dataList": [
+                 {
+                 "nameLabelText":"我的消息",
+                 "badgeImageViewImage":"image",
+                 "subNameLabelText":"",
+                 "narrowImageView":"image"
+                 },
+                 {
+                 "nameLabelText":"我的关注",
+                 "badgeImageViewImage":"image",
+                 "subNameLabelText":"",
+                 "narrowImageView":"image"
+                 },
+                 {
+                 "nameLabelText":"我的收藏",
+                 "badgeImageViewImage":"image",
+                 "subNameLabelText":"",
+                 "narrowImageView":"image"
+                 },
+                 {
+                 "nameLabelText":"我的发表",
+                 "badgeImageViewImage":"image",
+                 "subNameLabelText":"评论/回答",
+                 "narrowImageView":"image"
+                 },
+                 {
+                 "nameLabelText":"红包",
+                 "badgeImageViewImage":"image",
+                 "subNameLabelText":"邀请好友得现金红包",
+                 "narrowImageView":"image"
+                 },
+                 {
+                 "nameLabelText":"投诉反馈",
+                 "badgeImageViewImage":"image",
+                 "subNameLabelText":"",
+                 "narrowImageView":"image"
+                 },
+                 {
+                 "nameLabelText":"免流量看新闻",
+                 "badgeImageViewImage":"image",
+                 "subNameLabelText":"",
+                 "narrowImageView":"image"
+                 },
+                 {
+                 "nameLabelText":"游戏",
+                 "badgeImageViewImage":"image",
+                 "subNameLabelText":"",
+                 "narrowImageView":"image"
+                 }
+    ]
+}

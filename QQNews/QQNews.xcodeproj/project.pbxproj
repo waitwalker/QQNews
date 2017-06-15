@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A8C9A9E1EF2C15200C808EC /* ETTMeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C9A9D1EF2C15200C808EC /* ETTMeModel.swift */; };
+		1A8C9AA31EF2C5DB00C808EC /* MeData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */; };
 		CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434021EF24CD500A76EFC /* AppDelegate.swift */; };
 		CA1434051EF24CD500A76EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434041EF24CD500A76EFC /* ViewController.swift */; };
 		CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1434061EF24CD500A76EFC /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		1A8C9A9D1EF2C15200C808EC /* ETTMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeModel.swift; sourceTree = "<group>"; };
+		1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeData.geojson; sourceTree = "<group>"; };
 		CA1433FF1EF24CD500A76EFC /* QQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1434021EF24CD500A76EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA1434041EF24CD500A76EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 		1A8C9A9C1EF2C08D00C808EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA14340D1EF24CD500A76EFC /* LaunchScreen.storyboard in Resources */,
+				1A8C9AA31EF2C5DB00C808EC /* MeData.geojson in Resources */,
 				CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */,
 				CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */,
 			);
