@@ -76,7 +76,6 @@
 				CA14341D1EF24DB300A76EFC /* Me(我) */,
 				CA1434141EF24DB300A76EFC /* Main(主) */,
 				CA1434151EF24DB300A76EFC /* Common(公共) */,
-				CA1434021EF24CD500A76EFC /* AppDelegate.swift */,
 				CA1434041EF24CD500A76EFC /* ViewController.swift */,
 				CA1434061EF24CD500A76EFC /* Main.storyboard */,
 				CA1434091EF24CD500A76EFC /* Assets.xcassets */,
@@ -89,6 +88,7 @@
 		CA1434141EF24DB300A76EFC /* Main(主) */ = {
 			isa = PBXGroup;
 			children = (
+				CA1434021EF24CD500A76EFC /* AppDelegate.swift */,
 				CA1434251EF24E7A00A76EFC /* ETTTabBarController.swift */,
 				CA1434271EF24E9700A76EFC /* ETTNavigationController.swift */,
 			);
