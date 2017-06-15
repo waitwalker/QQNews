@@ -59,6 +59,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A8C9A961EF2BF9E00C808EC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1A8C9A971EF2BFCE00C808EC /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		1A8C9A981EF2BFE100C808EC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		1A8C9A991EF2C00700C808EC /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		1A8C9A9B1EF2C07C00C808EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A8C9A9C1EF2C08D00C808EC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CA1433F61EF24CD500A76EFC = {
 			isa = PBXGroup;
 			children = (
@@ -106,14 +148,13 @@
 		CA1434151EF24DB300A76EFC /* Common(公共) */ = {
 			isa = PBXGroup;
 			children = (
+				1A8C9A991EF2C00700C808EC /* Libs */,
+				1A8C9A981EF2BFE100C808EC /* Extension */,
+				1A8C9A971EF2BFCE00C808EC /* DataBase */,
+				1A8C9A961EF2BF9E00C808EC /* Category */,
 				CA9643CC1EF2783700F2D1D2 /* Macro */,
 				CA1434161EF24DB300A76EFC /* BaseClass */,
-				CA1434171EF24DB300A76EFC /* Category */,
 				CA1434181EF24DB300A76EFC /* Const */,
-				CA1434191EF24DB300A76EFC /* DataBase */,
-				CA14341A1EF24DB300A76EFC /* Extension */,
-				CA14341B1EF24DB300A76EFC /* Libs */,
-				CA14341C1EF24DB300A76EFC /* Network */,
 			);
 			path = "Common(公共)";
 			sourceTree = "<group>";
@@ -128,13 +169,6 @@
 			path = BaseClass;
 			sourceTree = "<group>";
 		};
-		CA1434171EF24DB300A76EFC /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
 		CA1434181EF24DB300A76EFC /* Const */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,39 +177,11 @@
 			path = Const;
 			sourceTree = "<group>";
 		};
-		CA1434191EF24DB300A76EFC /* DataBase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataBase;
-			sourceTree = "<group>";
-		};
-		CA14341A1EF24DB300A76EFC /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		CA14341B1EF24DB300A76EFC /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
-		CA14341C1EF24DB300A76EFC /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		CA14341D1EF24DB300A76EFC /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
-				CA260A0C1EF2731700DE23B9 /* ViewModel */,
-				CA260A0B1EF2730800DE23B9 /* Model */,
+				1A8C9A9C1EF2C08D00C808EC /* ViewModel */,
+				1A8C9A9B1EF2C07C00C808EC /* Model */,
 				CA260A0A1EF272FB00DE23B9 /* Controller */,
 				CA260A091EF272E000DE23B9 /* View */,
 			);
@@ -220,20 +226,6 @@
 				CAB415751EF25D9100553CE0 /* ETTMeViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		CA260A0B1EF2730800DE23B9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		CA260A0C1EF2731700DE23B9 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CA9643CC1EF2783700F2D1D2 /* Macro */ = {
