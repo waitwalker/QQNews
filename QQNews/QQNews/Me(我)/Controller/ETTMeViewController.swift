@@ -20,6 +20,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.setupSubviews();
+        self.getData()
     }
     
     func setupSubviews() -> Void 
@@ -33,8 +34,11 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     
     func getData() -> Void
     {
-        let meViewModel = ETTMeViewModel();
-        
+        ETTMeViewModel().getMeData { (array) in
+            
+            NSLog("%@", array);
+            
+        }
         
     }
     

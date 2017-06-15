@@ -14,15 +14,15 @@ class ETTMeViewModel: NSObject {
      //格式: typealias 闭包名称 = (参数名称: 参数类型) -> 返回值类型
      typealias swiftBlock = (str: String) -> Void
      */
-    typealias ettCallBack = (_ dataArray:Array<Any>)->Void;
+    typealias ettCallBack = (_ dataArray:NSArray)->Void;
     
     func getMeData(callBack:ettCallBack) -> Void {
         
-        let array = Array<Any>();
+        let array = NSArray().adding("23e");
         
         //发送网络请求 获取数据 解析
         
-        callBack(array);
+        callBack(array as NSArray);
         
         
     }
