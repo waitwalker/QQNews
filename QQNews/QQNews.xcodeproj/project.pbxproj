@@ -12,6 +12,14 @@
 		CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1434061EF24CD500A76EFC /* Main.storyboard */; };
 		CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1434091EF24CD500A76EFC /* Assets.xcassets */; };
 		CA14340D1EF24CD500A76EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA14340B1EF24CD500A76EFC /* LaunchScreen.storyboard */; };
+		CA1434221EF24E3400A76EFC /* ETTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434211EF24E3400A76EFC /* ETTView.swift */; };
+		CA1434241EF24E4000A76EFC /* ETTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434231EF24E4000A76EFC /* ETTViewController.swift */; };
+		CA1434261EF24E7A00A76EFC /* ETTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434251EF24E7A00A76EFC /* ETTTabBarController.swift */; };
+		CA1434281EF24E9700A76EFC /* ETTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434271EF24E9700A76EFC /* ETTNavigationController.swift */; };
+		CAB415701EF25D4300553CE0 /* ETTNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4156F1EF25D4300553CE0 /* ETTNewsViewController.swift */; };
+		CAB415721EF25D7600553CE0 /* ETTRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB415711EF25D7600553CE0 /* ETTRecommendViewController.swift */; };
+		CAB415741EF25D8400553CE0 /* ETTLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB415731EF25D8400553CE0 /* ETTLiveViewController.swift */; };
+		CAB415761EF25D9100553CE0 /* ETTMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB415751EF25D9100553CE0 /* ETTMeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		CA1434091EF24CD500A76EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA14340C1EF24CD500A76EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA14340E1EF24CD500A76EFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA1434211EF24E3400A76EFC /* ETTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTView.swift; sourceTree = "<group>"; };
+		CA1434231EF24E4000A76EFC /* ETTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTViewController.swift; sourceTree = "<group>"; };
+		CA1434251EF24E7A00A76EFC /* ETTTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTTabBarController.swift; sourceTree = "<group>"; };
+		CA1434271EF24E9700A76EFC /* ETTNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNavigationController.swift; sourceTree = "<group>"; };
+		CAB4156F1EF25D4300553CE0 /* ETTNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsViewController.swift; sourceTree = "<group>"; };
+		CAB415711EF25D7600553CE0 /* ETTRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendViewController.swift; sourceTree = "<group>"; };
+		CAB415731EF25D8400553CE0 /* ETTLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiveViewController.swift; sourceTree = "<group>"; };
+		CAB415751EF25D9100553CE0 /* ETTMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +70,12 @@
 		CA1434011EF24CD500A76EFC /* QQNews */ = {
 			isa = PBXGroup;
 			children = (
-				CA1434151EF24DB300A76EFC /* Common(公共) */,
-				CA1434201EF24DB300A76EFC /* Live(直播) */,
-				CA1434141EF24DB300A76EFC /* Main(主) */,
-				CA14341D1EF24DB300A76EFC /* Me(我) */,
 				CA14341E1EF24DB300A76EFC /* News(新闻) */,
 				CA14341F1EF24DB300A76EFC /* Recommend(推荐) */,
+				CA1434201EF24DB300A76EFC /* Live(直播) */,
+				CA14341D1EF24DB300A76EFC /* Me(我) */,
+				CA1434141EF24DB300A76EFC /* Main(主) */,
+				CA1434151EF24DB300A76EFC /* Common(公共) */,
 				CA1434021EF24CD500A76EFC /* AppDelegate.swift */,
 				CA1434041EF24CD500A76EFC /* ViewController.swift */,
 				CA1434061EF24CD500A76EFC /* Main.storyboard */,
@@ -73,6 +89,8 @@
 		CA1434141EF24DB300A76EFC /* Main(主) */ = {
 			isa = PBXGroup;
 			children = (
+				CA1434251EF24E7A00A76EFC /* ETTTabBarController.swift */,
+				CA1434271EF24E9700A76EFC /* ETTNavigationController.swift */,
 			);
 			path = "Main(主)";
 			sourceTree = "<group>";
@@ -94,6 +112,8 @@
 		CA1434161EF24DB300A76EFC /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				CA1434211EF24E3400A76EFC /* ETTView.swift */,
+				CA1434231EF24E4000A76EFC /* ETTViewController.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -143,6 +163,7 @@
 		CA14341D1EF24DB300A76EFC /* Me(我) */ = {
 			isa = PBXGroup;
 			children = (
+				CAB415751EF25D9100553CE0 /* ETTMeViewController.swift */,
 			);
 			path = "Me(我)";
 			sourceTree = "<group>";
@@ -150,6 +171,7 @@
 		CA14341E1EF24DB300A76EFC /* News(新闻) */ = {
 			isa = PBXGroup;
 			children = (
+				CAB4156F1EF25D4300553CE0 /* ETTNewsViewController.swift */,
 			);
 			path = "News(新闻)";
 			sourceTree = "<group>";
@@ -157,6 +179,7 @@
 		CA14341F1EF24DB300A76EFC /* Recommend(推荐) */ = {
 			isa = PBXGroup;
 			children = (
+				CAB415711EF25D7600553CE0 /* ETTRecommendViewController.swift */,
 			);
 			path = "Recommend(推荐)";
 			sourceTree = "<group>";
@@ -164,6 +187,7 @@
 		CA1434201EF24DB300A76EFC /* Live(直播) */ = {
 			isa = PBXGroup;
 			children = (
+				CAB415731EF25D8400553CE0 /* ETTLiveViewController.swift */,
 			);
 			path = "Live(直播)";
 			sourceTree = "<group>";
@@ -194,6 +218,7 @@
 		CA1433F71EF24CD500A76EFC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ETT;
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = waitWalker;
@@ -239,8 +264,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA1434261EF24E7A00A76EFC /* ETTTabBarController.swift in Sources */,
+				CA1434221EF24E3400A76EFC /* ETTView.swift in Sources */,
+				CAB415721EF25D7600553CE0 /* ETTRecommendViewController.swift in Sources */,
 				CA1434051EF24CD500A76EFC /* ViewController.swift in Sources */,
+				CAB415761EF25D9100553CE0 /* ETTMeViewController.swift in Sources */,
+				CA1434281EF24E9700A76EFC /* ETTNavigationController.swift in Sources */,
+				CA1434241EF24E4000A76EFC /* ETTViewController.swift in Sources */,
+				CAB415701EF25D4300553CE0 /* ETTNewsViewController.swift in Sources */,
 				CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */,
+				CAB415741EF25D8400553CE0 /* ETTLiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +449,7 @@
 				CA1434131EF24CD500A76EFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
