@@ -12,7 +12,6 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     
     let reusedIdentify:String = "meReusedIdentify";
     
-    
     var meTableView:UITableView?
     
     
@@ -32,6 +31,12 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         self.view.addSubview(meTableView!);
     }
     
+    func getData() -> Void
+    {
+        let meViewModel = ETTMeViewModel();
+        
+        
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int 
     {

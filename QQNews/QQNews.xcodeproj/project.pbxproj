@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A8C9A9E1EF2C15200C808EC /* ETTMeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C9A9D1EF2C15200C808EC /* ETTMeModel.swift */; };
 		1A8C9AA31EF2C5DB00C808EC /* MeData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */; };
+		1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C9AA41EF2D06300C808EC /* ETTMeViewModel.swift */; };
 		CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434021EF24CD500A76EFC /* AppDelegate.swift */; };
 		CA1434051EF24CD500A76EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434041EF24CD500A76EFC /* ViewController.swift */; };
 		CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1434061EF24CD500A76EFC /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		1A8C9A9D1EF2C15200C808EC /* ETTMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeModel.swift; sourceTree = "<group>"; };
 		1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeData.geojson; sourceTree = "<group>"; };
+		1A8C9AA41EF2D06300C808EC /* ETTMeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeViewModel.swift; sourceTree = "<group>"; };
 		CA1433FF1EF24CD500A76EFC /* QQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1434021EF24CD500A76EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA1434041EF24CD500A76EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */,
+				1A8C9AA41EF2D06300C808EC /* ETTMeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				CA1434241EF24E4000A76EFC /* ETTViewController.swift in Sources */,
 				CAB415701EF25D4300553CE0 /* ETTNewsViewController.swift in Sources */,
 				CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */,
+				1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */,
 				CA9643D01EF2794A00F2D1D2 /* ETTConst.swift in Sources */,
 				CA9643CE1EF2785200F2D1D2 /* ETTMacro.swift in Sources */,
 				CA260A101EF2749C00DE23B9 /* ETTMeCell.swift in Sources */,
@@ -464,6 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4XP6U9X87N;
 				INFOPLIST_FILE = QQNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etiantian.QQNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,6 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4XP6U9X87N;
 				INFOPLIST_FILE = QQNews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etiantian.QQNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";

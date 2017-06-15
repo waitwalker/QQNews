@@ -6,49 +6,49 @@
                  "nameLabelText":"我的消息",
                  "badgeImageViewImage":"image",
                  "subNameLabelText":"",
-                 "narrowImageView":"image"
+                 "narrowImageView":"right"
                  },
                  {
                  "nameLabelText":"我的关注",
                  "badgeImageViewImage":"image",
                  "subNameLabelText":"",
-                 "narrowImageView":"image"
+                 "narrowImageView":"right"
                  },
                  {
                  "nameLabelText":"我的收藏",
                  "badgeImageViewImage":"image",
                  "subNameLabelText":"",
-                 "narrowImageView":"image"
+                 "narrowImageView":"right"
                  },
                  {
                  "nameLabelText":"我的发表",
                  "badgeImageViewImage":"image",
                  "subNameLabelText":"评论/回答",
-                 "narrowImageView":"image"
+                 "narrowImageView":"right"
                  },
                  {
                  "nameLabelText":"红包",
                  "badgeImageViewImage":"image",
                  "subNameLabelText":"邀请好友得现金红包",
-                 "narrowImageView":"image"
+                 "narrowImageView":"right"
                  },
                  {
                  "nameLabelText":"投诉反馈",
                  "badgeImageViewImage":"image",
                  "subNameLabelText":"",
-                 "narrowImageView":"image"
+                 "narrowImageView":"right"
                  },
                  {
                  "nameLabelText":"免流量看新闻",
                  "badgeImageViewImage":"image",
                  "subNameLabelText":"",
-                 "narrowImageView":"image"
+                 "narrowImageView":"right"
                  },
                  {
                  "nameLabelText":"游戏",
                  "badgeImageViewImage":"image",
                  "subNameLabelText":"",
-                 "narrowImageView":"image"
+                 "narrowImageView":"right"
                  }
     ]
 }
