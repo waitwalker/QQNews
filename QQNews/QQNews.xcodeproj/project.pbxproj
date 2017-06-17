@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1A8C9A9E1EF2C15200C808EC /* ETTMeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C9A9D1EF2C15200C808EC /* ETTMeModel.swift */; };
-		1A8C9AA31EF2C5DB00C808EC /* MeData.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */; };
+		1A8C9AA31EF2C5DB00C808EC /* MeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A8C9AA21EF2C5DB00C808EC /* MeData.json */; };
 		1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C9AA41EF2D06300C808EC /* ETTMeViewModel.swift */; };
+		1AF750EA1EF50AB400E6F89F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */; };
+		3D7EF950E1F5171AEEFC2335 /* Pods_QQNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */; };
 		CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434021EF24CD500A76EFC /* AppDelegate.swift */; };
 		CA1434051EF24CD500A76EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434041EF24CD500A76EFC /* ViewController.swift */; };
 		CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1434061EF24CD500A76EFC /* Main.storyboard */; };
@@ -31,8 +33,11 @@
 
 /* Begin PBXFileReference section */
 		1A8C9A9D1EF2C15200C808EC /* ETTMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeModel.swift; sourceTree = "<group>"; };
-		1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MeData.geojson; sourceTree = "<group>"; };
+		1A8C9AA21EF2C5DB00C808EC /* MeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MeData.json; sourceTree = "<group>"; };
 		1A8C9AA41EF2D06300C808EC /* ETTMeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeViewModel.swift; sourceTree = "<group>"; };
+		1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/QQNews-djbeguobsumntqhexjcaacdtrqac/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QQNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		853BA44DAAFAE4326190F43B /* Pods-QQNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.release.xcconfig"; sourceTree = "<group>"; };
 		CA1433FF1EF24CD500A76EFC /* QQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1434021EF24CD500A76EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA1434041EF24CD500A76EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 		CAB415711EF25D7600553CE0 /* ETTRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendViewController.swift; sourceTree = "<group>"; };
 		CAB415731EF25D8400553CE0 /* ETTLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiveViewController.swift; sourceTree = "<group>"; };
 		CAB415751EF25D9100553CE0 /* ETTMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeViewController.swift; sourceTree = "<group>"; };
+		D4C05E9AB1AF05884B542017 /* Pods-QQNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF750EA1EF50AB400E6F89F /* SwiftyJSON.framework in Frameworks */,
+				3D7EF950E1F5171AEEFC2335 /* Pods_QQNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,10 +112,28 @@
 		1A8C9A9C1EF2C08D00C808EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1A8C9AA21EF2C5DB00C808EC /* MeData.geojson */,
+				1A8C9AA21EF2C5DB00C808EC /* MeData.json */,
 				1A8C9AA41EF2D06300C808EC /* ETTMeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5514CD5670B97DB53FC8372E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */,
+				6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		952471C5D1904D58E7729DE7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4C05E9AB1AF05884B542017 /* Pods-QQNews.debug.xcconfig */,
+				853BA44DAAFAE4326190F43B /* Pods-QQNews.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CA1433F61EF24CD500A76EFC = {
@@ -115,6 +141,8 @@
 			children = (
 				CA1434011EF24CD500A76EFC /* QQNews */,
 				CA1434001EF24CD500A76EFC /* Products */,
+				952471C5D1904D58E7729DE7 /* Pods */,
+				5514CD5670B97DB53FC8372E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,9 +280,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA1434111EF24CD500A76EFC /* Build configuration list for PBXNativeTarget "QQNews" */;
 			buildPhases = (
+				9805F761B2CF5EF177E94354 /* [CP] Check Pods Manifest.lock */,
 				CA1433FB1EF24CD500A76EFC /* Sources */,
 				CA1433FC1EF24CD500A76EFC /* Frameworks */,
 				CA1433FD1EF24CD500A76EFC /* Resources */,
+				BE1BD59E58125FFD10B245FD /* [CP] Embed Pods Frameworks */,
+				872D75C46AEA8A3973E8F12E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,13 +336,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA14340D1EF24CD500A76EFC /* LaunchScreen.storyboard in Resources */,
-				1A8C9AA31EF2C5DB00C808EC /* MeData.geojson in Resources */,
+				1A8C9AA31EF2C5DB00C808EC /* MeData.json in Resources */,
 				CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */,
 				CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		872D75C46AEA8A3973E8F12E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQNews/Pods-QQNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9805F761B2CF5EF177E94354 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BE1BD59E58125FFD10B245FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QQNews/Pods-QQNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA1433FB1EF24CD500A76EFC /* Sources */ = {
@@ -464,9 +543,10 @@
 		};
 		CA1434121EF24CD500A76EFC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4C05E9AB1AF05884B542017 /* Pods-QQNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4XP6U9X87N;
+				DEVELOPMENT_TEAM = NV5J27ZQZQ;
 				INFOPLIST_FILE = QQNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -479,9 +559,10 @@
 		};
 		CA1434131EF24CD500A76EFC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 853BA44DAAFAE4326190F43B /* Pods-QQNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4XP6U9X87N;
+				DEVELOPMENT_TEAM = NV5J27ZQZQ;
 				INFOPLIST_FILE = QQNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

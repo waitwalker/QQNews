@@ -14,7 +14,11 @@ class ETTNewsViewController: ETTViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         NSLog("屏幕frame: %@", NSStringFromCGRect(self.view.frame));
-        // Do any additional setup after loading the view.
+        
+        let imageView = UIImageView.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100));
+        imageView.image = UIImage.init(named: "profile_arrow_constellation");
+        self.view.addSubview(imageView)
+        
     }
 
     override func didReceiveMemoryWarning() {

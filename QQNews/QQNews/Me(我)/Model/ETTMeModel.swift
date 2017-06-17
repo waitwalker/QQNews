@@ -9,5 +9,10 @@
 import UIKit
 
 class ETTMeModel: NSObject {
-
+    
+    var nameLabelText:String?
+    var badgeImageViewImage:String?
+    var subNameLabelText:String?
+    var arrowImageView:String?
+    
 }

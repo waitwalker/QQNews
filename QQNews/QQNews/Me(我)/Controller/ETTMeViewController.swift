@@ -14,6 +14,8 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     
     var meTableView:UITableView?
     
+    var dataArray:NSMutableArray = NSMutableArray();
+    
     
     
     override func viewDidLoad() {
@@ -37,7 +39,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         ETTMeViewModel().getMeData { (array) in
             
             NSLog("%@", array);
-            
+            dataArray = array;
         }
         
     }
@@ -49,12 +51,13 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
     {
-        return 8;
+        return dataArray.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
         let cell = ETTMeCell.init(style: .default, reuseIdentifier: reusedIdentify);
+        cell.meModel = dataArray.object(at: indexPath.item) as? ETTMeModel;
         return cell;
     }
     
