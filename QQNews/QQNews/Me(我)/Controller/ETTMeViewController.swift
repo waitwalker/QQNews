@@ -34,11 +34,13 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         self.view.addSubview(meTableView!);
     }
     
+    
+    
+    /// 获取数据
     func getData() -> Void
     {
         ETTMeViewModel().getMeData { (array) in
             
-            NSLog("%@", array);
             dataArray = array;
         }
         
@@ -62,7 +64,19 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0;
+        return 54.0;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let cell:ETTMeCell = tableView.cellForRow(at: indexPath) as! ETTMeCell;
+        cell.badgeImageView?.isHidden = true;
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
+    {
+        tableView.deselectRow(at: indexPath, animated: true);
     }
 
     override func didReceiveMemoryWarning() {

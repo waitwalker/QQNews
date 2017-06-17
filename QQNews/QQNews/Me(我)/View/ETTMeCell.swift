@@ -25,9 +25,20 @@ class ETTMeCell: ETTTableViewCell
     {
         didSet
         {
-            print(meModel?.nameLabelText ?? "");
             nameLabel?.text = meModel?.nameLabelText;
-            
+            //nameLabel?.sizeToFit();
+            if meModel?.nameLabelText?.count == 2 {
+                nameLabel?.frame.size.width = 40.0;
+            } else if meModel?.nameLabelText?.count == 4
+            {
+                nameLabel?.frame.size.width = 70.0;
+            } else
+            {
+                nameLabel?.frame.size.width = 100.0;
+            }
+            badgeImageView?.frame.origin.x = (nameLabel?.frame.maxX)! + kMargin / 2.0;
+            subNameLabel?.text = meModel?.subNameLabelText;
+            arrowImageView?.image = UIImage.init(named: (meModel?.arrowImageView)!);
         }
         
     }
@@ -41,19 +52,28 @@ class ETTMeCell: ETTTableViewCell
     func setupSubviews() -> Void 
     {
         //nameLabel
-        let nameLabelWidth:CGFloat  = 120.0 * kWidthScale;
-        let nameLabelHeight:CGFloat = 30.0;
+        let nameLabelWidth:CGFloat  = 80.0 * kWidthScale;
+        let nameLabelHeight:CGFloat = self.contentView.frame.size.height;
         let nameLabelX:CGFloat = kMargin;
-        let nameLabelY:CGFloat = (self.contentView.frame.size.height - nameLabelHeight) / 2.0;
+        let nameLabelY:CGFloat = 0.0;
         nameLabel = UILabel.init(frame: CGRect(x: nameLabelX, y: nameLabelY, width: nameLabelWidth, height: nameLabelHeight));
         nameLabel?.text = "我的消息";
         nameLabel?.textAlignment = NSTextAlignment.left;
         nameLabel?.textColor = UIColor.black;
         nameLabel?.font = UIFont.systemFont(ofSize: 15.0)
+        nameLabel?.center.y = self.contentView.center.y;
         self.contentView.addSubview(nameLabel!)
         
         //badgeImageView
         badgeImageView = UIImageView.init();
+        badgeImageView?.backgroundColor = UIColor.red;
+        let badgeImageViewX:CGFloat = (nameLabel?.frame.maxX)! + kMargin;
+        let badgeImageViewWidthHeight:CGFloat = 5.0;
+        let badgeImageViewY = (self.contentView.frame.size.height - badgeImageViewWidthHeight) / 2.0;
+        
+        badgeImageView?.frame = CGRect(x: badgeImageViewX, y: badgeImageViewY, width: badgeImageViewWidthHeight, height: badgeImageViewWidthHeight);
+        badgeImageView?.layer.cornerRadius = 2.5;
+        badgeImageView?.clipsToBounds = true;
         self.contentView.addSubview(badgeImageView!);
         
         //arrow
