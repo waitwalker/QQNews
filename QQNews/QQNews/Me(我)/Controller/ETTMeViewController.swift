@@ -78,13 +78,26 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     {
         tableView.deselectRow(at: indexPath, animated: true);
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? 
+    {
+        let headerView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 250));
+        headerView.backgroundColor = UIColor.red;
+        return headerView;
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat 
+    {
+        return 250.0;
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 
