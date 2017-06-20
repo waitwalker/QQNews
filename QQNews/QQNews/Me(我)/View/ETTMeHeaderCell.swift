@@ -68,7 +68,7 @@ class ETTMeHeaderCell: ETTTableViewCell {
         headerImageView?.layer.cornerRadius = 20.0;
         headerImageView?.clipsToBounds = true;
         headerImageView?.isUserInteractionEnabled = true;
-        headerImageView?.addSubview(headerImageView!);
+        backgroundImageView?.addSubview(headerImageView!);
         
         let titleLabelHeight:CGFloat = 25.0;
         let titleLabelX:CGFloat = (backgroundImageView?.frame.maxX)!;
