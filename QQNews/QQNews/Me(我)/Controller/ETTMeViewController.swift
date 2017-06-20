@@ -14,6 +14,8 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     var meTableView:UITableView?
     var dataArray:NSMutableArray = NSMutableArray();
     
+    let kHeaderHeight:CGFloat = 250;
+    
     let kMargin:CGFloat = 20.0 * (414 / kScreenWidth);
     let kBarHeightMargin:CGFloat = 5.0;
     let kTextLabelFont:CGFloat = 8.0;
@@ -21,6 +23,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     let kTextLabelAlignmentCenter:NSTextAlignment = NSTextAlignment.center;
     let kBarImageViewWidthHeight:CGFloat = 34.0;
     
+    var headerContentView:UIView?
     var backgroundImageView:UIImageView?
     var headerImageView:UIImageView?
     var titleLabel:UILabel?
@@ -47,11 +50,13 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     
     func setupHeaderView() -> Void
     {
-        backgroundImageView = UIImageView(frame: CGRect(x: 0, y: -250, width: kScreenWidth, height: 250));
+        headerContentView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kHeaderHeight));
+        meTableView?.addSubview(headerContentView!);
+        
+        backgroundImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kHeaderHeight));
         backgroundImageView?.isUserInteractionEnabled = true;
-        backgroundImageView!.contentMode = .scaleAspectFill;
         backgroundImageView?.backgroundColor = UIColor.blue;
-        meTableView?.addSubview(backgroundImageView!);
+        headerContentView?.addSubview(backgroundImageView!);
         
         //let tapGest:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector(loginAction(tapGesture: UITapGestureRecognizer)));
         
@@ -64,7 +69,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         headerImageView?.clipsToBounds = true;
         headerImageView?.isUserInteractionEnabled = true;
         headerImageView?.backgroundColor = UIColor.red;
-        backgroundImageView?.addSubview(headerImageView!);
+        headerContentView?.addSubview(headerImageView!);
         
         let titleLabelHeight:CGFloat = 25.0;
         let titleLabelX:CGFloat = (backgroundImageView?.frame.maxX)!;
@@ -74,7 +79,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         titleLabel?.font = UIFont.systemFont(ofSize: 15.0);
         titleLabel?.textColor = UIColor.white;
         titleLabel?.textAlignment = NSTextAlignment.left;
-        backgroundImageView?.addSubview(titleLabel!);
+        headerContentView?.addSubview(titleLabel!);
         
         let subTitleLabelX:CGFloat = (titleLabel?.frame.origin.x)!;
         let subTitleLabelHeight:CGFloat = 15.0;
@@ -85,7 +90,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         subTitleLabel?.textColor = UIColor.white;
         subTitleLabel?.textAlignment = NSTextAlignment.left;
         subTitleLabel?.isHidden = true;
-        backgroundImageView?.addSubview(subTitleLabel!);
+        headerContentView?.addSubview(subTitleLabel!);
         
         let barContentViewX:CGFloat = 0.0;
         let barContentViewHeight:CGFloat = 64.0;
@@ -93,14 +98,14 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         let barContentViewY:CGFloat = (backgroundImageView?.frame.size.height)! - barContentViewHeight;
         barContentView = UIView(frame: CGRect(x: barContentViewX, y: barContentViewY, width: barContentViewWidth, height: barContentViewHeight));
         barContentView?.backgroundColor = UIColor.black.withAlphaComponent(0.2);
-        backgroundImageView?.addSubview(barContentView!);
+        headerContentView?.addSubview(barContentView!);
         
         let imageTextImageViewWidthHeight:CGFloat = kBarImageViewWidthHeight;
         let imageTextImageViewX:CGFloat = (kScreenWidth - imageTextImageViewWidthHeight) / 2.0;
         let imageTextImageViewY:CGFloat = kBarHeightMargin;
         imageTextImageView = UIImageView(frame: CGRect(x: imageTextImageViewX, y: imageTextImageViewY, width: imageTextImageViewWidthHeight, height: imageTextImageViewWidthHeight));
         imageTextImageView?.isUserInteractionEnabled = true;
-        barContentView?.addSubview(imageTextImageView!);
+        headerContentView?.addSubview(imageTextImageView!);
         
         let imageTextLabelWidth:CGFloat = 80.0;
         let imageTextLabelHeight:CGFloat = 15.0;
@@ -110,7 +115,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         imageTextLabel?.font = UIFont.systemFont(ofSize: kTextLabelFont);
         imageTextLabel?.textAlignment = kTextLabelAlignmentCenter;
         imageTextLabel?.textColor = kTextLabelTextColor;
-        barContentView?.addSubview(imageTextLabel!);
+        headerContentView?.addSubview(imageTextLabel!);
         
         let dayNightLabelX:CGFloat = 12 * kBarHeightMargin;
         let dayNightLabelY:CGFloat = (imageTextLabel?.frame.origin.y)!;
@@ -121,7 +126,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         dayNightLabel?.font = UIFont.systemFont(ofSize: kTextLabelFont);
         dayNightLabel?.textColor = kTextLabelTextColor;
         dayNightLabel?.textAlignment = kTextLabelAlignmentCenter;
-        barContentView?.addSubview(dayNightLabel!);
+        headerContentView?.addSubview(dayNightLabel!);
         
         let dayNightImageViewWidth:CGFloat = kBarImageViewWidthHeight;
         let dayNightImageViewHeight:CGFloat = kBarImageViewWidthHeight;
@@ -132,7 +137,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         let dayNightImageViewCenterY:CGFloat = (dayNightImageView?.center.y)!;
         let dayNightImageViewCenterX:CGFloat = (dayNightLabel?.center.x)!;
         dayNightImageView?.center = CGPoint(x: dayNightImageViewCenterX, y: dayNightImageViewCenterY);
-        barContentView?.addSubview(dayNightImageView!);
+        headerContentView?.addSubview(dayNightImageView!);
         
         let offlineLabelWidth:CGFloat = imageTextLabelWidth;
         let offlineLabelHeight:CGFloat = imageTextLabelHeight;
@@ -142,7 +147,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         offlineLabel?.textAlignment = kTextLabelAlignmentCenter;
         offlineLabel?.font = UIFont.systemFont(ofSize: kTextLabelFont);
         offlineLabel?.textColor = kTextLabelTextColor;
-        barContentView?.addSubview(offlineLabel!);
+        headerContentView?.addSubview(offlineLabel!);
         
         let offlineImageViewX:CGFloat = kScreenWidth - 80.0;
         let offlineImageViewY:CGFloat = imageTextLabelY;
@@ -154,7 +159,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         let offlineImageViewCenterY:CGFloat = dayNightImageViewCenterY;
         offlineImageView?.center = CGPoint(x: offlineImageViewCenterX, y: offlineImageViewCenterY);
         
-        barContentView?.addSubview(offlineImageView!);
+        headerContentView?.addSubview(offlineImageView!);
     }
     
     func setupSubviews() -> Void 
@@ -165,7 +170,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         meTableView?.dataSource = self;
         self.view.addSubview(meTableView!);
         self.setupHeaderView();
-        meTableView?.contentInset = UIEdgeInsetsMake(250, 0, 0, 0);
+        meTableView?.tableHeaderView = headerContentView;
     }
     
     
@@ -220,12 +225,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
             let offsetY:CGFloat = scrollView.contentOffset.y
             if offsetY < 0
             {
-                print(offsetY);
-                var frame:CGRect = (backgroundImageView?.frame)!;
-                print("加了之前",frame);
-                frame.size.height = -offsetY - 20;
-                print("加了以后",frame);
-                backgroundImageView?.frame = frame;
+                backgroundImageView?.frame = CGRect(x: 0, y: offsetY, width: kScreenWidth, height: kHeaderHeight - offsetY);
             } else
             {
                 print("正的",offsetY)
