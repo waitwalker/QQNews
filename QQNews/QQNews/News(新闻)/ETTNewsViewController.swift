@@ -9,15 +9,24 @@
 import UIKit
 
 class ETTNewsViewController: ETTViewController {
-
+    
+    var titleScrollView:UIScrollView?
+    var middleScrollView:UIScrollView?
+    
+    let kButtonWidth:CGFloat = 60.0;
+    var buttonArray:NSMutableArray?
+    var titleArray:NSArray = []
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         NSLog("屏幕frame: %@", NSStringFromCGRect(self.view.frame));
         
-        let imageView = UIImageView.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100));
-        imageView.image = UIImage.init(named: "profile_arrow_constellation");
-        self.view.addSubview(imageView)
+        
+        self.setupSubviews();
         
     }
 
@@ -26,15 +35,68 @@ class ETTNewsViewController: ETTViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func setupSubviews() -> Void
+    {
+        setupTopViews();
     }
-    */
+    
+    func setupTopViews() -> Void
+    {
+        let searchImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 44));
+        searchImageView.backgroundColor = UIColor.red;
+        searchImageView.isUserInteractionEnabled = true;
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: searchImageView);
+        
+        let addItemImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 44));
+        addItemImageView.backgroundColor = UIColor.red;
+        addItemImageView.isUserInteractionEnabled = true;
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: addItemImageView);
+        
+        let titleContentView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth - 30 * 2 - 30 * 2, height: 44));
+        titleContentView.backgroundColor = UIColor.purple;
+        self.navigationItem.titleView = titleContentView;
+        
+        titleArray = NSArray(objects: "要闻","视频","北京","NBA","科技","军事","社会","财经","娱乐");
+        
+        titleScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: titleContentView.frame.size.width, height: 44));
+        titleScrollView?.contentSize = CGSize.init(width: CGFloat((titleArray.count)) * kButtonWidth, height: 0);
+        titleScrollView?.backgroundColor = UIColor.green;
+        titleContentView.addSubview(titleScrollView!);
+        
+        let lineView = UIView(frame: CGRect(x: 0, y: 42, width: kButtonWidth, height: 2));
+        lineView.backgroundColor = UIColor.orange;
+        titleScrollView?.addSubview(lineView);
+        
+        buttonArray = NSMutableArray();
+        
+        for index in 0...(titleArray.count - 1) {
+            
+            print(titleArray[index])
+            let buttonX:CGFloat = CGFloat(index) * kButtonWidth;
+            let buttonY:CGFloat = 0;
+            let buttonWidth:CGFloat = kButtonWidth;
+            let buttonHeight:CGFloat = 40.0;
+            let button = UIButton(frame: CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight));
+            button.setTitle(titleArray[index] as? String, for: UIControlState.normal);
+            button.setTitleColor(UIColor.black, for: UIControlState.normal);
+            button.tag = index;
+            button.addTarget(self, action: #selector(buttonAction(button:)), for: UIControlEvents.touchUpInside);
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 20.0);
+            titleScrollView?.addSubview(button);
+            buttonArray?.add(button);
+        }
+        
+    }
+    
+    @objc func buttonAction(button:UIButton) -> Void
+    {
+        
+    }
+    
+    func setupMiddleViews() -> Void
+    {
+        
+    }
+    
 
 }

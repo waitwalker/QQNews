@@ -297,7 +297,6 @@
 		CA14341E1EF24DB300A76EFC /* News(新闻) */ = {
 			isa = PBXGroup;
 			children = (
-				CA5CB1A21EFA7F1B004CC9BA /* View */,
 				CAB4156F1EF25D4300553CE0 /* ETTNewsViewController.swift */,
 			);
 			path = "News(新闻)";
@@ -342,13 +341,6 @@
 				CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		CA5CB1A21EFA7F1B004CC9BA /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		CA941AF41EF7A01E003D0B81 /* Products */ = {
