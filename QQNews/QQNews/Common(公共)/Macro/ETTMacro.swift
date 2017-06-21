@@ -14,3 +14,9 @@ import UIKit
 func kETTColor(r:CGFloat, g:CGFloat, b:CGFloat) -> UIColor {
     return UIColor.init(red: (r)/255.0, green: (g)/255.0, blue: (b)/255.0, alpha: 1.0);
 }
+
+func kRandomColor() -> UIColor
+{
+    let color = UIColor.init(red:CGFloat(arc4random_uniform(255))/CGFloat(255.0), green:CGFloat(arc4random_uniform(255))/CGFloat(255.0), blue:CGFloat(arc4random_uniform(255))/CGFloat(255.0) , alpha: 1)
+    return color;
+}

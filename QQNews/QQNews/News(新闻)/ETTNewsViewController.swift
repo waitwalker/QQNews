@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ETTNewsViewController: ETTViewController {
+class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     
     var titleScrollView:UIScrollView?
     var middleScrollView:UIScrollView?
@@ -38,6 +38,7 @@ class ETTNewsViewController: ETTViewController {
     func setupSubviews() -> Void
     {
         setupTopViews();
+        setupMiddleViews();
     }
     
     func setupTopViews() -> Void
@@ -78,6 +79,7 @@ class ETTNewsViewController: ETTViewController {
             let buttonHeight:CGFloat = 40.0;
             let button = UIButton(frame: CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight));
             button.setTitle(titleArray[index] as? String, for: UIControlState.normal);
+            button.setTitleColor(UIColor.red, for: UIControlState.selected);
             button.setTitleColor(UIColor.black, for: UIControlState.normal);
             button.tag = index;
             button.addTarget(self, action: #selector(buttonAction(button:)), for: UIControlEvents.touchUpInside);
@@ -95,7 +97,49 @@ class ETTNewsViewController: ETTViewController {
     
     func setupMiddleViews() -> Void
     {
+        middleScrollView = UIScrollView(frame: CGRect(x: 0, y: 2, width: kScreenWidth, height: kScreenHeight - 2));
+        middleScrollView?.contentSize = CGSize(width: CGFloat(self.titleArray.count) * kScreenWidth, height: kScreenHeight - 2);
+        middleScrollView?.isPagingEnabled = true;
+        middleScrollView?.delegate = self;
+        middleScrollView?.bounces = false;
+        self.view.addSubview(middleScrollView!);
         
+        for index in 0...(titleArray.count - 1) {
+            let subviews = UIView(frame: CGRect(x: kScreenWidth * CGFloat(index), y: 2, width: kScreenWidth, height: kScreenHeight - 2));
+            subviews.backgroundColor = kRandomColor();
+            middleScrollView?.addSubview(subviews);
+        }
+        
+    }
+    
+    func addSubviewsInMiddleScrollView() -> Void
+    {
+        for index in 0...(titleArray.count - 1) {
+            switch index
+            {
+            case 0:
+                
+                break;
+            case 1:
+                
+                break;
+            case 2:
+                
+                break;
+            case 3:
+                
+                break;
+            case 5:
+                
+                break;
+            case 6:
+                
+                break;
+            default :
+                break;
+                
+            }
+        }
     }
     
 
