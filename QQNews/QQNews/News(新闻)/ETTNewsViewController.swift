@@ -12,10 +12,13 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     
     var titleScrollView:UIScrollView?
     var middleScrollView:UIScrollView?
+    var lineView:UIView?
+    
     
     let kButtonWidth:CGFloat = 60.0;
-    var buttonArray:NSMutableArray?
+    var buttonArray:NSMutableArray = []
     var titleArray:NSArray = []
+    
     
     
     
@@ -55,18 +58,20 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         
         let titleContentView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth - 30 * 2 - 30 * 2, height: 44));
         titleContentView.backgroundColor = UIColor.purple;
-        self.navigationItem.titleView = titleContentView;
         
-        titleArray = NSArray(objects: "要闻","视频","北京","NBA","科技","军事","社会","财经","娱乐");
+        
+        titleArray = NSArray(objects: "要闻","视频","北京","NBA","科技","军事","社会","财经","娱乐","房产");
         
         titleScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: titleContentView.frame.size.width, height: 44));
         titleScrollView?.contentSize = CGSize.init(width: CGFloat((titleArray.count)) * kButtonWidth, height: 0);
         titleScrollView?.backgroundColor = UIColor.green;
-        titleContentView.addSubview(titleScrollView!);
+        titleScrollView?.isScrollEnabled = true;
+        titleScrollView?.isPagingEnabled = true;
+        self.navigationItem.titleView = titleScrollView;
         
-        let lineView = UIView(frame: CGRect(x: 0, y: 42, width: kButtonWidth, height: 2));
-        lineView.backgroundColor = UIColor.orange;
-        titleScrollView?.addSubview(lineView);
+        lineView = UIView(frame: CGRect(x: 0, y: 42, width: kButtonWidth, height: 2));
+        lineView?.backgroundColor = UIColor.orange;
+        titleScrollView?.addSubview(lineView!);
         
         buttonArray = NSMutableArray();
         
@@ -85,7 +90,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             button.addTarget(self, action: #selector(buttonAction(button:)), for: UIControlEvents.touchUpInside);
             button.titleLabel?.font = UIFont.systemFont(ofSize: 20.0);
             titleScrollView?.addSubview(button);
-            buttonArray?.add(button);
+            buttonArray.add(button);
         }
         
     }
@@ -149,7 +154,48 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        let pageIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
+        for index in 0...((buttonArray.count) - 1) {
+            
+            if index == pageIndex
+            {
+                let button:UIButton = buttonArray[index] as! UIButton;
+                button.isSelected = true;
+                
+                UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                    
+                    var lineViewFrame = self.lineView?.frame;
+                    lineViewFrame?.origin.x = button.frame.origin.x;
+                    self.lineView?.frame = lineViewFrame!;
+                    
+                    let toRight:CGFloat = button.frame.origin.x + button.frame.size.width;
+                    let toLeft:CGFloat = button.frame.origin.x;
+                    let minX:CGFloat = (self.titleScrollView?.contentOffset.x)!;
+                    let maxX:CGFloat = (self.titleScrollView?.contentOffset.x)! + (self.titleScrollView?.frame.size.width)!;
+                    if toRight > maxX
+                   {
+                    self.titleScrollView?.setContentOffset(CGPoint(x: self.titleScrollView!.contentOffset.x + (toRight - maxX), y: self.titleScrollView!.contentOffset.y), animated: true);
+                    }
+                    
+                    if toLeft < minX
+                    {
+                        self.titleScrollView?.setContentOffset(CGPoint(x: (self.titleScrollView?.contentOffset.x)! + (toLeft - minX), y: (self.titleScrollView?.contentOffset.y)!), animated: true);
+                    }
+                    
+                }, completion: { (finished) in
+                    
+                })
+                
+            } else
+            {
+                let button:UIButton = buttonArray[index] as! UIButton;
+                button.isSelected = false;
+                
+            }
+            
+        }
         
     }
 }
