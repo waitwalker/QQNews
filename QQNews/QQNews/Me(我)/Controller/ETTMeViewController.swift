@@ -38,6 +38,8 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     var imageTextLabel:UILabel?
     var offlineImageView:UIImageView?
     var offlineLabel:UILabel?
+    var settingImageView:UIImageView?
+    
     
     var isLogin:Bool?
     
@@ -181,8 +183,13 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     {
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapAction(tapGesture:)));
         headerImageView?.addGestureRecognizer(tapGesture);
+        
+        let settingImageViewTap = UITapGestureRecognizer.init(target: self, action: #selector(settingImageViewTapAction(tap:)));
+        settingImageView?.addGestureRecognizer(settingImageViewTap)
+        
     }
     
+    // MARK: - 头像的点击事件回调
     @objc func tapAction(tapGesture:UITapGestureRecognizer) -> Void 
     {
         loginVC = ETTLoginViewController();
@@ -190,6 +197,12 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
             print("present 成功");
         })
         
+    }
+    
+    // MARK: - 设置图标的点击事件回调
+    @objc func settingImageViewTapAction(tap:UITapGestureRecognizer) -> Void 
+    {
+        print("设置被点击了");
     }
     
     // MARK: - 初始化子控件
@@ -202,9 +215,17 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         self.view.addSubview(meTableView!);
         self.setupHeaderView();
         meTableView?.tableHeaderView = headerContentView;
+        
+        
+        let settingImageViewWidthHeight:CGFloat = 40.0;
+        let settingImageViewY:CGFloat = 70.0;
+        let settingImageViewX:CGFloat = kScreenWidth - settingImageViewWidthHeight - 20;
+        settingImageView = UIImageView(frame: CGRect(x: settingImageViewX, y: settingImageViewY, width: settingImageViewWidthHeight, height: settingImageViewWidthHeight));
+        settingImageView?.isUserInteractionEnabled = true;
+        settingImageView?.image = UIImage(named: "userpage_icon_setting_normal");
+        self.view.addSubview(settingImageView!);
+        
     }
-    
-    
     
     /// 获取数据
     func getData() -> Void
