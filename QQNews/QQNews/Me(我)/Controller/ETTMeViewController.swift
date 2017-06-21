@@ -10,6 +10,8 @@ import UIKit
 
 class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate {
     
+    var loginVC:ETTLoginViewController?
+    
     let reusedIdentify:String = "meReusedIdentify";
     var meTableView:UITableView?
     var dataArray:NSMutableArray = NSMutableArray();
@@ -44,10 +46,15 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true;
+        
         self.setupSubviews();
+        
         self.getData()
+        
+        self.addTapGesture();
     }
     
+    // MARK: - 初始化头控件
     func setupHeaderView() -> Void
     {
         headerContentView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kHeaderHeight));
@@ -170,6 +177,22 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         barContentView?.addSubview(offlineImageView!);
     }
     
+    func addTapGesture() -> Void 
+    {
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(tapAction(tapGesture:)));
+        headerImageView?.addGestureRecognizer(tapGesture);
+    }
+    
+    @objc func tapAction(tapGesture:UITapGestureRecognizer) -> Void 
+    {
+        loginVC = ETTLoginViewController();
+        self.present(loginVC!, animated: true, completion: { 
+            print("present 成功");
+        })
+        
+    }
+    
+    // MARK: - 初始化子控件
     func setupSubviews() -> Void 
     {
         meTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
@@ -193,6 +216,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         
     }
     
+    // MARK: - tableViewDataSource
     func numberOfSections(in tableView: UITableView) -> Int 
     {
         return 1;
@@ -210,6 +234,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         return cell;
     }
     
+    // MARK: - tableView Delegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 54.0;
     }
@@ -226,6 +251,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         tableView.deselectRow(at: indexPath, animated: true);
     }
     
+    // MARK: - scrollview Delegate
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
         if scrollView .isKind(of: UITableView.self)
@@ -237,12 +263,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
             } else
             {
                 print("正的",offsetY)
-                
             }
-            
-            
-            
-            
         }
     }
     
