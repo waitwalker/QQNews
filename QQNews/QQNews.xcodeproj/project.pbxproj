@@ -23,6 +23,7 @@
 		CA1434281EF24E9700A76EFC /* ETTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434271EF24E9700A76EFC /* ETTNavigationController.swift */; };
 		CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260A0D1EF273FD00DE23B9 /* ETTTableViewCell.swift */; };
 		CA260A101EF2749C00DE23B9 /* ETTMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260A0F1EF2749C00DE23B9 /* ETTMeCell.swift */; };
+		CA5CB1A11EFA355C004CC9BA /* ETTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */; };
 		CA9643CE1EF2785200F2D1D2 /* ETTMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9643CD1EF2785200F2D1D2 /* ETTMacro.swift */; };
 		CA9643D01EF2794A00F2D1D2 /* ETTConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9643CF1EF2794A00F2D1D2 /* ETTConst.swift */; };
 		CAB415701EF25D4300553CE0 /* ETTNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB4156F1EF25D4300553CE0 /* ETTNewsViewController.swift */; };
@@ -100,6 +101,7 @@
 		CA1434271EF24E9700A76EFC /* ETTNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNavigationController.swift; sourceTree = "<group>"; };
 		CA260A0D1EF273FD00DE23B9 /* ETTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTTableViewCell.swift; sourceTree = "<group>"; };
 		CA260A0F1EF2749C00DE23B9 /* ETTMeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeCell.swift; sourceTree = "<group>"; };
+		CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLoginViewController.swift; sourceTree = "<group>"; };
 		CA941AF31EF7A01E003D0B81 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../../../../Downloads/GPUImage2-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		CA9643CD1EF2785200F2D1D2 /* ETTMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMacro.swift; sourceTree = "<group>"; };
 		CA9643CF1EF2794A00F2D1D2 /* ETTConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTConst.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		CA1434011EF24CD500A76EFC /* QQNews */ = {
 			isa = PBXGroup;
 			children = (
+				CA5CB19B1EFA348A004CC9BA /* Login */,
 				CA14341E1EF24DB300A76EFC /* News(新闻) */,
 				CA14341F1EF24DB300A76EFC /* Recommend(推荐) */,
 				CA1434201EF24DB300A76EFC /* Live(直播) */,
@@ -330,6 +333,14 @@
 				CAB415751EF25D9100553CE0 /* ETTMeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		CA5CB19B1EFA348A004CC9BA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		CA941AF41EF7A01E003D0B81 /* Products */ = {
@@ -521,6 +532,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5CB1A11EFA355C004CC9BA /* ETTLoginViewController.swift in Sources */,
 				CA1434261EF24E7A00A76EFC /* ETTTabBarController.swift in Sources */,
 				CA1434221EF24E3400A76EFC /* ETTView.swift in Sources */,
 				CAB415721EF25D7600553CE0 /* ETTRecommendViewController.swift in Sources */,

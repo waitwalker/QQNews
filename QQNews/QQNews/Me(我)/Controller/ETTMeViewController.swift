@@ -18,7 +18,7 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     
     let kMargin:CGFloat = 20.0 * (414 / kScreenWidth);
     let kBarHeightMargin:CGFloat = 5.0;
-    let kTextLabelFont:CGFloat = 8.0;
+    let kTextLabelFont:CGFloat = 10.0;
     let kTextLabelTextColor:UIColor = UIColor.white;
     let kTextLabelAlignmentCenter:NSTextAlignment = NSTextAlignment.center;
     let kBarImageViewWidthHeight:CGFloat = 34.0;
@@ -61,24 +61,25 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         //let tapGest:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector(loginAction(tapGesture: UITapGestureRecognizer)));
         
         
-        let headerImageViewWidthHeight:CGFloat = 40.0;
+        let headerImageViewWidthHeight:CGFloat = 60.0;
         let headerImageViewX = kMargin;
         let headerImageViewY = ((backgroundImageView?.frame.size.height)! - headerImageViewWidthHeight) / 2.0;
         headerImageView = UIImageView(frame: CGRect(x: headerImageViewX, y: headerImageViewY, width: headerImageViewWidthHeight, height: headerImageViewWidthHeight));
-        headerImageView?.layer.cornerRadius = 20.0;
+        headerImageView?.layer.cornerRadius = 30.0;
         headerImageView?.clipsToBounds = true;
         headerImageView?.isUserInteractionEnabled = true;
         headerImageView?.backgroundColor = UIColor.red;
         headerContentView?.addSubview(headerImageView!);
         
-        let titleLabelHeight:CGFloat = 25.0;
-        let titleLabelX:CGFloat = (backgroundImageView?.frame.maxX)!;
-        let titleLabelWidth:CGFloat = kScreenWidth - (headerImageView?.frame.maxX)! - 2 * kMargin;
+        let titleLabelHeight:CGFloat = 30.0;
+        let titleLabelX:CGFloat = (headerImageView?.frame.maxX)! + kMargin / 2.0;
+        let titleLabelWidth:CGFloat = kScreenWidth - (headerImageView?.frame.maxX)! - 2 * kBarHeightMargin;
         let titleLabelY:CGFloat = ((backgroundImageView?.frame.size.height)! - titleLabelHeight) / 2.0;
         titleLabel = UILabel(frame: CGRect(x: titleLabelX, y: titleLabelY, width: titleLabelWidth, height: titleLabelHeight));
-        titleLabel?.font = UIFont.systemFont(ofSize: 15.0);
+        titleLabel?.font = UIFont.systemFont(ofSize: 20.0);
         titleLabel?.textColor = UIColor.white;
         titleLabel?.textAlignment = NSTextAlignment.left;
+        titleLabel?.text = "点击登录";
         headerContentView?.addSubview(titleLabel!);
         
         let subTitleLabelX:CGFloat = (titleLabel?.frame.origin.x)!;
@@ -104,8 +105,9 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         let imageTextImageViewX:CGFloat = (kScreenWidth - imageTextImageViewWidthHeight) / 2.0;
         let imageTextImageViewY:CGFloat = kBarHeightMargin;
         imageTextImageView = UIImageView(frame: CGRect(x: imageTextImageViewX, y: imageTextImageViewY, width: imageTextImageViewWidthHeight, height: imageTextImageViewWidthHeight));
+        imageTextImageView?.image = UIImage(named: "night-personal_iocn_tupian");
         imageTextImageView?.isUserInteractionEnabled = true;
-        headerContentView?.addSubview(imageTextImageView!);
+        barContentView?.addSubview(imageTextImageView!);
         
         let imageTextLabelWidth:CGFloat = 80.0;
         let imageTextLabelHeight:CGFloat = 15.0;
@@ -113,11 +115,12 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         let imageTextLabelY:CGFloat = (imageTextImageView?.frame.maxY)! + kBarHeightMargin;
         imageTextLabel = UILabel(frame: CGRect(x: imageTextLabelX, y: imageTextLabelY, width: imageTextLabelWidth, height: imageTextLabelHeight));
         imageTextLabel?.font = UIFont.systemFont(ofSize: kTextLabelFont);
+        imageTextLabel?.text = "文字模式";
         imageTextLabel?.textAlignment = kTextLabelAlignmentCenter;
         imageTextLabel?.textColor = kTextLabelTextColor;
-        headerContentView?.addSubview(imageTextLabel!);
+        barContentView?.addSubview(imageTextLabel!);
         
-        let dayNightLabelX:CGFloat = 12 * kBarHeightMargin;
+        let dayNightLabelX:CGFloat = 8 * kBarHeightMargin;
         let dayNightLabelY:CGFloat = (imageTextLabel?.frame.origin.y)!;
         let dayNightLabelHeight:CGFloat = imageTextLabelHeight;
         let dayNightLabelWidth:CGFloat = imageTextLabelWidth;
@@ -126,7 +129,8 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         dayNightLabel?.font = UIFont.systemFont(ofSize: kTextLabelFont);
         dayNightLabel?.textColor = kTextLabelTextColor;
         dayNightLabel?.textAlignment = kTextLabelAlignmentCenter;
-        headerContentView?.addSubview(dayNightLabel!);
+        dayNightLabel?.text = "夜间模式";
+        barContentView?.addSubview(dayNightLabel!);
         
         let dayNightImageViewWidth:CGFloat = kBarImageViewWidthHeight;
         let dayNightImageViewHeight:CGFloat = kBarImageViewWidthHeight;
@@ -134,20 +138,22 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         let dayNightImageViewX:CGFloat = 80.0;
         dayNightImageView = UIImageView(frame: CGRect(x: dayNightImageViewX, y: dayNightImageViewY, width: dayNightImageViewWidth, height: dayNightImageViewHeight));
         dayNightImageView?.isUserInteractionEnabled = true;
+        dayNightImageView?.image = UIImage(named: "personal_icon_night");
         let dayNightImageViewCenterY:CGFloat = (dayNightImageView?.center.y)!;
         let dayNightImageViewCenterX:CGFloat = (dayNightLabel?.center.x)!;
         dayNightImageView?.center = CGPoint(x: dayNightImageViewCenterX, y: dayNightImageViewCenterY);
-        headerContentView?.addSubview(dayNightImageView!);
+        barContentView?.addSubview(dayNightImageView!);
         
         let offlineLabelWidth:CGFloat = imageTextLabelWidth;
         let offlineLabelHeight:CGFloat = imageTextLabelHeight;
-        let offlineLabelX:CGFloat = kScreenWidth - 12 * kMargin - offlineLabelWidth;
+        let offlineLabelX:CGFloat = kScreenWidth - 8 * kBarHeightMargin - offlineLabelWidth;
         let offlineLabelY:CGFloat = imageTextLabelY;
         offlineLabel = UILabel(frame: CGRect(x: offlineLabelX, y: offlineLabelY, width: offlineLabelWidth, height: offlineLabelHeight));
         offlineLabel?.textAlignment = kTextLabelAlignmentCenter;
         offlineLabel?.font = UIFont.systemFont(ofSize: kTextLabelFont);
         offlineLabel?.textColor = kTextLabelTextColor;
-        headerContentView?.addSubview(offlineLabel!);
+        offlineLabel?.text = "离线阅读";
+        barContentView?.addSubview(offlineLabel!);
         
         let offlineImageViewX:CGFloat = kScreenWidth - 80.0;
         let offlineImageViewY:CGFloat = imageTextLabelY;
@@ -155,11 +161,13 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
         let offlineImageViewHeight:CGFloat = kBarImageViewWidthHeight;
         offlineImageView = UIImageView(frame: CGRect(x: offlineImageViewX, y: offlineImageViewY, width: offlineImageViewWidth, height: offlineImageViewHeight));
         offlineImageView?.isUserInteractionEnabled = true;
+        offlineImageView?.image = UIImage(named: "personal_icon_night");
         let offlineImageViewCenterX:CGFloat = (offlineLabel?.center.x)!;
         let offlineImageViewCenterY:CGFloat = dayNightImageViewCenterY;
         offlineImageView?.center = CGPoint(x: offlineImageViewCenterX, y: offlineImageViewCenterY);
+        offlineImageView?.image = UIImage(named: "personal_icon_offline");
         
-        headerContentView?.addSubview(offlineImageView!);
+        barContentView?.addSubview(offlineImageView!);
     }
     
     func setupSubviews() -> Void 
