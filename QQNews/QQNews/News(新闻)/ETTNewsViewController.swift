@@ -109,7 +109,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             subviews.backgroundColor = kRandomColor();
             middleScrollView?.addSubview(subviews);
         }
-        
+        self.addSubviewsInMiddleScrollView();
     }
     
     func addSubviewsInMiddleScrollView() -> Void
@@ -118,6 +118,13 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             switch index
             {
             case 0:
+                do {
+                    let subview = middleScrollView?.subviews[index];
+                    let neededView = UIView(frame: CGRect(x: 0, y: 2, width: kScreenWidth, height: kScreenHeight - 2));
+                    neededView.backgroundColor = UIColor.yellow;
+                    subview?.addSubview(neededView);
+                    
+                }
                 
                 break;
             case 1:
@@ -142,5 +149,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         }
     }
     
-
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
 }
