@@ -97,6 +97,17 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     
     @objc func buttonAction(button:UIButton) -> Void
     {
+        button.isSelected = true;
+        let subviews = middleScrollView?.subviews[button.tag];
+        middleScrollView?.contentOffset = CGPoint(x: (subviews?.frame.origin.x)!, y: (subviews?.frame.origin.y)!);
+        for index in 0...(buttonArray.count - 1) {
+            let tempButton:UIButton = buttonArray[index] as! UIButton;
+            if tempButton.tag != button.tag
+            {
+                tempButton.isSelected = false;
+            }
+            
+        }
         
     }
     
