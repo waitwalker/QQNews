@@ -59,7 +59,7 @@ class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat 
     {
-        return 95.0;
+        return 110.0;
     }
     
 }
