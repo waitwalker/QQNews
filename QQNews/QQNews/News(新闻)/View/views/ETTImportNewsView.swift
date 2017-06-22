@@ -11,7 +11,9 @@ import UIKit
 class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
 
     var importTableView:UITableView?
-    let reusedImportId:String = "reusedImportId";
+    let reusedImportNewsTextId:String = "reusedImportId";
+    let reusedImportNewsPictureId = "ImportNewsPictureCell";
+    
     
     
     
@@ -30,7 +32,8 @@ class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
         importTableView = UITableView.init(frame: self.bounds);
         importTableView?.delegate = self;
         importTableView?.dataSource = self;
-        importTableView?.register(ETTImportNewsTextCell.self, forCellReuseIdentifier: reusedImportId);
+        importTableView?.register(ETTImportNewsTextCell.self, forCellReuseIdentifier: reusedImportNewsTextId);
+        importTableView?.register(ETTImportNewsPictureCell.self, forCellReuseIdentifier: reusedImportNewsPictureId)
         self.addSubview(importTableView!);
         
     }
@@ -47,10 +50,10 @@ class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
-        var cell = tableView.dequeueReusableCell(withIdentifier: reusedImportId);
+        var cell = tableView.dequeueReusableCell(withIdentifier: reusedImportNewsPictureId);
         if cell == nil
         {
-            cell = ETTImportNewsTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "cell");
+            cell = ETTImportNewsPictureCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedImportNewsPictureId);
         }
         
         return cell!;
@@ -59,7 +62,7 @@ class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat 
     {
-        return 110.0;
+        return 300.0;
     }
     
 }
