@@ -37,7 +37,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         NSLog("屏幕frame: %@", NSStringFromCGRect(self.view.frame));
         
         
-        //self.setupSubviews();
+        self.setupSubviews();
         
     }
 
@@ -149,7 +149,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             case 0:
                 do {
                     let subview = middleScrollView?.subviews[index];
-                    let neededView = UIView(frame: CGRect(x: 0, y: 2, width: kScreenWidth, height: kScreenHeight - 2));
+                    let neededView = ETTImportNewsView(frame: CGRect(x: 0, y: 2, width: kScreenWidth, height: kScreenHeight - 2));
                     neededView.backgroundColor = UIColor.yellow;
                     subview?.addSubview(neededView);
                     
@@ -181,45 +181,52 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
-        let pageIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
-        for index in 0...((buttonArray.count) - 1) {
-            
-            if index == pageIndex
-            {
-                let button:UIButton = buttonArray[index] as! UIButton;
-                button.isSelected = true;
-                button.titleLabel?.font = UIFont.systemFont(ofSize: kSelectedButtonTitleFontSize);
+        if scrollView == middleScrollView 
+        {
+            let pageIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
+            for index in 0...((buttonArray.count) - 1) {
                 
-                UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                if index == pageIndex
+                {
+                    let button:UIButton = buttonArray[index] as! UIButton;
+                    button.isSelected = true;
+                    button.titleLabel?.font = UIFont.systemFont(ofSize: kSelectedButtonTitleFontSize);
                     
-                    var lineViewFrame = self.lineView?.frame;
-                    lineViewFrame?.origin.x = button.frame.origin.x;
-                    self.lineView?.frame = lineViewFrame!;
+                    UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+                        
+                        var lineViewFrame = self.lineView?.frame;
+                        lineViewFrame?.origin.x = button.frame.origin.x;
+                        self.lineView?.frame = lineViewFrame!;
+                        
+                        let toRight:CGFloat = button.frame.origin.x + button.frame.size.width;
+                        let toLeft:CGFloat = button.frame.origin.x;
+                        let minX:CGFloat = (self.titleScrollView?.contentOffset.x)!;
+                        let maxX:CGFloat = (self.titleScrollView?.contentOffset.x)! + (self.titleScrollView?.frame.size.width)!;
+                        if toRight > maxX
+                        {
+                            self.titleScrollView?.setContentOffset(CGPoint(x: self.titleScrollView!.contentOffset.x + (toRight - maxX), y: self.titleScrollView!.contentOffset.y), animated: true);
+                        }
+                        
+                        if toLeft < minX
+                        {
+                            self.titleScrollView?.setContentOffset(CGPoint(x: (self.titleScrollView?.contentOffset.x)! + (toLeft - minX), y: (self.titleScrollView?.contentOffset.y)!), animated: true);
+                        }
+                        
+                    }, completion: { (finished) in
+                        
+                    })
                     
-                    let toRight:CGFloat = button.frame.origin.x + button.frame.size.width;
-                    let toLeft:CGFloat = button.frame.origin.x;
-                    let minX:CGFloat = (self.titleScrollView?.contentOffset.x)!;
-                    let maxX:CGFloat = (self.titleScrollView?.contentOffset.x)! + (self.titleScrollView?.frame.size.width)!;
-                    if toRight > maxX
-                   {
-                    self.titleScrollView?.setContentOffset(CGPoint(x: self.titleScrollView!.contentOffset.x + (toRight - maxX), y: self.titleScrollView!.contentOffset.y), animated: true);
-                    }
-                    
-                    if toLeft < minX
-                    {
-                        self.titleScrollView?.setContentOffset(CGPoint(x: (self.titleScrollView?.contentOffset.x)! + (toLeft - minX), y: (self.titleScrollView?.contentOffset.y)!), animated: true);
-                    }
-                    
-                }, completion: { (finished) in
-                    
-                })
-                
-            } else
-            {
-                let button:UIButton = buttonArray[index] as! UIButton;
-                button.isSelected = false;
-                button.titleLabel?.font = UIFont.systemFont(ofSize: kNormalButtonTitleFontSize);
+                } else
+                {
+                    let button:UIButton = buttonArray[index] as! UIButton;
+                    button.isSelected = false;
+                    button.titleLabel?.font = UIFont.systemFont(ofSize: kNormalButtonTitleFontSize);
+                }
             }
+        } else if scrollView .isKind(of: UITableView.self)
+        {
+            return;
         }
+        
     }
 }

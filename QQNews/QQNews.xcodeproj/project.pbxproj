@@ -22,6 +22,9 @@
 		CA1434281EF24E9700A76EFC /* ETTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434271EF24E9700A76EFC /* ETTNavigationController.swift */; };
 		CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260A0D1EF273FD00DE23B9 /* ETTTableViewCell.swift */; };
 		CA260A101EF2749C00DE23B9 /* ETTMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260A0F1EF2749C00DE23B9 /* ETTMeCell.swift */; };
+		CA2BE1591EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE1581EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift */; };
+		CA2BE15E1EFB93010006F1C7 /* ETTImportNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE15D1EFB93010006F1C7 /* ETTImportNewsView.swift */; };
+		CA2BE1631EFB957D0006F1C7 /* ETTNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE1621EFB957D0006F1C7 /* ETTNewsViewModel.swift */; };
 		CA5CB1A11EFA355C004CC9BA /* ETTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */; };
 		CA9643CE1EF2785200F2D1D2 /* ETTMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9643CD1EF2785200F2D1D2 /* ETTMacro.swift */; };
 		CA9643D01EF2794A00F2D1D2 /* ETTConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9643CF1EF2794A00F2D1D2 /* ETTConst.swift */; };
@@ -101,6 +104,9 @@
 		CA260A0F1EF2749C00DE23B9 /* ETTMeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeCell.swift; sourceTree = "<group>"; };
 		CA2BE1191EFB66CB0006F1C7 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/QQNews-cbizyuwsvkmykrevdzagjvhwvmoo/Build/Products/Debug-iphoneos/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		CA2BE1331EFB6DA40006F1C7 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "Pods/../build/Debug-iphoneos/Masonry/Masonry.framework"; sourceTree = "<group>"; };
+		CA2BE1581EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportNewsTextCell.swift; sourceTree = "<group>"; };
+		CA2BE15D1EFB93010006F1C7 /* ETTImportNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportNewsView.swift; sourceTree = "<group>"; };
+		CA2BE1621EFB957D0006F1C7 /* ETTNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsViewModel.swift; sourceTree = "<group>"; };
 		CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLoginViewController.swift; sourceTree = "<group>"; };
 		CA941AF31EF7A01E003D0B81 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../../../../Downloads/GPUImage2-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		CA9643CD1EF2785200F2D1D2 /* ETTMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMacro.swift; sourceTree = "<group>"; };
@@ -298,7 +304,10 @@
 		CA14341E1EF24DB300A76EFC /* News(新闻) */ = {
 			isa = PBXGroup;
 			children = (
-				CAB4156F1EF25D4300553CE0 /* ETTNewsViewController.swift */,
+				CA2BE1611EFB93560006F1C7 /* Model */,
+				CA2BE15F1EFB93370006F1C7 /* ViewModel */,
+				CA2BE15A1EFB91C60006F1C7 /* Controller */,
+				CA2BE1571EFB78390006F1C7 /* View */,
 			);
 			path = "News(新闻)";
 			sourceTree = "<group>";
@@ -334,6 +343,54 @@
 				CAB415751EF25D9100553CE0 /* ETTMeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		CA2BE1571EFB78390006F1C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BE15C1EFB92DC0006F1C7 /* views */,
+				CA2BE15B1EFB91DF0006F1C7 /* cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA2BE15A1EFB91C60006F1C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CAB4156F1EF25D4300553CE0 /* ETTNewsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CA2BE15B1EFB91DF0006F1C7 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BE1581EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		CA2BE15C1EFB92DC0006F1C7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BE15D1EFB93010006F1C7 /* ETTImportNewsView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		CA2BE15F1EFB93370006F1C7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA2BE1621EFB957D0006F1C7 /* ETTNewsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CA2BE1611EFB93560006F1C7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CA5CB19B1EFA348A004CC9BA /* Login */ = {
@@ -540,12 +597,15 @@
 				CAC19B491EF77F1600AE78BC /* ETTMeHeaderCell.swift in Sources */,
 				1A8C9A9E1EF2C15200C808EC /* ETTMeModel.swift in Sources */,
 				CAB415761EF25D9100553CE0 /* ETTMeViewController.swift in Sources */,
+				CA2BE1591EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift in Sources */,
 				CA1434281EF24E9700A76EFC /* ETTNavigationController.swift in Sources */,
 				CA1434241EF24E4000A76EFC /* ETTViewController.swift in Sources */,
 				CAB415701EF25D4300553CE0 /* ETTNewsViewController.swift in Sources */,
 				CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */,
 				1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */,
+				CA2BE15E1EFB93010006F1C7 /* ETTImportNewsView.swift in Sources */,
 				CA9643D01EF2794A00F2D1D2 /* ETTConst.swift in Sources */,
+				CA2BE1631EFB957D0006F1C7 /* ETTNewsViewModel.swift in Sources */,
 				CA9643CE1EF2785200F2D1D2 /* ETTMacro.swift in Sources */,
 				CA260A101EF2749C00DE23B9 /* ETTMeCell.swift in Sources */,
 				CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */,
