@@ -250,9 +250,15 @@ class ETTMeViewController: ETTViewController,UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
-        let cell = ETTMeCell.init(style: .default, reuseIdentifier: reusedIdentify);
-        cell.meModel = dataArray.object(at: indexPath.item) as? ETTMeModel;
-        return cell;
+        //let cell = ETTMeCell.init(style: .default, reuseIdentifier: reusedIdentify);
+        var cell = tableView.dequeueReusableCell(withIdentifier: reusedIdentify) as? ETTMeCell;
+        if cell == nil 
+        {
+            cell = ETTMeCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedIdentify) ;
+        }
+        
+        cell?.meModel = dataArray.object(at: indexPath.item) as? ETTMeModel;
+        return cell!;
     }
     
     // MARK: - tableView Delegate

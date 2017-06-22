@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Masonry
 
 class ETTMeCell: ETTTableViewCell 
 {
@@ -26,21 +27,10 @@ class ETTMeCell: ETTTableViewCell
         didSet
         {
             nameLabel?.text = meModel?.nameLabelText;
-            //nameLabel?.sizeToFit();
-            if meModel?.nameLabelText?.count == 2 {
-                nameLabel?.frame.size.width = 40.0;
-            } else if meModel?.nameLabelText?.count == 4
-            {
-                nameLabel?.frame.size.width = 70.0;
-            } else
-            {
-                nameLabel?.frame.size.width = 100.0;
-            }
-            badgeImageView?.frame.origin.x = (nameLabel?.frame.maxX)! + kMargin / 2.0;
+            nameLabel?.sizeToFit();
             subNameLabel?.text = meModel?.subNameLabelText;
             arrowImageView?.image = UIImage.init(named: (meModel?.arrowImageView)!);
         }
-        
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) 
@@ -52,49 +42,53 @@ class ETTMeCell: ETTTableViewCell
     func setupSubviews() -> Void 
     {
         //nameLabel
-        let nameLabelWidth:CGFloat  = 80.0 * kWidthScale;
-        let nameLabelHeight:CGFloat = self.contentView.frame.size.height;
-        let nameLabelX:CGFloat = kMargin;
-        let nameLabelY:CGFloat = 0.0;
-        nameLabel = UILabel.init(frame: CGRect(x: nameLabelX, y: nameLabelY, width: nameLabelWidth, height: nameLabelHeight));
+        nameLabel = UILabel.init();
         nameLabel?.text = "我的消息";
         nameLabel?.textAlignment = NSTextAlignment.left;
         nameLabel?.textColor = UIColor.black;
-        nameLabel?.font = UIFont.systemFont(ofSize: 15.0)
-        nameLabel?.center.y = self.contentView.center.y;
+        nameLabel?.font = UIFont.systemFont(ofSize: 15.0);
         self.contentView.addSubview(nameLabel!)
+        let _ = nameLabel?.mas_makeConstraints({ (make) in
+            make?.left.equalTo()(self.contentView)?.offset()(20);
+            make?.top.equalTo()(self.contentView)?.offset()(0);
+            make?.bottom.equalTo()(self.contentView)?.offset()(0);
+        });
         
         //badgeImageView
         badgeImageView = UIImageView.init();
         badgeImageView?.backgroundColor = UIColor.red;
-        let badgeImageViewX:CGFloat = (nameLabel?.frame.maxX)! + kMargin;
-        let badgeImageViewWidthHeight:CGFloat = 5.0;
-        let badgeImageViewY = (self.contentView.frame.size.height - badgeImageViewWidthHeight) / 2.0;
-        
-        badgeImageView?.frame = CGRect(x: badgeImageViewX, y: badgeImageViewY, width: badgeImageViewWidthHeight, height: badgeImageViewWidthHeight);
         badgeImageView?.layer.cornerRadius = 2.5;
         badgeImageView?.clipsToBounds = true;
         self.contentView.addSubview(badgeImageView!);
+        let _ = badgeImageView?.mas_makeConstraints({ (make) in
+            make?.width.height().equalTo()(5);
+            make?.left.equalTo()(self.nameLabel?.mas_right)?.offset()(5);
+            make?.centerY.equalTo()(self.nameLabel);
+        })
+        
         
         //arrow
-        let arrowImageViewX = kScreenWidth - 2 * kMargin;
-        let arrowImageViewY = (self.contentView.frame.size.height - 17 * kHeightScale) / 2.0;
-        let arrowImageViewWidth = 10 * kWidthScale;
-        let arrowImageViewHeight = 17 * kHeightScale;
-        arrowImageView = UIImageView.init(frame: CGRect(x: arrowImageViewX, y: arrowImageViewY, width: arrowImageViewWidth, height: arrowImageViewHeight));
+        arrowImageView = UIImageView.init();
         self.contentView.addSubview(arrowImageView!);
+        let _ = arrowImageView?.mas_makeConstraints({ (make) in
+            make?.right.equalTo()(self.contentView.mas_right)?.offset()(-15);
+            make?.centerY.equalTo()(self.contentView);
+            make?.height.equalTo()(17);
+            make?.width.equalTo()(10);
+        })
         
         //subNameLabel
-        let subNameLabelWidth = kScreenWidth - 2 * kMargin - (arrowImageView?.frame.size.width)!;
-        let subNameLabelHeight:CGFloat = 30.0;
-        let subNameLabelX = kScreenWidth - subNameLabelWidth - 3 * kMargin;
-        let subNameLabelY = (self.contentView.frame.height - 30.0 ) / 2.0;
-        subNameLabel = UILabel.init(frame: CGRect(x: subNameLabelX, y: subNameLabelY, width: subNameLabelWidth, height: subNameLabelHeight));
+        subNameLabel = UILabel.init();
         subNameLabel?.text = "邀请好友得现金红包";
         subNameLabel?.textColor = UIColor.black;
         subNameLabel?.textAlignment = NSTextAlignment.right;
         subNameLabel?.font = UIFont.systemFont(ofSize: 15.0);
         self.contentView.addSubview(subNameLabel!);
+        let _ = subNameLabel?.mas_makeConstraints({ (make) in
+            make?.right.equalTo()(self.arrowImageView?.mas_left)?.offset()(-10);
+            make?.height.equalTo()(self.contentView);
+            make?.width.equalTo()(200);
+        })
     }
     
     

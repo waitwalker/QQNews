@@ -1,12 +1,15 @@
 PODS:
+  - Masonry (1.0.2)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Masonry (~> 1.0.2)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 351dad8aa4fa3b83565493cc3ca03aff6ea30bcb
+PODFILE CHECKSUM: f17112c9cb2054a4b84dc0b608069aa60cbdd037
 
 COCOAPODS: 1.2.1

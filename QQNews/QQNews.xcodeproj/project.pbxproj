@@ -13,7 +13,6 @@
 		1AF750EA1EF50AB400E6F89F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */; };
 		3D7EF950E1F5171AEEFC2335 /* Pods_QQNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */; };
 		CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434021EF24CD500A76EFC /* AppDelegate.swift */; };
-		CA1434051EF24CD500A76EFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434041EF24CD500A76EFC /* ViewController.swift */; };
 		CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1434061EF24CD500A76EFC /* Main.storyboard */; };
 		CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1434091EF24CD500A76EFC /* Assets.xcassets */; };
 		CA14340D1EF24CD500A76EFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA14340B1EF24CD500A76EFC /* LaunchScreen.storyboard */; };
@@ -90,7 +89,6 @@
 		853BA44DAAFAE4326190F43B /* Pods-QQNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.release.xcconfig"; sourceTree = "<group>"; };
 		CA1433FF1EF24CD500A76EFC /* QQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1434021EF24CD500A76EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA1434041EF24CD500A76EFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA1434071EF24CD500A76EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA1434091EF24CD500A76EFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA14340C1EF24CD500A76EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +99,8 @@
 		CA1434271EF24E9700A76EFC /* ETTNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNavigationController.swift; sourceTree = "<group>"; };
 		CA260A0D1EF273FD00DE23B9 /* ETTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTTableViewCell.swift; sourceTree = "<group>"; };
 		CA260A0F1EF2749C00DE23B9 /* ETTMeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeCell.swift; sourceTree = "<group>"; };
+		CA2BE1191EFB66CB0006F1C7 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/QQNews-cbizyuwsvkmykrevdzagjvhwvmoo/Build/Products/Debug-iphoneos/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
+		CA2BE1331EFB6DA40006F1C7 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "Pods/../build/Debug-iphoneos/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLoginViewController.swift; sourceTree = "<group>"; };
 		CA941AF31EF7A01E003D0B81 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../../../../Downloads/GPUImage2-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		CA9643CD1EF2785200F2D1D2 /* ETTMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMacro.swift; sourceTree = "<group>"; };
@@ -184,6 +184,8 @@
 		5514CD5670B97DB53FC8372E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA2BE1331EFB6DA40006F1C7 /* Masonry.framework */,
+				CA2BE1191EFB66CB0006F1C7 /* SnapKit.framework */,
 				CAC19B541EF798A600AE78BC /* QuartzCore.framework */,
 				CAC19B531EF7989E00AE78BC /* AVFoundation.framework */,
 				CAC19B4F1EF7987600AE78BC /* OpenGLES.framework */,
@@ -232,7 +234,6 @@
 				CA14341D1EF24DB300A76EFC /* Me(我) */,
 				CA1434141EF24DB300A76EFC /* Main(主) */,
 				CA1434151EF24DB300A76EFC /* Common(公共) */,
-				CA1434041EF24CD500A76EFC /* ViewController.swift */,
 				CA1434061EF24CD500A76EFC /* Main.storyboard */,
 				CA1434091EF24CD500A76EFC /* Assets.xcassets */,
 				CA14340B1EF24CD500A76EFC /* LaunchScreen.storyboard */,
@@ -536,7 +537,6 @@
 				CA1434261EF24E7A00A76EFC /* ETTTabBarController.swift in Sources */,
 				CA1434221EF24E3400A76EFC /* ETTView.swift in Sources */,
 				CAB415721EF25D7600553CE0 /* ETTRecommendViewController.swift in Sources */,
-				CA1434051EF24CD500A76EFC /* ViewController.swift in Sources */,
 				CAC19B491EF77F1600AE78BC /* ETTMeHeaderCell.swift in Sources */,
 				1A8C9A9E1EF2C15200C808EC /* ETTMeModel.swift in Sources */,
 				CAB415761EF25D9100553CE0 /* ETTMeViewController.swift in Sources */,

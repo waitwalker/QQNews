@@ -10,16 +10,24 @@ import UIKit
 
 class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     
+    // MARK: - 属性变量
     var titleScrollView:UIScrollView?
     var middleScrollView:UIScrollView?
     var lineView:UIView?
     
     
-    let kButtonWidth:CGFloat = 60.0;
+    let kButtonWidth:CGFloat = 50.0;
+    let kSelectedButtonTitleFontSize:CGFloat = 20.0;
+    let kNormalButtonTitleFontSize:CGFloat = 18.0;
+    let kSelectedButtonTitleColor:UIColor = kETTColor(r: 0, g: 0, b: 0);
+    let kNormalButtonTitleColor:UIColor = kETTColor(r: 127, g: 127, b: 127);
+    let kLineViewBackgroundColor:UIColor = kETTColor(r: 0, g: 103, b: 208);
+    
+    
+    
+    
     var buttonArray:NSMutableArray = []
     var titleArray:NSArray = []
-    
-    
     
     
     
@@ -29,7 +37,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         NSLog("屏幕frame: %@", NSStringFromCGRect(self.view.frame));
         
         
-        self.setupSubviews();
+        //self.setupSubviews();
         
     }
 
@@ -38,12 +46,14 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - 初始化子控件
     func setupSubviews() -> Void
     {
         setupTopViews();
         setupMiddleViews();
     }
     
+    // MARK: - 设置顶部titleView
     func setupTopViews() -> Void
     {
         let searchImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 44));
@@ -64,13 +74,13 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         
         titleScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: titleContentView.frame.size.width, height: 44));
         titleScrollView?.contentSize = CGSize.init(width: CGFloat((titleArray.count)) * kButtonWidth, height: 0);
-        titleScrollView?.backgroundColor = UIColor.green;
         titleScrollView?.isScrollEnabled = true;
         titleScrollView?.isPagingEnabled = true;
+        titleScrollView?.showsHorizontalScrollIndicator = false;
         self.navigationItem.titleView = titleScrollView;
         
         lineView = UIView(frame: CGRect(x: 0, y: 42, width: kButtonWidth, height: 2));
-        lineView?.backgroundColor = UIColor.orange;
+        lineView?.backgroundColor = kLineViewBackgroundColor;
         titleScrollView?.addSubview(lineView!);
         
         buttonArray = NSMutableArray();
@@ -84,17 +94,18 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             let buttonHeight:CGFloat = 40.0;
             let button = UIButton(frame: CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight));
             button.setTitle(titleArray[index] as? String, for: UIControlState.normal);
-            button.setTitleColor(UIColor.red, for: UIControlState.selected);
-            button.setTitleColor(UIColor.black, for: UIControlState.normal);
+            button.setTitleColor(kSelectedButtonTitleColor, for: UIControlState.selected);
+            button.setTitleColor(kNormalButtonTitleColor, for: UIControlState.normal);
             button.tag = index;
             button.addTarget(self, action: #selector(buttonAction(button:)), for: UIControlEvents.touchUpInside);
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 20.0);
+            button.titleLabel?.font = UIFont.systemFont(ofSize: kSelectedButtonTitleFontSize);
             titleScrollView?.addSubview(button);
             buttonArray.add(button);
         }
         
     }
     
+    // MARK: - 顶部titleView按钮的点击事件回调
     @objc func buttonAction(button:UIButton) -> Void
     {
         button.isSelected = true;
@@ -106,11 +117,11 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             {
                 tempButton.isSelected = false;
             }
-            
         }
         
     }
     
+    // MARK: - 初始化中间部分
     func setupMiddleViews() -> Void
     {
         middleScrollView = UIScrollView(frame: CGRect(x: 0, y: 2, width: kScreenWidth, height: kScreenHeight - 2));
@@ -118,6 +129,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         middleScrollView?.isPagingEnabled = true;
         middleScrollView?.delegate = self;
         middleScrollView?.bounces = false;
+        middleScrollView?.showsHorizontalScrollIndicator = false;
         self.view.addSubview(middleScrollView!);
         
         for index in 0...(titleArray.count - 1) {
@@ -128,6 +140,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         self.addSubviewsInMiddleScrollView();
     }
     
+    // MARK: - 添加中间部分子视图
     func addSubviewsInMiddleScrollView() -> Void
     {
         for index in 0...(titleArray.count - 1) {
@@ -165,6 +178,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         }
     }
     
+    // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
         let pageIndex:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width + 0.5);
@@ -174,6 +188,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             {
                 let button:UIButton = buttonArray[index] as! UIButton;
                 button.isSelected = true;
+                button.titleLabel?.font = UIFont.systemFont(ofSize: kSelectedButtonTitleFontSize);
                 
                 UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                     
@@ -203,10 +218,8 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             {
                 let button:UIButton = buttonArray[index] as! UIButton;
                 button.isSelected = false;
-                
+                button.titleLabel?.font = UIFont.systemFont(ofSize: kNormalButtonTitleFontSize);
             }
-            
         }
-        
     }
 }
