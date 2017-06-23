@@ -11,7 +11,7 @@ import UIKit
 class ETTImportNewsPictureCell: ETTTableViewCell {
     
     var titleLabel:UILabel?
-    var pictureImageView:UIImageView?
+    var picturesImageView:UIImageView?
     var commentNumLabel:UILabel?
     var timeLabel:UILabel?
     var pictureNumLabel:UILabel?
@@ -91,16 +91,30 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
             make?.bottom.width().height().equalTo()(self.commentNumLabel);
         })
         
-//        pictureImageView = UIImageView();
-//        pictureImageView?.isUserInteractionEnabled = true;
-//        pictureImageView?.backgroundColor = kRandomColor();
-//        self.contentView.addSubview(pictureImageView!);
-//        let _ = mas_makeConstraints { (make) in
-//            make?.left.equalTo()(self.contentView)?.offset()(15);
-//            make?.right.equalTo()(self.contentView)?.offset()(-15);
-//            make?.top.equalTo()(self.titleLabel)?.offset()(10);
-//            make?.bottom.equalTo()(self.dotImageView)?.offset()(-10);
-//        }
+        picturesImageView = UIImageView();
+        picturesImageView?.isUserInteractionEnabled = true;
+        picturesImageView?.backgroundColor = kRandomColor();
+        self.contentView.addSubview(picturesImageView!);
+        let _ = picturesImageView?.mas_makeConstraints({ (make) in
+            make?.left.equalTo()(self.contentView)?.offset()(15);
+            make?.right.equalTo()(self.contentView)?.offset()(-15);
+            make?.top.equalTo()(self.titleLabel?.mas_bottom)?.offset()(10);
+            make?.bottom.equalTo()(self.commentNumLabel?.mas_top)?.offset()(-10);
+        })
+
+        pictureNumLabel = UILabel();
+        pictureNumLabel?.textColor = UIColor.white;
+        pictureNumLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
+        pictureNumLabel?.backgroundColor = kRandomColor();
+        pictureNumLabel?.textAlignment = NSTextAlignment.left;
+        picturesImageView?.addSubview(pictureNumLabel!);
+        let _ = pictureNumLabel?.mas_makeConstraints({ (make) in
+            make?.left.equalTo()(self.picturesImageView)?.offset()(15);
+            make?.bottom.equalTo()(self.picturesImageView)?.offset()(-10);
+            make?.width.height().equalTo()(self.commentNumLabel);
+        })
+        
+        
         
     }
 
