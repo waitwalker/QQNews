@@ -1,14 +1,14 @@
 //
-//  ETTNewsView.swift
+//  ETTImportNewsViewController.swift
 //  QQNews
 //
-//  Created by LiuChuanan on 2017/6/22.
+//  Created by LiuChuanan on 2017/6/23.
 //  Copyright © 2017年 waitWalker. All rights reserved.
 //
 
 import UIKit
 
-class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
+class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITableViewDelegate {
 
     var importTableView:UITableView?
     let reusedImportNewsTextId:String = "reusedImportId";
@@ -16,27 +16,27 @@ class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
     let reusedImportNewsVideoId = "reusedImportNewsVideoId";
     
     
-    
-    
-    override init(frame: CGRect) 
+    override func viewDidLoad() 
     {
-        super.init(frame: frame);
-        //self.setupSubviews();
+        super.viewDidLoad()
+
+        self.setupSubviews();
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func setupSubviews() -> Void 
     {
-        importTableView = UITableView.init(frame: self.bounds);
+        importTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height));
         importTableView?.delegate = self;
         importTableView?.dataSource = self;
-        importTableView?.register(ETTImportNewsTextCell.self, forCellReuseIdentifier: reusedImportNewsTextId);
-        importTableView?.register(ETTImportNewsPictureCell.self, forCellReuseIdentifier: reusedImportNewsPictureId);
+//        importTableView?.register(ETTImportNewsTextCell.self, forCellReuseIdentifier: reusedImportNewsTextId);
+//        importTableView?.register(ETTImportNewsPictureCell.self, forCellReuseIdentifier: reusedImportNewsPictureId);
         importTableView?.register(ETTImportNewsVideoCell.self, forCellReuseIdentifier: reusedImportNewsVideoId);
-        self.addSubview(importTableView!);
+        self.view.addSubview(importTableView!);
         
     }
     
@@ -53,7 +53,7 @@ class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
         /*
-             注意一下 需要替换3个位置 上下两个id 中间cell
+         注意一下 需要替换3个位置 上下两个id 中间cell
          */
         var cell = tableView.dequeueReusableCell(withIdentifier: reusedImportNewsVideoId);
         if cell == nil
@@ -69,5 +69,15 @@ class ETTImportNewsView: ETTView,UITableViewDelegate,UITableViewDataSource {
     {
         return 300.0;
     }
-    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }

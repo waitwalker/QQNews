@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Masonry
 
 class ETTImportNewsTextCell: ETTTableViewCell {
     

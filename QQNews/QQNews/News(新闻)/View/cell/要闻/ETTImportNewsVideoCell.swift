@@ -12,7 +12,6 @@
  */
 
 import UIKit
-import Masonry
 
 class ETTImportNewsVideoCell: ETTTableViewCell {
     

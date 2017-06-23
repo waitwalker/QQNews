@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Masonry
 
 class ETTTableViewCell: UITableViewCell {
 
