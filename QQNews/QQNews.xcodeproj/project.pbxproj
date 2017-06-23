@@ -12,6 +12,7 @@
 		1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8C9AA41EF2D06300C808EC /* ETTMeViewModel.swift */; };
 		1AF750EA1EF50AB400E6F89F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */; };
 		3D7EF950E1F5171AEEFC2335 /* Pods_QQNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */; };
+		CA0DEAEA1EFCBCE0001958DE /* ETTImportNewsVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0DEAE91EFCBCE0001958DE /* ETTImportNewsVideoCell.swift */; };
 		CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434021EF24CD500A76EFC /* AppDelegate.swift */; };
 		CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1434061EF24CD500A76EFC /* Main.storyboard */; };
 		CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1434091EF24CD500A76EFC /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/QQNews-djbeguobsumntqhexjcaacdtrqac/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QQNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853BA44DAAFAE4326190F43B /* Pods-QQNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.release.xcconfig"; sourceTree = "<group>"; };
+		CA0DEAE91EFCBCE0001958DE /* ETTImportNewsVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportNewsVideoCell.swift; sourceTree = "<group>"; };
 		CA1433FF1EF24CD500A76EFC /* QQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1434021EF24CD500A76EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA1434071EF24CD500A76EFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			children = (
 				CA2BE1581EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift */,
 				CA2BE1641EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift */,
+				CA0DEAE91EFCBCE0001958DE /* ETTImportNewsVideoCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				CA1434281EF24E9700A76EFC /* ETTNavigationController.swift in Sources */,
 				CA1434241EF24E4000A76EFC /* ETTViewController.swift in Sources */,
 				CAB415701EF25D4300553CE0 /* ETTNewsViewController.swift in Sources */,
+				CA0DEAEA1EFCBCE0001958DE /* ETTImportNewsVideoCell.swift in Sources */,
 				CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */,
 				CA2BE1651EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift in Sources */,
 				1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */,
