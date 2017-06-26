@@ -16,6 +16,6 @@ class ETTCardModel: NSObject
     var icon:String?
     var uin:String?
     var intro:String?
-    var msgEntry:NSInteger?
+    var msgEntry:Int?
     
 }

@@ -12,7 +12,7 @@ class ETTVideoChannelModel: NSObject
 {
     var egid:String?
     var eid:String?
-    var openSupport:NSInteger?
+    var openSupport:Int?
     var video:ETTVideoModel?
     
 }

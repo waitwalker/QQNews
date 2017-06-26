@@ -171,7 +171,6 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
                 
                 videoNewsVC.view.frame = (subview!.bounds);
                 
-                print(videoNewsVC.view)
                 subview?.addSubview(videoNewsVC.view);
             }
                 break;

@@ -11,19 +11,19 @@ import UIKit
 class ETTVideoModel: NSObject 
 {
 
-    var videosourcetype:NSInteger?
-    var playmode:NSInteger?
+    var videosourcetype:Int?
+    var playmode:Int?
     var duration:String?
     var vid:String?
     var desc:String?
     var img:String?
     var playurl:String?
-    var width:NSInteger?
-    var height:NSInteger?
-    var screenType:NSInteger?
-    var playcount:NSInteger?
+    var width:Int?
+    var height:Int?
+    var screenType:Int?
+    var playcount:Int?
     var aspect:NSNumber?
-    var supportVR:NSInteger?
+    var supportVR:Int?
     
     
 }
