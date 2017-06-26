@@ -10,6 +10,7 @@ import UIKit
 
 class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     
+    var importNewsVC = ETTImportNewsViewController();
     // MARK: - 属性变量
     var titleScrollView:UIScrollView?
     var middleScrollView:UIScrollView?
@@ -37,9 +38,16 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         NSLog("屏幕frame: %@", NSStringFromCGRect(self.view.frame));
         
         
-        self.setupSubviews();
+        //self.setupSubviews();
+        
+        importNewsVC = ETTImportNewsViewController();
+        importNewsVC.view.frame = self.view.frame;
+        self.view.addSubview(importNewsVC.view);
+        
         
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,7 +78,8 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         titleContentView.backgroundColor = UIColor.purple;
         
         
-        titleArray = NSArray(objects: "要闻","视频","北京","NBA","科技","军事","社会","财经","娱乐","房产");
+        titleArray = NSArray(objects: "要闻");
+        //NSArray(objects: "要闻","视频","北京","NBA","科技","军事","社会","财经","娱乐","房产");
         
         titleScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: titleContentView.frame.size.width, height: 44));
         titleScrollView?.contentSize = CGSize.init(width: CGFloat((titleArray.count)) * kButtonWidth, height: 0);
@@ -157,60 +166,60 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
                 }
                 
                 break;
-            case 1:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
-            case 2:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
-            case 3:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
-            case 4:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
-            case 5:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
-            case 6:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
-            case 7:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
-            case 8:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
-            case 9:
-                let subview = middleScrollView?.subviews[index];
-                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-                neededView.backgroundColor = UIColor.yellow;
-                //subview?.addSubview(neededView);
-                break;
+//            case 1:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
+//            case 2:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
+//            case 3:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
+//            case 4:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
+//            case 5:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
+//            case 6:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
+//            case 7:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
+//            case 8:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
+//            case 9:
+//                let subview = middleScrollView?.subviews[index];
+//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
+//                neededView.backgroundColor = UIColor.yellow;
+//                //subview?.addSubview(neededView);
+//                break;
                 
             default :
                 break;

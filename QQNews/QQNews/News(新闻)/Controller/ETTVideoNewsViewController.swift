@@ -1,21 +1,19 @@
 //
-//  ETTRecommendViewController.swift
+//  ETTVideoNewsViewController.swift
 //  QQNews
 //
-//  Created by LiuChuanan on 2017/6/15.
+//  Created by LiuChuanan on 2017/6/26.
 //  Copyright © 2017年 waitWalker. All rights reserved.
 //
 
 import UIKit
 
-class ETTRecommendViewController: ETTViewController {
+class ETTVideoNewsViewController: ETTViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white;
-        let importNewsVC = ETTImportNewsViewController();
-        importNewsVC.view.frame = self.view.frame;
-        self.view.addSubview(importNewsVC.view);
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

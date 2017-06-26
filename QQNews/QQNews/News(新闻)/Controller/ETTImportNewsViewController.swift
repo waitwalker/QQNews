@@ -12,8 +12,8 @@ class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITab
 
     var importTableView:UITableView?
     let reusedImportNewsTextId:String = "reusedImportId";
-    let reusedImportNewsPictureId = "ImportNewsPictureCell";
-    let reusedImportNewsVideoId = "reusedImportNewsVideoId";
+    let reusedImportNewsPictureId:String = "ImportNewsPictureCell";
+    let reusedImportNewsVideoId:String = "reusedImportNewsVideoId";
     
     
     override func viewDidLoad() 
