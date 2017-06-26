@@ -21,6 +21,11 @@ class ETTVideoNewsViewController: ETTViewController,UITableViewDataSource,UITabl
         super.viewDidLoad()
         
         self.setupSubviews();
+        let newsViewModel = ETTNewsViewModel();
+        newsViewModel.getVideoNewsData { (videoListArray) in
+            
+        }
+        
     }
 
     func setupSubviews() -> Void 
