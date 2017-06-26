@@ -16,6 +16,7 @@ class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITab
     let reusedImportNewsVideoId:String = "reusedImportNewsVideoId";
     
     
+    
     override func viewDidLoad() 
     {
         super.viewDidLoad()
@@ -23,18 +24,14 @@ class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITab
         self.setupSubviews();
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func setupSubviews() -> Void 
     {
         importTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height));
         importTableView?.delegate = self;
         importTableView?.dataSource = self;
-//        importTableView?.register(ETTImportNewsTextCell.self, forCellReuseIdentifier: reusedImportNewsTextId);
-//        importTableView?.register(ETTImportNewsPictureCell.self, forCellReuseIdentifier: reusedImportNewsPictureId);
+        importTableView?.register(ETTImportNewsTextCell.self, forCellReuseIdentifier: reusedImportNewsTextId);
+        importTableView?.register(ETTImportNewsPictureCell.self, forCellReuseIdentifier: reusedImportNewsPictureId);
         importTableView?.register(ETTImportNewsVideoCell.self, forCellReuseIdentifier: reusedImportNewsVideoId);
         self.view.addSubview(importTableView!);
         
@@ -55,10 +52,10 @@ class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITab
         /*
          注意一下 需要替换3个位置 上下两个id 中间cell
          */
-        var cell = tableView.dequeueReusableCell(withIdentifier: reusedImportNewsVideoId);
+        var cell = tableView.dequeueReusableCell(withIdentifier: reusedImportNewsTextId);
         if cell == nil
         {
-            cell = ETTImportNewsVideoCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedImportNewsVideoId);
+            cell = ETTImportNewsTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedImportNewsTextId);
         }
         
         return cell!;

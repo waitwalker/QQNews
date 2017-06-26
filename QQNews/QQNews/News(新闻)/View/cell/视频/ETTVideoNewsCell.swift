@@ -56,6 +56,7 @@ class ETTVideoNewsCell: ETTTableViewCell {
         VTitleLabel?.backgroundColor = kRandomColor();
         VTitleLabel?.textAlignment = NSTextAlignment.left;
         VTitleLabel?.font = UIFont.systemFont(ofSize: kTitleFont);
+        VTitleLabel?.text = "视频连接";
         self.contentView.addSubview(VTitleLabel!);
         let _ = VTitleLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.contentView)?.offset()(15);

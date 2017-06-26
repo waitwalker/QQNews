@@ -13,7 +13,6 @@
 		1AF750EA1EF50AB400E6F89F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */; };
 		3D7EF950E1F5171AEEFC2335 /* Pods_QQNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */; };
 		CA0DEAEA1EFCBCE0001958DE /* ETTImportNewsVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0DEAE91EFCBCE0001958DE /* ETTImportNewsVideoCell.swift */; };
-		CA0DEAED1EFCEF2E001958DE /* ETTVideoNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0DEAEC1EFCEF2E001958DE /* ETTVideoNewsView.swift */; };
 		CA0DEAF11EFCF171001958DE /* ETTVideoNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0DEAF01EFCF171001958DE /* ETTVideoNewsCell.swift */; };
 		CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1434021EF24CD500A76EFC /* AppDelegate.swift */; };
 		CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA1434061EF24CD500A76EFC /* Main.storyboard */; };
@@ -26,7 +25,6 @@
 		CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260A0D1EF273FD00DE23B9 /* ETTTableViewCell.swift */; };
 		CA260A101EF2749C00DE23B9 /* ETTMeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA260A0F1EF2749C00DE23B9 /* ETTMeCell.swift */; };
 		CA2BE1591EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE1581EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift */; };
-		CA2BE15E1EFB93010006F1C7 /* ETTImportNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE15D1EFB93010006F1C7 /* ETTImportNewsView.swift */; };
 		CA2BE1631EFB957D0006F1C7 /* ETTNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE1621EFB957D0006F1C7 /* ETTNewsViewModel.swift */; };
 		CA2BE1651EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2BE1641EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift */; };
 		CA5CB1A11EFA355C004CC9BA /* ETTLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */; };
@@ -97,7 +95,6 @@
 		6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QQNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853BA44DAAFAE4326190F43B /* Pods-QQNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.release.xcconfig"; sourceTree = "<group>"; };
 		CA0DEAE91EFCBCE0001958DE /* ETTImportNewsVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportNewsVideoCell.swift; sourceTree = "<group>"; };
-		CA0DEAEC1EFCEF2E001958DE /* ETTVideoNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTVideoNewsView.swift; sourceTree = "<group>"; };
 		CA0DEAF01EFCF171001958DE /* ETTVideoNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTVideoNewsCell.swift; sourceTree = "<group>"; };
 		CA1433FF1EF24CD500A76EFC /* QQNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1434021EF24CD500A76EFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +111,6 @@
 		CA2BE1191EFB66CB0006F1C7 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/QQNews-cbizyuwsvkmykrevdzagjvhwvmoo/Build/Products/Debug-iphoneos/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		CA2BE1331EFB6DA40006F1C7 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "Pods/../build/Debug-iphoneos/Masonry/Masonry.framework"; sourceTree = "<group>"; };
 		CA2BE1581EFB91BC0006F1C7 /* ETTImportNewsTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportNewsTextCell.swift; sourceTree = "<group>"; };
-		CA2BE15D1EFB93010006F1C7 /* ETTImportNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportNewsView.swift; sourceTree = "<group>"; };
 		CA2BE1621EFB957D0006F1C7 /* ETTNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsViewModel.swift; sourceTree = "<group>"; };
 		CA2BE1641EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportNewsPictureCell.swift; sourceTree = "<group>"; };
 		CA5CB1A01EFA355C004CC9BA /* ETTLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLoginViewController.swift; sourceTree = "<group>"; };
@@ -406,8 +402,6 @@
 		CA2BE15C1EFB92DC0006F1C7 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				CA2BE15D1EFB93010006F1C7 /* ETTImportNewsView.swift */,
-				CA0DEAEC1EFCEF2E001958DE /* ETTVideoNewsView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -640,8 +634,6 @@
 				CA2BE1651EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift in Sources */,
 				1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */,
 				CA8EB03F1EFD1F0E005DCA0E /* ETTImportNewsViewController.swift in Sources */,
-				CA2BE15E1EFB93010006F1C7 /* ETTImportNewsView.swift in Sources */,
-				CA0DEAED1EFCEF2E001958DE /* ETTVideoNewsView.swift in Sources */,
 				CA9643D01EF2794A00F2D1D2 /* ETTConst.swift in Sources */,
 				CA0DEAF11EFCF171001958DE /* ETTVideoNewsCell.swift in Sources */,
 				CA2BE1631EFB957D0006F1C7 /* ETTNewsViewModel.swift in Sources */,

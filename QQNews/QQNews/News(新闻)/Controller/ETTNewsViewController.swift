@@ -11,6 +11,10 @@ import UIKit
 class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     
     var importNewsVC = ETTImportNewsViewController();
+    
+    var videoNewsVC = ETTVideoNewsViewController();
+    
+    
     // MARK: - 属性变量
     var titleScrollView:UIScrollView?
     var middleScrollView:UIScrollView?
@@ -38,12 +42,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         NSLog("屏幕frame: %@", NSStringFromCGRect(self.view.frame));
         
         
-        //self.setupSubviews();
-        
-        importNewsVC = ETTImportNewsViewController();
-        importNewsVC.view.frame = self.view.frame;
-        self.view.addSubview(importNewsVC.view);
-        
+        self.setupSubviews();
         
     }
     
@@ -78,7 +77,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         titleContentView.backgroundColor = UIColor.purple;
         
         
-        titleArray = NSArray(objects: "要闻");
+        titleArray = NSArray(objects: "要闻","视频");
         //NSArray(objects: "要闻","视频","北京","NBA","科技","军事","社会","财经","娱乐","房产");
         
         titleScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: titleContentView.frame.size.width, height: 44));
@@ -134,7 +133,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     func setupMiddleViews() -> Void
     {
         middleScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-        middleScrollView?.contentSize = CGSize(width: CGFloat(self.titleArray.count) * kScreenWidth, height: kScreenHeight);
+        middleScrollView?.contentSize = CGSize(width: CGFloat(self.titleArray.count) * kScreenWidth, height: 0);
         middleScrollView?.isPagingEnabled = true;
         middleScrollView?.delegate = self;
         middleScrollView?.bounces = false;
@@ -159,19 +158,23 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             case 0:
                 do {
                     let subview = middleScrollView?.subviews[index];
-                    let importNewsVC:ETTImportNewsViewController = ETTImportNewsViewController();
-                    importNewsVC.view.frame = (subview!.frame);
+                    
+                    importNewsVC.view.frame = (subview!.bounds);
                     
                     subview?.addSubview(importNewsVC.view);
                 }
                 
                 break;
-//            case 1:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
+            case 1:
+               do {
+                let subview = middleScrollView?.subviews[index];
+                
+                videoNewsVC.view.frame = (subview!.bounds);
+                
+                print(videoNewsVC.view)
+                subview?.addSubview(videoNewsVC.view);
+            }
+                break;
 //            case 2:
 //                let subview = middleScrollView?.subviews[index];
 //                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
