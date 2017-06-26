@@ -95,6 +95,7 @@
 		1A8C9A9D1EF2C15200C808EC /* ETTMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeModel.swift; sourceTree = "<group>"; };
 		1A8C9AA21EF2C5DB00C808EC /* MeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MeData.json; sourceTree = "<group>"; };
 		1A8C9AA41EF2D06300C808EC /* ETTMeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMeViewModel.swift; sourceTree = "<group>"; };
+		1ABDBB251F013D0600BA589A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/QQNews-djbeguobsumntqhexjcaacdtrqac/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QQNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853BA44DAAFAE4326190F43B /* Pods-QQNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.release.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +207,7 @@
 		5514CD5670B97DB53FC8372E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ABDBB251F013D0600BA589A /* Alamofire.framework */,
 				CA2BE1331EFB6DA40006F1C7 /* Masonry.framework */,
 				CA2BE1191EFB66CB0006F1C7 /* SnapKit.framework */,
 				CAC19B541EF798A600AE78BC /* QuartzCore.framework */,

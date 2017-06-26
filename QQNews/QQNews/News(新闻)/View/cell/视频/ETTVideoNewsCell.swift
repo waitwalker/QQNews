@@ -23,10 +23,28 @@ class ETTVideoNewsCell: ETTTableViewCell {
     var VCommentLabel:UILabel?
     var VDotImageView:UIImageView?
     
+    var videoNewsModel:ETTVideoNewsModel?
+    {
+        didSet
+        {
+            VTitleLabel?.text = videoNewsModel?.title;
+            if videoNewsModel?.video_channel?.video?.duration == nil
+            {
+                VRemainTimeLabel?.text = "05:36";
+            } else
+            {
+                VRemainTimeLabel?.text = videoNewsModel?.video_channel?.video?.duration;
+            }
+            VCommentLabel?.text = String(format: "%ld",(videoNewsModel?.pushCommentCount)!);
+        }
+        
+    }
     
-    let kTitleFont:CGFloat = 20.0;
+    
+    
+    let kTitleFont:CGFloat = 18.0;
     let kTitleColor:UIColor = UIColor.black;
-    let kSubTitleFont:CGFloat = 8.0;
+    let kSubTitleFont:CGFloat = 12.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
     
@@ -53,10 +71,10 @@ class ETTVideoNewsCell: ETTTableViewCell {
     {
         VTitleLabel = UILabel();
         VTitleLabel?.textColor = kRandomColor();
-        VTitleLabel?.backgroundColor = kRandomColor();
         VTitleLabel?.textAlignment = NSTextAlignment.left;
         VTitleLabel?.font = UIFont.systemFont(ofSize: kTitleFont);
         VTitleLabel?.text = "视频连接";
+        VTitleLabel?.numberOfLines = 2;
         self.contentView.addSubview(VTitleLabel!);
         let _ = VTitleLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.contentView)?.offset()(15);
@@ -126,7 +144,6 @@ class ETTVideoNewsCell: ETTTableViewCell {
         VCommentLabel?.textColor = kRandomColor();
         VCommentLabel?.textAlignment = NSTextAlignment.left;
         VCommentLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        VCommentLabel?.backgroundColor = kRandomColor();
         self.contentView.addSubview(VCommentLabel!);
         let _ = VCommentLabel?.mas_makeConstraints({ (make) in
             make?.right.equalTo()(self.VDotImageView?.mas_left)?.offset()(-0);
@@ -174,7 +191,6 @@ class ETTVideoNewsCell: ETTTableViewCell {
         
         VRemainTimeLabel = UILabel();
         VRemainTimeLabel?.textColor = kRandomColor();
-        VRemainTimeLabel?.backgroundColor = kRandomColor();
         VRemainTimeLabel?.textAlignment = NSTextAlignment.left;
         VRemainTimeLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
         VBackgroundImageView?.addSubview(VRemainTimeLabel!);

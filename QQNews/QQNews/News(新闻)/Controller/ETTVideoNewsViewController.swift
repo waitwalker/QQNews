@@ -11,6 +11,7 @@ import UIKit
 class ETTVideoNewsViewController: ETTViewController,UITableViewDataSource,UITableViewDelegate {
 
     var VTableView:UITableView?
+    var videoDataArray = NSMutableArray();
     
     
     let reusedIdentifiyVideo:String = "reusedIdentifiyVideo";
@@ -24,6 +25,9 @@ class ETTVideoNewsViewController: ETTViewController,UITableViewDataSource,UITabl
         let newsViewModel = ETTNewsViewModel();
         newsViewModel.getVideoNewsData { (videoListArray) in
             
+            self.videoDataArray = videoListArray;
+            print(self.videoDataArray.count)
+            self.VTableView?.reloadData();
         }
         
     }
@@ -45,16 +49,17 @@ class ETTVideoNewsViewController: ETTViewController,UITableViewDataSource,UITabl
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
     {
-        return 20;
+        return videoDataArray.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
-        var cell = tableView.dequeueReusableCell(withIdentifier: reusedIdentifiyVideo);
+        var cell = tableView.dequeueReusableCell(withIdentifier: reusedIdentifiyVideo) as? ETTVideoNewsCell;
         if cell == nil
         {
             cell = ETTVideoNewsCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedIdentifiyVideo);
         }
+        cell?.videoNewsModel = videoDataArray[indexPath.item] as? ETTVideoNewsModel;
         return cell!;
     }
     

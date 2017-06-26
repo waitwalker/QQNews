@@ -15,7 +15,7 @@ class ETTNewsViewModel: NSObject {
     // MARK: - 获取视频列表数据
     typealias videoListCallBack = (_ videoListArray:NSMutableArray)->Void
     
-    func getVideoNewsData(videoNewsCallBack:videoListCallBack) -> Void 
+    func getVideoNewsData(videoNewsCallBack:@escaping videoListCallBack) -> Void
     {
         let URI:String = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f0105aa6744&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNVideoDetailListViewController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom=icon";
         
@@ -48,6 +48,8 @@ class ETTNewsViewModel: NSObject {
                         {
                             let videoNewsModel = ETTVideoNewsModel();
                             videoNewsModel.isSensitive = JSON["isSensitive"].int;
+                            
+                            
                             videoNewsModel.toneScore = JSON["toneScore"].string;
                             videoNewsModel.weiboid = JSON["weiboid"].string;
                             videoNewsModel.tag = JSON["tag"].array;
@@ -135,15 +137,17 @@ class ETTNewsViewModel: NSObject {
                             videoNewsModel.forbidRedPacket = JSON["forbidRedPacket"].int;
                             videoNewsModel.graphicLiveID = JSON["graphicLiveID"].string;
                             videoNewsModel.thumbnails = JSON["thumbnails"].array;
-                            print(videoNewsModel)
+                            
+                            videoListArray.add(videoNewsModel);
                         }
+                        videoNewsCallBack(videoListArray);
                         
                     }
                 }
                 break
                 
-            case false: 
-                print(dataResponse.result.error)
+            case false:
+                
                 break
             }
         }
