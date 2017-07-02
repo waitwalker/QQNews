@@ -59,7 +59,7 @@ class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITab
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
     {
-        return 20;
+        return importNewsListArry.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
@@ -67,11 +67,13 @@ class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITab
         /*
          注意一下 需要替换3个位置 上下两个id 中间cell
          */
-        var cell = tableView.dequeueReusableCell(withIdentifier: reusedImportNewsTextId);
+        var cell = tableView.dequeueReusableCell(withIdentifier: reusedImportNewsTextId) as? ETTImportNewsTextCell;
         if cell == nil
         {
             cell = ETTImportNewsTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedImportNewsTextId);
         }
+        
+        cell?.importNewsModel = (importNewsListArry[indexPath.item] as! ETTImportNewsModel);
         
         return cell!;
         
@@ -79,7 +81,7 @@ class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITab
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat 
     {
-        return 300.0;
+        return 120.0;
     }
 
     /*

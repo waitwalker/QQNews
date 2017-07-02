@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ETTImportNewsTextCell: ETTTableViewCell {
     
@@ -22,6 +23,16 @@ class ETTImportNewsTextCell: ETTTableViewCell {
     let kSubTitleFont:CGFloat = 8.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
+    var importNewsModel:ETTImportNewsModel?
+    {
+        didSet
+        {
+            titleLabel?.text = importNewsModel?.title;
+            
+            pictureImageView?.sd_setImage(with: URL.init(string: (importNewsModel?.thumbnailsString)!), placeholderImage: UIImage.init(named: "qq_placeholder"));
+        }
+        
+    }
     
     
     

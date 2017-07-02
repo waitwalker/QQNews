@@ -27,6 +27,8 @@ class ETTImportNewsModel: NSObject
     var showType_video:String?    //String    normal
     var thumbnails_big:Array<Any>?    //Array
     var thumbnails:Array<Any>?    //Array
+    var thumbnailsString:String?
+    
     var qishu:String?    //String
     var source:String?    //String    福州晚报
     var imagecount:Int?    //Integer    0

@@ -14,7 +14,7 @@ class ETTNewsViewModel: NSObject {
     
     // MARK: - 获取要闻列表
     typealias importNewsListCallBack = (_ ipormtNewsListArray:NSMutableArray)->Void
-    func getImportNewsListData(callBack:importNewsListCallBack) -> Void
+    func getImportNewsListData(callBack:@escaping importNewsListCallBack) -> Void
     {
         let URI:String = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f08e8d71890&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListChannelVideoController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon";
         let URLString = kHost + URI;
@@ -31,8 +31,36 @@ class ETTNewsViewModel: NSObject {
                 if let value = response.result.value
                 {
                     let json = JSON(value);
-                    print(json);
+                    let dataArray = NSMutableArray();
                     
+                    if let newsList = json["newslist"].array
+                    {
+                        for (subJson:JSON) in newsList
+                        {
+                            print(JSON)
+                            let importNewsModel = ETTImportNewsModel();
+                            
+                            importNewsModel.title = JSON["title"].string;
+                            importNewsModel.thumbnails = JSON["thumbnails"].array;
+                            if let string = JSON["thumbnails"].array?.first?.rawString()
+                            {
+                                importNewsModel.thumbnailsString = string;
+                            };
+                            importNewsModel.thumbnails_big = JSON["thumbnails_big"].array;
+                            importNewsModel.thumbnails_qqnews = JSON["thumbnails_qqnews"].array;
+                            importNewsModel.thumbnails_qqnews_photo = JSON["thumbnails_qqnews_photo"].array;
+                            importNewsModel.bigImage = JSON["bigImage"].array;
+                            
+                            
+                            
+                            dataArray.add(importNewsModel);
+                            
+                            
+                        }
+                        
+                    }
+                    
+                    callBack(dataArray);
                     
                 }
                 

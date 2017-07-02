@@ -212,6 +212,13 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		1A94CE011F09361B00E4CE3F /* ImportNewsDetail(要闻详情) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ImportNewsDetail(要闻详情)";
+			sourceTree = "<group>";
+		};
 		1AA084E31F08EFA7005DD495 /* 要闻 */ = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +366,7 @@
 		CA14341E1EF24DB300A76EFC /* News(新闻) */ = {
 			isa = PBXGroup;
 			children = (
+				1A94CE011F09361B00E4CE3F /* ImportNewsDetail(要闻详情) */,
 				CA2BE1611EFB93560006F1C7 /* Model */,
 				CA2BE15F1EFB93370006F1C7 /* ViewModel */,
 				CA2BE15A1EFB91C60006F1C7 /* Controller */,
