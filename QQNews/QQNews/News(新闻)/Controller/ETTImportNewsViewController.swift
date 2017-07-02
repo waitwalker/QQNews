@@ -15,15 +15,30 @@ class ETTImportNewsViewController: ETTViewController,UITableViewDataSource,UITab
     let reusedImportNewsPictureId:String = "ImportNewsPictureCell";
     let reusedImportNewsVideoId:String = "reusedImportNewsVideoId";
     
+    var importNewsListArry = NSMutableArray();
+    
+    
     
     
     override func viewDidLoad() 
     {
         super.viewDidLoad()
-
+        
+        //初始化控件
         self.setupSubviews();
+        
+        //获取数据
+        self.getImportNewsList();
     }
 
+    func getImportNewsList() -> Void
+    {
+        newsViewModel.getImportNewsListData { (dataArray) in
+            self.importNewsListArry = dataArray;
+            
+            self.importTableView?.reloadData();
+        }
+    }
     
     func setupSubviews() -> Void 
     {

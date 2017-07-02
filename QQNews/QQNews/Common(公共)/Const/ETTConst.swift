@@ -15,5 +15,8 @@ let kScreenHeight = UIScreen.main.bounds.size.height;
 /// 网络访问
 let kHost:String = "http://r.inews.qq.com/";
 
+let newsViewModel = ETTNewsViewModel();
+
+
 
 

@@ -11,7 +11,42 @@ import Alamofire
 import SwiftyJSON
 
 class ETTNewsViewModel: NSObject {
-
+    
+    // MARK: - 获取要闻列表
+    typealias importNewsListCallBack = (_ ipormtNewsListArray:NSMutableArray)->Void
+    func getImportNewsListData(callBack:importNewsListCallBack) -> Void
+    {
+        let URI:String = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f08e8d71890&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListChannelVideoController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon";
+        let URLString = kHost + URI;
+        
+        
+        print("请求地址",URLString);
+        
+        
+        Alamofire.request(URLString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result.isSuccess
+            {
+            case true:
+                
+                if let value = response.result.value
+                {
+                    let json = JSON(value);
+                    print(json);
+                    
+                    
+                }
+                
+                break;
+                
+            case false:
+                
+                break;
+                
+            }
+        }
+    }
+    
+    
     // MARK: - 获取视频列表数据
     typealias videoListCallBack = (_ videoListArray:NSMutableArray)->Void
     
@@ -22,7 +57,7 @@ class ETTNewsViewModel: NSObject {
         let urlString = String(format: "%@%@", kHost,URI)
         
         
-        let videoString:String = "http://r.inews.qq.com/getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f0105aa6744&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNVideoDetailListViewController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom=icon";
+        let videoString:String = "http://r.inews.qq.com/getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f08e1e8a9cf&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon";
         
         print("请求地址",urlString);
         
@@ -35,15 +70,11 @@ class ETTNewsViewModel: NSObject {
                     //创建swiftJSON对象
                     let json = JSON(value);
                     
-                    //print(json)
-                    
                     let videoListArray:NSMutableArray = NSMutableArray();
                     
                     
                     if let newslist = json["newslist"].array
                     {
-                        print(newslist);
-                        
                         for (subJson:JSON) in newslist
                         {
                             let videoNewsModel = ETTVideoNewsModel();
