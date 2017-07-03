@@ -11,6 +11,7 @@
  */
 
 import UIKit
+import MJRefresh
 
 class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableViewDataSource 
 {
@@ -20,6 +21,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     let reusedRecommendTextId:String = "reusedRecommendCellId"
     let reusedRecommendPictureId:String = "reusedRecommendPictureId"
+    let reusedRecommendVideoId:String = "reusedRecommendVideoId"
     
     
     
@@ -33,13 +35,22 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         
     }
     
+    
+    
     func setupSubviews() -> Void 
     {
         recommendTableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         recommendTableView?.delegate = self
         recommendTableView?.dataSource = self
         recommendTableView?.register(ETTRecommendTextCell.self, forCellReuseIdentifier: reusedRecommendTextId)
+        recommendTableView?.register(ETTRecommendPictureCell.self, forCellReuseIdentifier: reusedRecommendPictureId)
+        recommendTableView?.register(ETTRecommendVideoCell.self, forCellReuseIdentifier: reusedRecommendVideoId)
         self.view.addSubview(recommendTableView!)
+    }
+    
+    func refreshGetNewData() -> Void
+    {
+        
     }
     
     func getRecommendData() -> Void 
@@ -68,35 +79,47 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
         let recommendModel = recommendDataArray[indexPath.item] as! ETTRecommendModel;
-        
-        if recommendModel.imagecount! > 0
+        if recommendModel.videoTotalTime == nil
         {
-            var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendPictureId) as? ETTRecommendPictureCell
-            if cell == nil
+            if recommendModel.imagecount! > 0
             {
-                cell = ETTRecommendPictureCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendPictureId)
+                var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendPictureId) as? ETTRecommendPictureCell
+                if cell == nil
+                {
+                    cell = ETTRecommendPictureCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendPictureId)
+                }
+                cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
+                
+                return cell!
+            } else
+            {
+                var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendTextId) as? ETTRecommendTextCell
+                if cell == nil
+                {
+                    cell = ETTRecommendTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendTextId)
+                }
+                cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
+                
+                return cell!
             }
-            cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
-            
-            return cell!
         } else
         {
-            var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendTextId) as? ETTRecommendTextCell
+            var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendVideoId) as? ETTRecommendVideoCell
             if cell == nil
             {
-                cell = ETTRecommendTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendTextId)
+                cell = ETTRecommendVideoCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendVideoId)
             }
-            cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
-            
             return cell!
+            
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat 
     {
         let recommendModel = recommendDataArray[indexPath.item] as! ETTRecommendModel;
         
-        if recommendModel.imagecount! > 0
+        if recommendModel.imagecount! > 0 || recommendModel.videoTotalTime != nil
         {
             return 300;
         } else

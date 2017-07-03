@@ -12,11 +12,17 @@ import UIKit
 let kScreenWidth  = UIScreen.main.bounds.size.width;
 let kScreenHeight = UIScreen.main.bounds.size.height;
 
+/// 站位图片
+let kPlace_holder:String = "qq_placeholder"
+
+
 /// 网络访问
 let kHost:String = "http://r.inews.qq.com/";
 
+/// 新闻viewModel
 let newsViewModel = ETTNewsViewModel();
 
+/// 推荐viewModel
 let recommendViewModel = ETTRecommendViewModel();
 
 

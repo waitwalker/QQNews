@@ -25,9 +25,18 @@ class ETTRecommendVideoCell: ETTTableViewCell {
     
     let kTitleFont:CGFloat = 20.0;
     let kTitleColor:UIColor = UIColor.black;
-    let kSubTitleFont:CGFloat = 8.0;
-    let kSubTitleColor:UIColor = UIColor.black;
+    let kSubTitleFont:CGFloat = 14.0;
+    let kSubTitleColor:UIColor = UIColor.white;
     
+    var recommendModel:ETTRecommendModel?
+    {
+        didSet
+        {
+            vTitleLabel?.text = recommendModel?.title
+            vTimeLabel?.text = recommendModel?.videoTotalTime
+            vBackgroundImageView?.sd_setImage(with: URL.init(string: (recommendModel?.thumbnailsString)!), placeholderImage: UIImage(named:kPlace_holder))
+        }
+    }
     
     
     
@@ -81,7 +90,6 @@ class ETTRecommendVideoCell: ETTTableViewCell {
         vTimeLabel?.textColor = kSubTitleColor;
         vTimeLabel?.textAlignment = NSTextAlignment.left;
         vTimeLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        vTimeLabel?.backgroundColor = kRandomColor();
         self.contentView.addSubview(vTimeLabel!);
         let _ = vTimeLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.vCommentLabel?.mas_right)?.offset()(10);

@@ -80,5 +80,7 @@ class ETTImportNewsModel: NSObject
     var seq_no:String?    //String    237098986453$$$2-3--要闻-0
     var article_pos:Int?    //Integer    1
     var video_channel:ETTImportVideoChannelModel?
+    var videoTotalTime:String?
+    
     
 }
