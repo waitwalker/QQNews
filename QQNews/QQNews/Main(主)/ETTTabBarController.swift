@@ -37,9 +37,9 @@ class ETTTabBarController: UITabBarController {
         childVC.tabBarItem.selectedImage = UIImage.init(named: selectedImage)?.withRenderingMode(.alwaysOriginal);
         let normalDict = NSDictionary(object: UIColor.init(red: 40.0, green: 40.0, blue: 40.0, alpha: 1.0), forKey: kCTForegroundColorAttributeName as! NSCopying)
         
-        childVC.tabBarItem.setTitleTextAttributes(normalDict as? [String : Any], for: .normal);
+        childVC.tabBarItem.setTitleTextAttributes(normalDict as? [NSAttributedStringKey : Any], for: .normal);
         let selectedDict = NSDictionary(object: UIColor.init(red: 31.0, green: 123.0, blue: 212.0, alpha: 1.0), forKey: kCTForegroundColorAttributeName as! NSCopying);
-        childVC.tabBarItem.setTitleTextAttributes(selectedDict as? [String : Any], for: .selected)
+        childVC.tabBarItem.setTitleTextAttributes(selectedDict as? [NSAttributedStringKey : Any], for: .selected)
         let navigationController = ETTNavigationController(rootViewController: childVC);
         self.addChildViewController(navigationController);
     }
@@ -63,14 +63,5 @@ class ETTTabBarController: UITabBarController {
         
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

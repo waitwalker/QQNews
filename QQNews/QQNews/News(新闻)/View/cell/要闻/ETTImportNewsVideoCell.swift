@@ -94,7 +94,7 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         
         vDotImageView = UIImageView();
         vDotImageView?.isUserInteractionEnabled = true;
-        vDotImageView?.backgroundColor = kRandomColor();
+        vDotImageView?.image = UIImage(named: "timeline_icon_dot")
         self.contentView.addSubview(vDotImageView!);
         let _ = vDotImageView?.mas_makeConstraints({ (make) in
             make?.right.equalTo()(self.contentView)?.offset()(-15);

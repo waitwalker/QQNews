@@ -84,7 +84,7 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
         
         dotImageView = UIImageView();
         dotImageView?.isUserInteractionEnabled = true;
-        dotImageView?.backgroundColor = kRandomColor();
+        dotImageView?.image = UIImage(named: "timeline_icon_dot")
         self.contentView.addSubview(dotImageView!);
         let _ = dotImageView?.mas_makeConstraints({ (make) in
             make?.right.equalTo()(self.contentView.mas_right)?.offset()(-15);

@@ -18,7 +18,9 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     var recommendDataArray = NSMutableArray();
     
     
-    let reusedRecommendCellId:String = "reusedRecommendCellId"
+    let reusedRecommendTextId:String = "reusedRecommendCellId"
+    let reusedRecommendPictureId:String = "reusedRecommendPictureId"
+    
     
     
     
@@ -36,7 +38,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         recommendTableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         recommendTableView?.delegate = self
         recommendTableView?.dataSource = self
-        recommendTableView?.register(ETTRecommendTextCell.self, forCellReuseIdentifier: reusedRecommendCellId)
+        recommendTableView?.register(ETTRecommendTextCell.self, forCellReuseIdentifier: reusedRecommendTextId)
         self.view.addSubview(recommendTableView!)
     }
     
@@ -65,29 +67,44 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
-        var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendCellId) as? ETTRecommendTextCell
-        if cell == nil
+        let recommendModel = recommendDataArray[indexPath.item] as! ETTRecommendModel;
+        
+        if recommendModel.imagecount! > 0
         {
-            cell = ETTRecommendTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendCellId)
+            var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendPictureId) as? ETTRecommendPictureCell
+            if cell == nil
+            {
+                cell = ETTRecommendPictureCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendPictureId)
+            }
+            cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
+            
+            return cell!
+        } else
+        {
+            var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendTextId) as? ETTRecommendTextCell
+            if cell == nil
+            {
+                cell = ETTRecommendTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendTextId)
+            }
+            cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
+            
+            return cell!
         }
-        cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
-    
-        return cell!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat 
     {
-        return 120;
+        let recommendModel = recommendDataArray[indexPath.item] as! ETTRecommendModel;
+        
+        if recommendModel.imagecount! > 0
+        {
+            return 300;
+        } else
+        {
+            return 120;
+        }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

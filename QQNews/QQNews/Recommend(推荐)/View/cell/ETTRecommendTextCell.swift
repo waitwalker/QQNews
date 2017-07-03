@@ -118,7 +118,7 @@ class ETTRecommendTextCell: ETTTableViewCell {
         })
         
         dotImageView = UIImageView();
-        dotImageView?.backgroundColor = kRandomColor();
+        dotImageView?.image = UIImage(named: "timeline_icon_dot")
         dotImageView?.isUserInteractionEnabled = true;
         self.contentView.addSubview(dotImageView!);
         
