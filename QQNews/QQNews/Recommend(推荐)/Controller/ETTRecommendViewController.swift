@@ -15,6 +15,8 @@ import UIKit
 class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableViewDataSource 
 {
     var recommendTableView:UITableView?
+    var recommendDataArray = NSMutableArray();
+    
     
     let reusedRecommendCellId:String = "reusedRecommendCellId"
     
@@ -24,6 +26,8 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.setupSubviews()
+        self.getRecommendData()
+        
         
     }
     
@@ -34,6 +38,14 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         recommendTableView?.dataSource = self
         recommendTableView?.register(ETTRecommendTextCell.self, forCellReuseIdentifier: reusedRecommendCellId)
         self.view.addSubview(recommendTableView!)
+    }
+    
+    func getRecommendData() -> Void 
+    {
+        recommendViewModel.getRecommendData { (dataArray) in
+            self.recommendDataArray = dataArray
+            self.recommendTableView?.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,16 +60,18 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
     {
-        return 20
+        return recommendDataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
     {
-        var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendCellId) as? ETTImportNewsTextCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: reusedRecommendCellId) as? ETTRecommendTextCell
         if cell == nil
         {
-            cell = ETTImportNewsTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendCellId)
+            cell = ETTRecommendTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendCellId)
         }
+        cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
+    
         return cell!
     }
     

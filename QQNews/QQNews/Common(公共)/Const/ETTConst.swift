@@ -17,6 +17,9 @@ let kHost:String = "http://r.inews.qq.com/";
 
 let newsViewModel = ETTNewsViewModel();
 
+let recommendViewModel = ETTRecommendViewModel();
+
+
 
 
 

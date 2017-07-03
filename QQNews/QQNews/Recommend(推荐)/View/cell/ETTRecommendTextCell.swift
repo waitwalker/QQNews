@@ -23,18 +23,16 @@ class ETTRecommendTextCell: ETTTableViewCell {
     let kSubTitleFont:CGFloat = 8.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
-    var importNewsModel:ETTRecommendModel?
+    var recommendModel:ETTRecommendModel?
     {
         didSet
         {
+            titleLabel?.text = recommendModel?.title;
             
+            pictureImageView?.sd_setImage(with: URL.init(string: (recommendModel?.thumbnailsString)!), placeholderImage: UIImage.init(named: "qq_placeholder"));
         }
         
     }
-    
-    
-    
-    
     
     
     override func awakeFromNib() {
