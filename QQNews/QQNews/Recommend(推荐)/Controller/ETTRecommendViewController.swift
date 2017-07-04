@@ -32,6 +32,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         self.view.backgroundColor = UIColor.white;
         self.setupSubviews()
         self.refreshGetNewData()
+        let _ = ETTDataBase.sharedInstance
         
     }
     

@@ -49,6 +49,7 @@
 		CAC19B511EF7989200AE78BC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC19B4E1EF7986B00AE78BC /* CoreVideo.framework */; };
 		CAC19B521EF7989800AE78BC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC19B4F1EF7987600AE78BC /* OpenGLES.framework */; };
 		CAC19B551EF798B300AE78BC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC19B541EF798A600AE78BC /* QuartzCore.framework */; };
+		CAD85E621F0B8E6100455164 /* ETTDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD85E611F0B8E6100455164 /* ETTDataBase.swift */; };
 		CAE1DDB21F0A40DC004B1287 /* ETTRecommendTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE1DDB11F0A40DC004B1287 /* ETTRecommendTextCell.swift */; };
 		CAE1DDB71F0A4162004B1287 /* ETTRecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE1DDB61F0A4162004B1287 /* ETTRecommendModel.swift */; };
 		CAE1DDBA1F0A41FE004B1287 /* ETTRecommendVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE1DDB91F0A41FE004B1287 /* ETTRecommendVideoCell.swift */; };
@@ -154,6 +155,7 @@
 		CAC19B4F1EF7987600AE78BC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		CAC19B531EF7989E00AE78BC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CAC19B541EF798A600AE78BC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CAD85E611F0B8E6100455164 /* ETTDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTDataBase.swift; sourceTree = "<group>"; };
 		CAE1DDB11F0A40DC004B1287 /* ETTRecommendTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendTextCell.swift; sourceTree = "<group>"; };
 		CAE1DDB61F0A4162004B1287 /* ETTRecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendModel.swift; sourceTree = "<group>"; };
 		CAE1DDB91F0A41FE004B1287 /* ETTRecommendVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendVideoCell.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		1A8C9A971EF2BFCE00C808EC /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				CAD85E611F0B8E6100455164 /* ETTDataBase.swift */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */,
 				CA2BE1651EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift in Sources */,
 				1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */,
+				CAD85E621F0B8E6100455164 /* ETTDataBase.swift in Sources */,
 				CA8EB03F1EFD1F0E005DCA0E /* ETTImportNewsViewController.swift in Sources */,
 				1AA084E51F08EFC2005DD495 /* ETTImportNewsModel.swift in Sources */,
 				CA9643D01EF2794A00F2D1D2 /* ETTConst.swift in Sources */,
