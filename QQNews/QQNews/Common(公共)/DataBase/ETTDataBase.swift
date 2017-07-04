@@ -19,21 +19,22 @@ class ETTDataBase: NSObject
     {
         realm = try! Realm()
         
+        print(realm?.configuration.fileURL as Any)
     }
     
     func addObject(object:Any) -> Void 
     {
-        
+        realm?.add(object as! Object)
     }
     
     func removeAllObjec() -> Void 
     {
-        
+        realm?.deleteAll()
     }
     
-    func queryAllObject() -> Void 
+    func queryAllObject() -> Results<Object>
     {
-        
-        
+        let result = realm?.objects(Object.self)
+        return result!
     }
 }

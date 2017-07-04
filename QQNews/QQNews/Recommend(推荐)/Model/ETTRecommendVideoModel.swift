@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ETTRecommendVideoModel: NSObject 
+class ETTRecommendVideoModel: Object 
 {
     var playmode:Int?
     var img:String?

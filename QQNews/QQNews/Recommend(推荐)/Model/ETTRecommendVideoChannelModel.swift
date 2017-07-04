@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ETTRecommendVideoChannelModel: NSObject 
+class ETTRecommendVideoChannelModel: Object 
 {
     var eid:Int? //1,
     var video:ETTRecommendVideoModel?

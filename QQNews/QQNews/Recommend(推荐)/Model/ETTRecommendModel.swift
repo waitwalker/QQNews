@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ETTRecommendModel: NSObject 
+class ETTRecommendModel: Object 
 {
     var id:String?
     var uinnick:String?      //String    福州晚报
