@@ -30,8 +30,8 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.setupSubviews()
-        self.getRecommendData()
-        
+        //self.getRecommendData()
+        self.refreshGetNewData()
         
     }
     
@@ -50,6 +50,34 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     func refreshGetNewData() -> Void
     {
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(networkRequest))
+        header?.setTitle("下拉刷新", for: MJRefreshState.idle)
+        header?.setTitle("松手刷新", for: MJRefreshState.pulling)
+        header?.setTitle("加载中...", for: MJRefreshState.refreshing)
+        header?.beginRefreshing()
+        self.recommendTableView?.mj_header = header
+    }
+    
+    @objc func networkRequest() -> Void 
+    {
+        print("开始刷新")
+        let delayTime = DispatchTime.now() + DispatchTimeInterval.seconds(2)
+        
+        DispatchQueue.main.asyncAfter(deadline: delayTime) { 
+            
+            recommendViewModel.getRecommendData(callBack: { (dataArray) in
+                
+                for item in dataArray
+                {
+                    self.recommendDataArray.insert(item, at: 0)
+                }
+                
+                print(self.recommendDataArray)
+                self.recommendTableView?.reloadData()
+            })
+            
+            self.recommendTableView?.mj_header.endRefreshing()
+        }
         
     }
     
