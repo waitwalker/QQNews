@@ -40,12 +40,19 @@ class ETTRecommendViewModel: NSObject
                             {
                                 recommendModel.thumbnailsString = string;
                             };
+                            
+                            if let bigString = JSON["thumbnails_qqnews_photo"].array?.first?.rawString()
+                            {
+                                recommendModel.thumbnailsBigString = bigString
+                            }
+                            
                             recommendModel.thumbnails_big = JSON["thumbnails_big"].array;
                             recommendModel.thumbnails_qqnews = JSON["thumbnails_qqnews"].array;
                             recommendModel.thumbnails_qqnews_photo = JSON["thumbnails_qqnews_photo"].array;
                             recommendModel.bigImage = JSON["bigImage"].array;
                             recommendModel.imagecount = JSON["imagecount"].intValue;
                             recommendModel.videoTotalTime = JSON["videoTotalTime"].string;
+                            recommendModel.source = JSON["source"].string;
                             
                             recommendDataArray.add(recommendModel);
                             

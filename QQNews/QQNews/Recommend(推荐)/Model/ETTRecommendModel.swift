@@ -28,6 +28,8 @@ class ETTRecommendModel: NSObject
     var thumbnails_big:Array<Any>?    //Array
     var thumbnails:Array<Any>?    //Array
     var thumbnailsString:String?
+    var thumbnailsBigString:String?
+    
     
     var qishu:String?    //String
     var source:String?    //String    福州晚报

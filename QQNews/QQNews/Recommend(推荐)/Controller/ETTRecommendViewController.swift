@@ -30,7 +30,6 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.setupSubviews()
-        //self.getRecommendData()
         self.refreshGetNewData()
         
     }
@@ -79,14 +78,6 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
             self.recommendTableView?.mj_header.endRefreshing()
         }
         
-    }
-    
-    func getRecommendData() -> Void 
-    {
-        recommendViewModel.getRecommendData { (dataArray) in
-            self.recommendDataArray = dataArray
-            self.recommendTableView?.reloadData()
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,6 +128,9 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
             {
                 cell = ETTRecommendVideoCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedRecommendVideoId)
             }
+            
+            cell?.recommendModel = recommendDataArray[indexPath.item] as? ETTRecommendModel
+            
             return cell!
             
         }
@@ -156,6 +150,14 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         }
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) 
+    {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) 
+    {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }

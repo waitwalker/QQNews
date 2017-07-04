@@ -128,7 +128,9 @@ class ETTImportNewsTextCell: ETTTableViewCell {
         
         let _ = dotImageView?.mas_makeConstraints({ (make) in
             make?.right.equalTo()(self.titleLabel?.mas_right);
-            make?.width.height().bottom().equalTo()(self.timeLabel);
+            make?.width.equalTo()(20);
+            make?.height.equalTo()(10);
+            make?.bottom.equalTo()(self.timeLabel);
         })
         
         

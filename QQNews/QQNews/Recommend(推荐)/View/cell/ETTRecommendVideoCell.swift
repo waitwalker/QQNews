@@ -23,18 +23,26 @@ class ETTRecommendVideoCell: ETTTableViewCell {
     var vTimeLabel:UILabel?
     var vDotImageView:UIImageView?
     
-    let kTitleFont:CGFloat = 20.0;
+    let kTitleFont:CGFloat = 18.0;
     let kTitleColor:UIColor = UIColor.black;
     let kSubTitleFont:CGFloat = 14.0;
-    let kSubTitleColor:UIColor = UIColor.white;
+    let kSubTitleColor:UIColor = UIColor.black;
     
     var recommendModel:ETTRecommendModel?
     {
         didSet
         {
             vTitleLabel?.text = recommendModel?.title
+            print("视频标题是",vTitleLabel?.text as Any)
             vTimeLabel?.text = recommendModel?.videoTotalTime
-            vBackgroundImageView?.sd_setImage(with: URL.init(string: (recommendModel?.thumbnailsString)!), placeholderImage: UIImage(named:kPlace_holder))
+            vCommentLabel?.sizeToFit()
+            var imageString = recommendModel?.thumbnailsBigString 
+            if imageString == nil
+            {
+                imageString = (recommendModel?.thumbnailsString)!
+            }
+            
+            vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
         }
     }
     
@@ -60,10 +68,9 @@ class ETTRecommendVideoCell: ETTTableViewCell {
     func setupSubviews() -> Void 
     {
         vTitleLabel = UILabel();
-        vTitleLabel?.textColor = kSubTitleColor;
+        vTitleLabel?.textColor = kTitleColor;
         vTitleLabel?.textAlignment = NSTextAlignment.left;
-        vTitleLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        vTitleLabel?.backgroundColor = kRandomColor();
+        vTitleLabel?.font = UIFont.systemFont(ofSize: kTitleFont);
         vTitleLabel?.numberOfLines = 2;
         self.contentView.addSubview(vTitleLabel!);
         let _ = vTitleLabel?.mas_makeConstraints({ (make) in
@@ -77,11 +84,10 @@ class ETTRecommendVideoCell: ETTTableViewCell {
         vCommentLabel?.textAlignment = NSTextAlignment.left;
         vCommentLabel?.textColor = kSubTitleColor;
         vCommentLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        vCommentLabel?.backgroundColor = kRandomColor();
+        vCommentLabel?.text = String(format: "%d评", kRandowNum())
         self.contentView.addSubview(vCommentLabel!);
         let _ = vCommentLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.vTitleLabel);
-            make?.width.equalTo()(40);
             make?.height.equalTo()(20);
             make?.bottom.equalTo()(self.contentView)?.offset()(-10);
         })
@@ -102,7 +108,9 @@ class ETTRecommendVideoCell: ETTTableViewCell {
         self.contentView.addSubview(vDotImageView!);
         let _ = vDotImageView?.mas_makeConstraints({ (make) in
             make?.right.equalTo()(self.contentView)?.offset()(-15);
-            make?.width.height().bottom().equalTo()(self.vCommentLabel);
+            make?.width.equalTo()(25);
+            make?.height.equalTo()(15);
+            make?.bottom.equalTo()(self.vCommentLabel);
         })
         
         vBackgroundImageView = UIImageView();

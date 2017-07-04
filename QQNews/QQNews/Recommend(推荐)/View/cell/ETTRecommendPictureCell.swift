@@ -18,7 +18,7 @@ class ETTRecommendPictureCell: ETTTableViewCell {
     var pictureNumLabel:UILabel?
     var dotImageView:UIImageView?
     
-    let kTitleFont:CGFloat = 20.0;
+    let kTitleFont:CGFloat = 18.0;
     let kTitleColor:UIColor = UIColor.black;
     let kSubTitleFont:CGFloat = 14.0;
     let kSubTitleColor:UIColor = UIColor.black;
@@ -28,7 +28,14 @@ class ETTRecommendPictureCell: ETTTableViewCell {
         didSet
         {
             titleLabel?.text = recommendModel?.title;
-            picturesImageView?.sd_setImage(with: URL.init(string: (recommendModel?.thumbnailsString)!), placeholderImage: UIImage.init(named: "qq_placeholder"))
+            commentNumLabel?.sizeToFit()
+            var imageString = recommendModel?.thumbnailsBigString 
+            if imageString == nil
+            {
+                imageString = (recommendModel?.thumbnailsString)!
+            }
+            
+            picturesImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"))
             pictureNumLabel?.text = String(format: "%d图", (recommendModel?.imagecount)!)
         }
     }
@@ -56,7 +63,6 @@ class ETTRecommendPictureCell: ETTTableViewCell {
         titleLabel?.textColor = UIColor.black;
         titleLabel?.textAlignment = NSTextAlignment.left;
         titleLabel?.font = UIFont.systemFont(ofSize: 18.0);
-        titleLabel?.backgroundColor = kRandomColor();
         self.contentView.addSubview(titleLabel!);
         
         let _ = titleLabel?.mas_makeConstraints({ (make) in
@@ -70,13 +76,12 @@ class ETTRecommendPictureCell: ETTTableViewCell {
         commentNumLabel?.textAlignment = NSTextAlignment.left;
         commentNumLabel?.textColor = kSubTitleColor;
         commentNumLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        commentNumLabel?.backgroundColor = kRandomColor();
+        commentNumLabel?.text = String(format: "%d评", kRandowNum())
         self.contentView.addSubview(commentNumLabel!);
         
         let _ = commentNumLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.titleLabel);
             make?.bottom.equalTo()(self.contentView)?.offset()(-10);
-            make?.width.equalTo()(40);
             make?.height.equalTo()(20);
         })
         
@@ -84,7 +89,7 @@ class ETTRecommendPictureCell: ETTTableViewCell {
         timeLabel?.textColor = kSubTitleColor;
         timeLabel?.textAlignment = NSTextAlignment.left;
         timeLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        timeLabel?.backgroundColor = kRandomColor();
+        timeLabel?.isHidden = true
         self.contentView.addSubview(timeLabel!);
         let _ = timeLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.commentNumLabel?.mas_right)?.offset()(10);
@@ -97,7 +102,9 @@ class ETTRecommendPictureCell: ETTTableViewCell {
         self.contentView.addSubview(dotImageView!)
         let _ = dotImageView?.mas_makeConstraints({ (make) in
             make?.right.equalTo()(self.contentView.mas_right)?.offset()(-15);
-            make?.bottom.width().height().equalTo()(self.commentNumLabel);
+            make?.width.equalTo()(25);
+            make?.height.equalTo()(15);
+            make?.bottom.equalTo()(self.commentNumLabel);
         })
         
         picturesImageView = UIImageView();
