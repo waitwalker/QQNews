@@ -26,3 +26,10 @@ func kRandowNum()->Int
     let randomNum:Int = Int(arc4random_uniform(10000))
     return randomNum
 }
+
+func kImage(named:String) -> UIImage 
+{
+    let image:UIImage = UIImage(named: named)!
+    return image
+    
+}

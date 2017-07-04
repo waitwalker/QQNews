@@ -83,5 +83,6 @@ class ETTRecommendModel: NSObject
     var article_pos:Int?    //Integer    1
     var video_channel:ETTRecommendVideoChannelModel?
     var videoTotalTime:String?
+    var videoNum:Int? 
     
 }

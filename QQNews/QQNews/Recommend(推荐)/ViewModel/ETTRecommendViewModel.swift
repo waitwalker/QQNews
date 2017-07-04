@@ -53,6 +53,7 @@ class ETTRecommendViewModel: NSObject
                             recommendModel.imagecount = JSON["imagecount"].intValue;
                             recommendModel.videoTotalTime = JSON["videoTotalTime"].string;
                             recommendModel.source = JSON["source"].string;
+                            recommendModel.videoNum = JSON["videoNum"].intValue;
                             
                             recommendDataArray.add(recommendModel);
                             

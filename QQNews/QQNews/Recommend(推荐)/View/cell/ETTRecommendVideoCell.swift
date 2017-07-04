@@ -13,7 +13,7 @@ class ETTRecommendVideoCell: ETTTableViewCell {
     
     var vTitleLabel:UILabel?
     var vBackgroundImageView:UIImageView?
-    var vPlayContentView:UIView?
+    var vPlayContentView:UIImageView?
     var vPlayImageView:UIImageView?
     var vVideoNumContentView:UIView?
     var vVideoNumImageView:UIImageView?
@@ -43,6 +43,8 @@ class ETTRecommendVideoCell: ETTTableViewCell {
             }
             
             vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
+            vVideoNumLabel?.text = String(format: "%d视频", (recommendModel?.videoNum)!)
+            vRemainTimeLabel?.text = recommendModel?.videoTotalTime
         }
     }
     
@@ -123,10 +125,9 @@ class ETTRecommendVideoCell: ETTTableViewCell {
             make?.bottom.equalTo()(self.vCommentLabel?.mas_top)?.offset()(-10);
         })
         
-        vPlayContentView = UIView();
-        vPlayContentView?.backgroundColor = kRandomColor().withAlphaComponent(0.3);
-        vPlayContentView?.layer.cornerRadius = 30;
-        vPlayContentView?.clipsToBounds = true;
+        vPlayContentView = UIImageView();
+        vPlayContentView?.image = UIImage(named: "timeline_video_icon")
+        vPlayContentView?.isUserInteractionEnabled = true
         vBackgroundImageView?.addSubview(vPlayContentView!);
         let _ = vPlayContentView?.mas_makeConstraints({ (make) in
             make?.width.height().equalTo()(60);
@@ -136,6 +137,7 @@ class ETTRecommendVideoCell: ETTTableViewCell {
         vPlayImageView = UIImageView();
         vPlayImageView?.isUserInteractionEnabled = true;
         vPlayImageView?.backgroundColor = kRandomColor();
+        vPlayImageView?.isHidden = true
         vPlayContentView?.addSubview(vPlayImageView!);
         let _ = vPlayImageView?.mas_makeConstraints({ (make) in
             make?.height.width().equalTo()(30);
@@ -143,7 +145,7 @@ class ETTRecommendVideoCell: ETTTableViewCell {
         })
         
         vVideoNumContentView = UIView();
-        vVideoNumContentView?.backgroundColor = kRandomColor().withAlphaComponent(0.3);
+        vVideoNumContentView?.backgroundColor = UIColor.black.withAlphaComponent(0.3);
         vBackgroundImageView?.addSubview(vVideoNumContentView!);
         let _ = vVideoNumContentView?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.vBackgroundImageView)?.offset()(10);
@@ -153,7 +155,7 @@ class ETTRecommendVideoCell: ETTTableViewCell {
         })
         
         vVideoNumImageView = UIImageView();
-        vVideoNumImageView?.backgroundColor = kRandomColor();
+        vVideoNumImageView?.image = kImage(named: "icon_detail_play_small")
         vVideoNumImageView?.isUserInteractionEnabled = true;
         vVideoNumContentView?.addSubview(vVideoNumImageView!);
         let _ = vVideoNumImageView?.mas_makeConstraints({ (make) in
@@ -165,7 +167,7 @@ class ETTRecommendVideoCell: ETTTableViewCell {
         
         vVideoNumLabel = UILabel();
         vVideoNumLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        vVideoNumLabel?.backgroundColor = kRandomColor();
+        vVideoNumLabel?.textColor = UIColor.white
         vVideoNumLabel?.textAlignment = NSTextAlignment.left;
         vVideoNumContentView?.addSubview(vVideoNumLabel!);
         let _ = vVideoNumLabel?.mas_makeConstraints({ (make) in
@@ -176,7 +178,6 @@ class ETTRecommendVideoCell: ETTTableViewCell {
         
         vRemainTimeLabel = UILabel();
         vRemainTimeLabel?.textAlignment = NSTextAlignment.left;
-        vRemainTimeLabel?.backgroundColor = kRandomColor();
         vRemainTimeLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
         vRemainTimeLabel?.textColor = UIColor.white;
         vBackgroundImageView?.addSubview(vRemainTimeLabel!);
