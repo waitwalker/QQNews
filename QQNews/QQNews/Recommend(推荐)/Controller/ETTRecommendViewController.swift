@@ -12,6 +12,7 @@
 
 import UIKit
 import MJRefresh
+import Realm
 
 class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableViewDataSource 
 {
