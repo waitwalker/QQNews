@@ -145,6 +145,7 @@
 		CA941AF31EF7A01E003D0B81 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../../../../Downloads/GPUImage2-master/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
 		CA9643CD1EF2785200F2D1D2 /* ETTMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTMacro.swift; sourceTree = "<group>"; };
 		CA9643CF1EF2794A00F2D1D2 /* ETTConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTConst.swift; sourceTree = "<group>"; };
+		CAA68DAF1F0CE06D009EC336 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CAB4156F1EF25D4300553CE0 /* ETTNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsViewController.swift; sourceTree = "<group>"; };
 		CAB415711EF25D7600553CE0 /* ETTRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendViewController.swift; sourceTree = "<group>"; };
 		CAB415731EF25D8400553CE0 /* ETTLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiveViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +253,7 @@
 		5514CD5670B97DB53FC8372E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAA68DAF1F0CE06D009EC336 /* libsqlite3.tbd */,
 				1ABDBB251F013D0600BA589A /* Alamofire.framework */,
 				CA2BE1331EFB6DA40006F1C7 /* Masonry.framework */,
 				CA2BE1191EFB66CB0006F1C7 /* SnapKit.framework */,

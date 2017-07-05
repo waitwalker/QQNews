@@ -39,7 +39,12 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     func getDataFromDataBase() -> Void 
     {
-        if (1 > 0) {
+        let dataArr = DataBase.queryAllObject()
+        
+        
+        if (dataArr.count > 0) {
+            
+            recommendDataArray = dataArr;
             
             recommendTableView?.reloadData()
         } else
@@ -82,7 +87,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
                 for item in dataArray
                 {
                     self.recommendDataArray.insert(item, at: 0)
-                    
+                    self.DataBase.addObject(recommendModel: item as! ETTRecommendModel)
                 }
                 
                 print(self.recommendDataArray)
