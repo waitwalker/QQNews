@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 
-class ETTRecommendCardModel: Object 
+class ETTRecommendCardModel: NSObject 
 {
     var chlname:String?    //String    福州晚报
     var chlid:String?    //String    5279510

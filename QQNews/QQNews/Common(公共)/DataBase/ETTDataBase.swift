@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FMDB
 
 
 class ETTDataBase: NSObject 

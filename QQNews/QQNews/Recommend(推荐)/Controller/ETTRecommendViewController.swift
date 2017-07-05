@@ -12,7 +12,6 @@
 
 import UIKit
 import MJRefresh
-import RealmSwift
 
 class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableViewDataSource 
 {
@@ -21,7 +20,6 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     let DataBase = ETTDataBase.sharedInstance
     
-    var results:Results<ETTRecommendModel>?
     
     let reusedRecommendTextId:String = "reusedRecommendCellId"
     let reusedRecommendPictureId:String = "reusedRecommendPictureId"
@@ -41,11 +39,8 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     func getDataFromDataBase() -> Void 
     {
-        results = DataBase.queryAllObject()
-        if (results!.count > 0) {
-            for recommendModel in results! { 
-                recommendDataArray.add(recommendModel)
-            }
+        if (1 > 0) {
+            
             recommendTableView?.reloadData()
         } else
         {
@@ -87,7 +82,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
                 for item in dataArray
                 {
                     self.recommendDataArray.insert(item, at: 0)
-                    self.DataBase.addObject(object: item as! ETTRecommendModel)
+                    
                 }
                 
                 print(self.recommendDataArray)
