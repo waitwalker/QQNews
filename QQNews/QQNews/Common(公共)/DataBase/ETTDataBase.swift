@@ -7,34 +7,31 @@
 //
 
 import UIKit
-import RealmSwift
+
 
 class ETTDataBase: NSObject 
 {
-    let realm:Realm?
+    
     
     // MARK: - 单例
     static let sharedInstance = ETTDataBase.init()
     private override init() 
     {
-        realm = try! Realm()
         
-        print(realm?.configuration.fileURL as Any)
     }
     
-    func addObject(object:Any) -> Void 
+    func addObject() -> Void 
     {
-        realm?.add(object as! Object)
+        
     }
     
     func removeAllObjec() -> Void 
     {
-        realm?.deleteAll()
+        
     }
     
-    func queryAllObject() -> Results<Object>
+    func queryAllObject() -> Void
     {
-        let result = realm?.objects(Object.self)
-        return result!
+        
     }
 }

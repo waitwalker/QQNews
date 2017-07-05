@@ -12,13 +12,16 @@
 
 import UIKit
 import MJRefresh
-import Realm
+import RealmSwift
 
 class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableViewDataSource 
 {
     var recommendTableView:UITableView?
     var recommendDataArray = NSMutableArray();
     
+    let DataBase = ETTDataBase.sharedInstance
+    
+    var results:Results<ETTRecommendModel>?
     
     let reusedRecommendTextId:String = "reusedRecommendCellId"
     let reusedRecommendPictureId:String = "reusedRecommendPictureId"
@@ -27,16 +30,29 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad() 
+    {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.setupSubviews()
-        self.refreshGetNewData()
-        let _ = ETTDataBase.sharedInstance
+        self.getDataFromDataBase()
         
     }
     
-    
+    func getDataFromDataBase() -> Void 
+    {
+        results = DataBase.queryAllObject()
+        if (results!.count > 0) {
+            for recommendModel in results! { 
+                recommendDataArray.add(recommendModel)
+            }
+            recommendTableView?.reloadData()
+        } else
+        {
+            self.refreshGetNewData()
+        }
+        
+    }
     
     func setupSubviews() -> Void 
     {
@@ -71,6 +87,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
                 for item in dataArray
                 {
                     self.recommendDataArray.insert(item, at: 0)
+                    self.DataBase.addObject(object: item as! ETTRecommendModel)
                 }
                 
                 print(self.recommendDataArray)
