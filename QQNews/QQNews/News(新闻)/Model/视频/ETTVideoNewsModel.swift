@@ -32,7 +32,7 @@ class ETTVideoNewsModel: NSObject
     var comment:String?
     var openAdsPhotos:Int?
     var a_ver:String?
-    var videoNum:Int?
+    var videoNum:Int32?
     var openBigImage:Int?
     var surl:String?
     var specialID:String?
@@ -73,7 +73,7 @@ class ETTVideoNewsModel: NSObject
     var card:ETTCardModel?
     var PlacementId:String?
     var SubAdOn:Int?
-    var imagecount:Int?
+    var imagecount:Int32?
     var commentPlacementId:String?
     var openAdsComment:Int?
     var media_id:String?

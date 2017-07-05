@@ -120,7 +120,7 @@ class ETTNewsViewModel: NSObject {
                             videoNewsModel.showBigPicStyle = JSON["showBigPicStyle"].string;
                             videoNewsModel.commentPlacementId = JSON["commentPlacementId"].string;
                             videoNewsModel.id = JSON["id"].string;
-                            videoNewsModel.imagecount = JSON["imagecount"].int;
+                            videoNewsModel.imagecount = JSON["imagecount"].int32Value;
                             videoNewsModel.pushCommentCount = JSON["pushCommentCount"].int;
                             videoNewsModel.url = JSON["url"].string;
                             videoNewsModel.time = JSON["time"].string;
@@ -184,7 +184,7 @@ class ETTNewsViewModel: NSObject {
                             videoNewsModel.show_source = JSON["show_source"].int;
                             videoNewsModel.openAdsPhotos = JSON["openAdsPhotos"].int;
                             videoNewsModel.a_ver = JSON["a_ver"].string;
-                            videoNewsModel.videoNum = JSON["videoNum"].int;
+                            videoNewsModel.videoNum = JSON["videoNum"].int32;
                             videoNewsModel.openBigImage = JSON["openBigImage"].int;
                             videoNewsModel.surl = JSON["surl"].string;
                             videoNewsModel.seq_no = JSON["seq_no"].string;

@@ -35,17 +35,23 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         self.setupSubviews()
         self.getDataFromDataBase()
         
+        
     }
     
     func getDataFromDataBase() -> Void 
     {
-        let dataArr = DataBase.queryAllObject()
-        
+        let dataArr = DataBase.queryObject()
         
         if (dataArr.count > 0) {
             
-            recommendDataArray = dataArr;
-            
+            //recommendDataArray = dataArr;
+            for item:ETTRecommendModel in dataArr
+            {
+                print(item.title as Any)
+                recommendDataArray.add(item)
+                
+                
+            }
             recommendTableView?.reloadData()
         } else
         {
@@ -87,7 +93,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
                 for item in dataArray
                 {
                     self.recommendDataArray.insert(item, at: 0)
-                    self.DataBase.addObject(recommendModel: item as! ETTRecommendModel)
+                    self.DataBase.insertObject(recommendModel: item as! ETTRecommendModel)
                 }
                 
                 print(self.recommendDataArray)
