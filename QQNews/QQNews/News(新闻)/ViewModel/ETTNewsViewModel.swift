@@ -224,7 +224,7 @@ class ETTNewsViewModel: NSObject {
     typealias beijingDataCallBack = (_ beijingArray:NSMutableArray)->Void
     func getBeijingData(callBack:@escaping beijingDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f4409f2b&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListChannelVideoController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         Alamofire.request(URLString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result.isSuccess
@@ -269,14 +269,8 @@ class ETTNewsViewModel: NSObject {
                     }
                     callBack(dataArray)
                 }
-                
-                
                 break
-                
-                
             case false:
-                
-                
                 break
             }
         }
@@ -286,7 +280,7 @@ class ETTNewsViewModel: NSObject {
     typealias governmentDataCallBack = (_ governmentArray:NSMutableArray)->Void
     func getGovernmentData(callBack:@escaping governmentDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f85c86c9&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -299,7 +293,7 @@ class ETTNewsViewModel: NSObject {
     typealias petDataCallBack = (_ petArray:NSMutableArray)->Void
     func getPetData(callBack:@escaping petDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f12f8445b5f&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -312,7 +306,7 @@ class ETTNewsViewModel: NSObject {
     typealias footballDataCallBack = (_ footballArray:NSMutableArray)->Void
     func getFootballyData(callBack:@escaping footballDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f12f823e1d5&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -325,7 +319,7 @@ class ETTNewsViewModel: NSObject {
     typealias koreanDataCallBack = (_ koreanArray:NSMutableArray)->Void
     func getKoreanData(callBack:@escaping koreanDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f12f80bd0c4&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -338,7 +332,7 @@ class ETTNewsViewModel: NSObject {
     typealias varietyDataCallBack = (_ varietyArray:NSMutableArray)->Void
     func getVarietyData(callBack:@escaping varietyDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f12f7ce84a2&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -351,7 +345,7 @@ class ETTNewsViewModel: NSObject {
     typealias beautyDataCallBack = (_ beautyArray:NSMutableArray)->Void
     func getBeautyData(callBack:@escaping beautyDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f12f7b94ec4&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -364,7 +358,7 @@ class ETTNewsViewModel: NSObject {
     typealias educationDataCallBack = (_ educationArray:NSMutableArray)->Void
     func getEducationyData(callBack:@escaping educationDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f12f797d8eb&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -377,7 +371,7 @@ class ETTNewsViewModel: NSObject {
     typealias movieDataCallBack = (_ movieArray:NSMutableArray)->Void
     func getMovieData(callBack:@escaping movieDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f77ef706&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -390,7 +384,7 @@ class ETTNewsViewModel: NSObject {
     typealias digitalDataCallBack = (_ digitalArray:NSMutableArray)->Void
     func getDigitalData(callBack:@escaping digitalDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f12f75fe518&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -403,7 +397,7 @@ class ETTNewsViewModel: NSObject {
     typealias pictureDataCallBack = (_ pictureArray:NSMutableArray)->Void
     func getPictureData(callBack:@escaping pictureDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f72c29e1&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -416,7 +410,7 @@ class ETTNewsViewModel: NSObject {
     typealias gameDataCallBack = (_ gameArray:NSMutableArray)->Void
     func getGameData(callBack:@escaping gameDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f70c54e0&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -429,7 +423,7 @@ class ETTNewsViewModel: NSObject {
     typealias fashionDataCallBack = (_ fashionArray:NSMutableArray)->Void
     func getFashionData(callBack:@escaping fashionDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f6ed1102&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -442,7 +436,7 @@ class ETTNewsViewModel: NSObject {
     typealias internationDataCallBack = (_ internationArray:NSMutableArray)->Void
     func getInternationData(callBack:@escaping internationDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f6d50618&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -455,7 +449,7 @@ class ETTNewsViewModel: NSObject {
     typealias militaryDataCallBack = (_ militaryArray:NSMutableArray)->Void
     func getMilitaryData(callBack:@escaping militaryDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f6986a1f&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -468,7 +462,7 @@ class ETTNewsViewModel: NSObject {
     typealias societyDataCallBack = (_ societyArray:NSMutableArray)->Void
     func getSocietyData(callBack:@escaping societyDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f6811337&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -482,7 +476,7 @@ class ETTNewsViewModel: NSObject {
     typealias technologyDataCallBack = (_ technologyArray:NSMutableArray)->Void
     func getTechnologyData(callBack:@escaping technologyDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f6594742&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -495,7 +489,7 @@ class ETTNewsViewModel: NSObject {
     typealias autoDataCallBack = (_ sutoArray:NSMutableArray)->Void
     func getAutoData(callBack:@escaping autoDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f12f6383655&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -508,7 +502,7 @@ class ETTNewsViewModel: NSObject {
     typealias NBADataCallBack = (_ NBAArray:NSMutableArray)->Void
     func getNBAData(callBack:@escaping NBADataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f6143300&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -521,7 +515,7 @@ class ETTNewsViewModel: NSObject {
     typealias sportDataCallBack = (_ sportArray:NSMutableArray)->Void
     func getSportData(callBack:@escaping sportDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f5efe38a&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -534,7 +528,7 @@ class ETTNewsViewModel: NSObject {
     typealias entertainmentDataCallBack = (_ entertainmentArray:NSMutableArray)->Void
     func getEntertainmentData(callBack:@escaping entertainmentDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f5d50f9a&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
@@ -547,7 +541,7 @@ class ETTNewsViewModel: NSObject {
     typealias financeDataCallBack = (_ financeArray:NSMutableArray)->Void
     func getFinanceData(callBack:@escaping financeDataCallBack) -> Void
     {
-        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URI = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f12f5b4a5a7&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         let dataArray = NSMutableArray()
         
