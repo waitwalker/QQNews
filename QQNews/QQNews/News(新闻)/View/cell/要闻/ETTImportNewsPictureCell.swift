@@ -22,6 +22,22 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
     let kSubTitleFont:CGFloat = 8.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
+    var importNewsModel:ETTImportNewsModel?
+    {
+        didSet
+        {
+            timeLabel?.text = importNewsModel?.title;
+            commentNumLabel?.sizeToFit()
+            var imageString = importNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (importNewsModel?.thumbnailsString)!
+            }
+            
+            picturesImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"))
+            pictureNumLabel?.text = String(format: "%d图", (importNewsModel?.imagecount)!)
+        }
+    }
     
     
     
@@ -47,7 +63,6 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
         titleLabel?.textColor = UIColor.black;
         titleLabel?.textAlignment = NSTextAlignment.left;
         titleLabel?.font = UIFont.systemFont(ofSize: 18.0);
-        titleLabel?.backgroundColor = kRandomColor();
         self.contentView.addSubview(titleLabel!);
         
         let _ = titleLabel?.mas_makeConstraints({ (make) in
@@ -61,13 +76,12 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
         commentNumLabel?.textAlignment = NSTextAlignment.left;
         commentNumLabel?.textColor = kSubTitleColor;
         commentNumLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        commentNumLabel?.backgroundColor = kRandomColor();
+        commentNumLabel?.text = String(format: "%d评", kRandowNum())
         self.contentView.addSubview(commentNumLabel!);
         
         let _ = commentNumLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.titleLabel);
             make?.bottom.equalTo()(self.contentView)?.offset()(-10);
-            make?.width.equalTo()(40);
             make?.height.equalTo()(20);
         })
         
@@ -75,7 +89,7 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
         timeLabel?.textColor = kSubTitleColor;
         timeLabel?.textAlignment = NSTextAlignment.left;
         timeLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        timeLabel?.backgroundColor = kRandomColor();
+        timeLabel?.isHidden = true
         self.contentView.addSubview(timeLabel!);
         let _ = timeLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.commentNumLabel?.mas_right)?.offset()(10);
@@ -85,10 +99,12 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
         dotImageView = UIImageView();
         dotImageView?.isUserInteractionEnabled = true;
         dotImageView?.image = UIImage(named: "timeline_icon_dot")
-        self.contentView.addSubview(dotImageView!);
+        self.contentView.addSubview(dotImageView!)
         let _ = dotImageView?.mas_makeConstraints({ (make) in
             make?.right.equalTo()(self.contentView.mas_right)?.offset()(-15);
-            make?.bottom.width().height().equalTo()(self.commentNumLabel);
+            make?.width.equalTo()(25);
+            make?.height.equalTo()(15);
+            make?.bottom.equalTo()(self.commentNumLabel);
         })
         
         picturesImageView = UIImageView();
@@ -101,11 +117,10 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
             make?.top.equalTo()(self.titleLabel?.mas_bottom)?.offset()(10);
             make?.bottom.equalTo()(self.commentNumLabel?.mas_top)?.offset()(-10);
         })
-
+        
         pictureNumLabel = UILabel();
         pictureNumLabel?.textColor = UIColor.white;
         pictureNumLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        pictureNumLabel?.backgroundColor = kRandomColor();
         pictureNumLabel?.textAlignment = NSTextAlignment.left;
         picturesImageView?.addSubview(pictureNumLabel!);
         let _ = pictureNumLabel?.mas_makeConstraints({ (make) in
@@ -113,7 +128,6 @@ class ETTImportNewsPictureCell: ETTTableViewCell {
             make?.bottom.equalTo()(self.picturesImageView)?.offset()(-10);
             make?.width.height().equalTo()(self.commentNumLabel);
         })
-        
         
         
     }

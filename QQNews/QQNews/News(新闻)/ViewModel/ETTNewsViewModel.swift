@@ -50,7 +50,14 @@ class ETTNewsViewModel: NSObject {
                             importNewsModel.thumbnails_qqnews = JSON["thumbnails_qqnews"].array;
                             importNewsModel.thumbnails_qqnews_photo = JSON["thumbnails_qqnews_photo"].array;
                             importNewsModel.bigImage = JSON["bigImage"].array;
-                            
+                            importNewsModel.imagecount = JSON["imagecount"].intValue;
+                            if let bigString = JSON["thumbnails_qqnews_photo"].array?.first?.rawString()
+                            {
+                                importNewsModel.thumbnailsBigString = bigString
+                            }
+                            importNewsModel.videoTotalTime = JSON["videoTotalTime"].string;
+                            importNewsModel.source = JSON["source"].string;
+                            importNewsModel.videoNum = JSON["videoNum"].intValue;
                             
                             
                             dataArray.add(importNewsModel);

@@ -33,8 +33,8 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.setupSubviews()
-        self.getDataFromDataBase()
-        
+        //self.getDataFromDataBase()
+        self.refreshGetNewData()
         
     }
     
@@ -93,7 +93,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
                 for item in dataArray
                 {
                     self.recommendDataArray.insert(item, at: 0)
-                    self.DataBase.insertObject(recommendModel: item as! ETTRecommendModel)
+                    //self.DataBase.insertObject(recommendModel: item as! ETTRecommendModel)
                 }
                 
                 print(self.recommendDataArray)

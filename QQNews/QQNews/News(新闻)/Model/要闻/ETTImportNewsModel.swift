@@ -28,6 +28,8 @@ class ETTImportNewsModel: NSObject
     var thumbnails_big:Array<Any>?    //Array
     var thumbnails:Array<Any>?    //Array
     var thumbnailsString:String?
+    var thumbnailsBigString:String?
+    
     
     var qishu:String?    //String
     var source:String?    //String    福州晚报
@@ -81,6 +83,7 @@ class ETTImportNewsModel: NSObject
     var article_pos:Int?    //Integer    1
     var video_channel:ETTImportVideoChannelModel?
     var videoTotalTime:String?
+    var videoNum:Int?
     
     
 }

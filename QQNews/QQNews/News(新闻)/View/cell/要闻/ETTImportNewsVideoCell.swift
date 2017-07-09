@@ -17,7 +17,7 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
     
     var vTitleLabel:UILabel?
     var vBackgroundImageView:UIImageView?
-    var vPlayContentView:UIView?
+    var vPlayContentView:UIImageView?
     var vPlayImageView:UIImageView?
     var vVideoNumContentView:UIView?
     var vVideoNumImageView:UIImageView?
@@ -32,6 +32,24 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
     let kSubTitleFont:CGFloat = 8.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
+    var importNewsModel:ETTImportNewsModel?
+    {
+        didSet
+        {
+            vTitleLabel?.text = importNewsModel?.title
+            vTimeLabel?.text = importNewsModel?.videoTotalTime
+            vCommentLabel?.sizeToFit()
+            var imageString = importNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (importNewsModel?.thumbnailsString)!
+            }
+            
+            vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
+            vVideoNumLabel?.text = String(format: "%d视频", (importNewsModel?.videoNum)!)
+            vRemainTimeLabel?.text = importNewsModel?.videoTotalTime
+        }
+    }
     
     
     
@@ -55,10 +73,9 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
     func setupSubviews() -> Void 
     {
         vTitleLabel = UILabel();
-        vTitleLabel?.textColor = kSubTitleColor;
+        vTitleLabel?.textColor = kTitleColor;
         vTitleLabel?.textAlignment = NSTextAlignment.left;
-        vTitleLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        vTitleLabel?.backgroundColor = kRandomColor();
+        vTitleLabel?.font = UIFont.systemFont(ofSize: kTitleFont);
         vTitleLabel?.numberOfLines = 2;
         self.contentView.addSubview(vTitleLabel!);
         let _ = vTitleLabel?.mas_makeConstraints({ (make) in
@@ -72,11 +89,10 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         vCommentLabel?.textAlignment = NSTextAlignment.left;
         vCommentLabel?.textColor = kSubTitleColor;
         vCommentLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        vCommentLabel?.backgroundColor = kRandomColor();
+        vCommentLabel?.text = String(format: "%d评", kRandowNum())
         self.contentView.addSubview(vCommentLabel!);
         let _ = vCommentLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.vTitleLabel);
-            make?.width.equalTo()(40);
             make?.height.equalTo()(20);
             make?.bottom.equalTo()(self.contentView)?.offset()(-10);
         })
@@ -85,7 +101,6 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         vTimeLabel?.textColor = kSubTitleColor;
         vTimeLabel?.textAlignment = NSTextAlignment.left;
         vTimeLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        vTimeLabel?.backgroundColor = kRandomColor();
         self.contentView.addSubview(vTimeLabel!);
         let _ = vTimeLabel?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.vCommentLabel?.mas_right)?.offset()(10);
@@ -98,7 +113,9 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         self.contentView.addSubview(vDotImageView!);
         let _ = vDotImageView?.mas_makeConstraints({ (make) in
             make?.right.equalTo()(self.contentView)?.offset()(-15);
-            make?.width.height().bottom().equalTo()(self.vCommentLabel);
+            make?.width.equalTo()(25);
+            make?.height.equalTo()(15);
+            make?.bottom.equalTo()(self.vCommentLabel);
         })
         
         vBackgroundImageView = UIImageView();
@@ -111,10 +128,9 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
             make?.bottom.equalTo()(self.vCommentLabel?.mas_top)?.offset()(-10);
         })
         
-        vPlayContentView = UIView();
-        vPlayContentView?.backgroundColor = kRandomColor().withAlphaComponent(0.3);
-        vPlayContentView?.layer.cornerRadius = 30;
-        vPlayContentView?.clipsToBounds = true;
+        vPlayContentView = UIImageView();
+        vPlayContentView?.image = UIImage(named: "timeline_video_icon")
+        vPlayContentView?.isUserInteractionEnabled = true
         vBackgroundImageView?.addSubview(vPlayContentView!);
         let _ = vPlayContentView?.mas_makeConstraints({ (make) in
             make?.width.height().equalTo()(60);
@@ -124,6 +140,7 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         vPlayImageView = UIImageView();
         vPlayImageView?.isUserInteractionEnabled = true;
         vPlayImageView?.backgroundColor = kRandomColor();
+        vPlayImageView?.isHidden = true
         vPlayContentView?.addSubview(vPlayImageView!);
         let _ = vPlayImageView?.mas_makeConstraints({ (make) in
             make?.height.width().equalTo()(30);
@@ -131,7 +148,7 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         })
         
         vVideoNumContentView = UIView();
-        vVideoNumContentView?.backgroundColor = kRandomColor().withAlphaComponent(0.3);
+        vVideoNumContentView?.backgroundColor = UIColor.black.withAlphaComponent(0.3);
         vBackgroundImageView?.addSubview(vVideoNumContentView!);
         let _ = vVideoNumContentView?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.vBackgroundImageView)?.offset()(10);
@@ -141,7 +158,7 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         })
         
         vVideoNumImageView = UIImageView();
-        vVideoNumImageView?.backgroundColor = kRandomColor();
+        vVideoNumImageView?.image = kImage(named: "icon_detail_play_small")
         vVideoNumImageView?.isUserInteractionEnabled = true;
         vVideoNumContentView?.addSubview(vVideoNumImageView!);
         let _ = vVideoNumImageView?.mas_makeConstraints({ (make) in
@@ -153,7 +170,7 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         
         vVideoNumLabel = UILabel();
         vVideoNumLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
-        vVideoNumLabel?.backgroundColor = kRandomColor();
+        vVideoNumLabel?.textColor = UIColor.white
         vVideoNumLabel?.textAlignment = NSTextAlignment.left;
         vVideoNumContentView?.addSubview(vVideoNumLabel!);
         let _ = vVideoNumLabel?.mas_makeConstraints({ (make) in
@@ -164,7 +181,6 @@ class ETTImportNewsVideoCell: ETTTableViewCell {
         
         vRemainTimeLabel = UILabel();
         vRemainTimeLabel?.textAlignment = NSTextAlignment.left;
-        vRemainTimeLabel?.backgroundColor = kRandomColor();
         vRemainTimeLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
         vRemainTimeLabel?.textColor = UIColor.white;
         vBackgroundImageView?.addSubview(vRemainTimeLabel!);
