@@ -14,6 +14,52 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     
     var videoNewsVC = ETTVideoNewsViewController();
     
+    var beijingNewsVC = ETTBeijingViewController();
+    
+    var financeNewsVC = ETTFinanceViewController();
+    
+    var entertainmentNewsVC = ETTEntertainmentViewController();
+    
+    var sportNewsVC = ETTSportViewController();
+    
+    var NBANewsVC = ETTNBAViewController();
+    
+    var autoNewsVC = ETTAutoViewController();
+    
+    var technologyNewsVC = ETTTechnologyViewController();
+    
+    var societyNewsVC = ETTSocietyViewController();
+    
+    var militaryNewsVC = ETTMilitaryViewController();
+    
+    var internationNewsVC = ETTInternationViewController();
+    
+    var fashionNewsVC = ETTFashionViewController();
+    
+    var gameNewsVC = ETTGameViewController();
+    
+    var pictureNewsVC = ETTPictureViewController();
+    
+    var digitalNewsVC = ETTDigitalViewController();
+    
+    var movieNewsVC = ETTMovieViewController();
+    
+    var educationNewsVC = ETTEducationViewController();
+    
+    var beautyNewsVC = ETTBeautyViewController();
+    
+    var varietyNewsVC = ETTVarietyViewController();
+    
+    var koreanlNewsVC = ETTKoreanViewController();
+    
+    var footbalNewsVC = ETTFootballViewController();
+    
+    var petNewsVC = ETTPetViewController();
+    
+    var governmentNewsVC = ETTGovernmentViewController();
+    
+    
+    
     
     // MARK: - 属性变量
     var titleScrollView:UIScrollView?
@@ -84,8 +130,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         titleContentView.backgroundColor = UIColor.white;
         
         
-        titleArray = NSArray(objects: "要闻","视频");
-        //NSArray(objects: "要闻","视频","北京","NBA","科技","军事","社会","财经","娱乐","房产");
+        titleArray = NSArray(objects: "要闻","视频","北京","财经","娱乐","体育","NBA","汽车","科技","社会","军事","国际","时尚","游戏","图片","数码","电影","教育","美容","综艺","韩流","足球","宠物","政务");
         
         titleScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: titleContentView.frame.size.width, height: 44));
         titleScrollView?.contentSize = CGSize.init(width: CGFloat((titleArray.count)) * kButtonWidth, height: 0);
@@ -194,54 +239,160 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
                 subview?.addSubview(videoNewsVC.view);
             }
                 break;
-//            case 2:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
-//            case 3:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
-//            case 4:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
-//            case 5:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
-//            case 6:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
-//            case 7:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
-//            case 8:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
-//            case 9:
-//                let subview = middleScrollView?.subviews[index];
-//                let neededView = ETTVideoNewsView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kScreenHeight));
-//                neededView.backgroundColor = UIColor.yellow;
-//                //subview?.addSubview(neededView);
-//                break;
+            case 2:
+                let subview = middleScrollView?.subviews[index];
+                
+                beijingNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(beijingNewsVC.view);
+                break;
+            case 3:
+                let subview = middleScrollView?.subviews[index];
+                
+                financeNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(financeNewsVC.view);
+                break;
+            case 4:
+                let subview = middleScrollView?.subviews[index];
+                
+                entertainmentNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(entertainmentNewsVC.view);
+                break;
+            case 5:
+                let subview = middleScrollView?.subviews[index];
+                
+                sportNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(sportNewsVC.view);
+                break;
+            case 6:
+                let subview = middleScrollView?.subviews[index];
+                
+                NBANewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(NBANewsVC.view);
+                break;
+            case 7:
+                let subview = middleScrollView?.subviews[index];
+                
+                autoNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(autoNewsVC.view);
+                break;
+            case 8:
+                let subview = middleScrollView?.subviews[index];
+                
+                technologyNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(technologyNewsVC.view);
+                break;
+            case 9:
+                let subview = middleScrollView?.subviews[index];
+                
+                societyNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(societyNewsVC.view);
+                break;
+            case 10:
+                let subview = middleScrollView?.subviews[index];
+                
+                militaryNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(militaryNewsVC.view);
+                break;
+            case 11:
+                let subview = middleScrollView?.subviews[index];
+                
+                internationNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(internationNewsVC.view);
+                break;
+            case 12:
+                let subview = middleScrollView?.subviews[index];
+                
+                fashionNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(fashionNewsVC.view);
+                break;
+            case 13:
+                let subview = middleScrollView?.subviews[index];
+                
+                gameNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(gameNewsVC.view);
+                break;
+            case 14:
+                let subview = middleScrollView?.subviews[index];
+                
+                pictureNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(pictureNewsVC.view);
+                break;
+            case 15:
+                let subview = middleScrollView?.subviews[index];
+                
+                digitalNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(digitalNewsVC.view);
+                break;
+            case 16:
+                let subview = middleScrollView?.subviews[index];
+                
+                movieNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(movieNewsVC.view);
+                break;
+            case 17:
+                let subview = middleScrollView?.subviews[index];
+                
+                educationNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(educationNewsVC.view);
+                break;
+            case 18:
+                let subview = middleScrollView?.subviews[index];
+                
+                beautyNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(beautyNewsVC.view);
+                break;
+            case 19:
+                let subview = middleScrollView?.subviews[index];
+                
+                varietyNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(varietyNewsVC.view);
+                break;
+            case 20:
+                let subview = middleScrollView?.subviews[index];
+                
+                koreanlNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(koreanlNewsVC.view);
+                break;
+            case 21:
+                let subview = middleScrollView?.subviews[index];
+                
+                footbalNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(footbalNewsVC.view);
+                break;
+            case 22:
+                let subview = middleScrollView?.subviews[index];
+                
+                petNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(petNewsVC.view);
+                break;
+            case 23:
+                let subview = middleScrollView?.subviews[index];
+                
+                governmentNewsVC.view.frame = (subview!.bounds);
+                
+                subview?.addSubview(governmentNewsVC.view);
+                break;
                 
             default :
                 break;

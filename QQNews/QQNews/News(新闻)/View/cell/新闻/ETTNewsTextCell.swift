@@ -79,8 +79,8 @@ class ETTNewsTextCell: ETTTableViewCell {
         
         let _ = pictureImageView?.mas_makeConstraints({ (make) in
             make?.left.equalTo()(self.titleLabel?.mas_right)?.offset()(15);
-            make?.top.equalTo()(self.contentView)?.offset()(10);
-            make?.bottom.equalTo()(self.contentView)?.offset()(-10);
+            make?.top.equalTo()(self.contentView)?.offset()(20);
+            make?.bottom.equalTo()(self.contentView)?.offset()(-20);
             make?.right.equalTo()(self.contentView)?.offset()(-15);
         })
         

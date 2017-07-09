@@ -119,7 +119,6 @@ class ETTVideoNewsCell: ETTTableViewCell {
             VBackgroundImageView?.sd_setImage(with: URL.init(string: (videoNewsModel?.bigImageString)!), placeholderImage: UIImage(named:kPlace_holder))
             VRemainTimeLabel?.text = videoNewsModel?.videoTotalTime
             VSourceImageView?.sd_setImage(with: URL.init(string: (videoNewsModel?.bigImageString!)!), placeholderImage: UIImage(named: kPlace_holder))
-            VCommentLabel?.text = String(format: "%ld",(videoNewsModel?.pushCommentCount)!);
             VSourceNikeNameLabel?.text = videoNewsModel?.source;
             VSourceNikeNameLabel?.sizeToFit()
             VCategoryLabel?.text = videoNewsModel?.title?.substring(to: (videoNewsModel?.title?.index((videoNewsModel?.title?.startIndex)!, offsetBy: 4))!)

@@ -100,12 +100,11 @@ class ETTBeijingViewController: ETTViewController,UITableViewDataSource,UITableV
         
         DispatchQueue.main.asyncAfter(deadline: delayTime) {
             
-            recommendViewModel.getRecommendData(callBack: { (dataArray) in
+            newsViewModel.getBeijingData(callBack: { (dataArray) in
                 
                 for item in dataArray
                 {
                     self.NDataArray.insert(item, at: 0)
-                    //self.DataBase.insertObject(recommendModel: item as! ETTRecommendModel)
                 }
                 
                 self.NTableView?.reloadData()
