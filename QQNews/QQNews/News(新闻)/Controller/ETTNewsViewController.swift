@@ -63,17 +63,25 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     // MARK: - 设置顶部titleView
     func setupTopViews() -> Void
     {
-        let searchImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 44));
-        searchImageView.isUserInteractionEnabled = true;
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: searchImageView);
+        //搜索按钮
+        let searchButton = UIButton()
+        searchButton.setImage(kImage(named: "search_icon_btn_black"), for: UIControlState.normal)
+        searchButton.setImage(kImage(named: "night-search_icon_btn_black"), for: UIControlState.highlighted)
+        searchButton.frame = CGRect(x: -10, y: 0, width: 30, height: 44)
+        searchButton.addTarget(self, action: #selector(searchButtonAction(button:)), for: UIControlEvents.touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: searchButton);
         
-        let addItemImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 44));
-        addItemImageView.backgroundColor = UIColor.red;
-        addItemImageView.isUserInteractionEnabled = true;
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: addItemImageView);
+        //添加按钮
+        let addButton = UIButton()
+        addButton.setImage(kImage(named: "timeline_add_Channel_black"), for: UIControlState.normal)
+        addButton.setImage(kImage(named: "night-timeline_add_Channel_white"), for: UIControlState.highlighted)
+        addButton.frame = CGRect(x: 0, y: 0, width: 30, height: 44)
+        addButton.addTarget(self, action: #selector(addButtonAction(button:)), for: UIControlEvents.touchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: addButton);
+        
         
         let titleContentView = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth - 30 * 2 - 30 * 2, height: 44));
-        titleContentView.backgroundColor = UIColor.purple;
+        titleContentView.backgroundColor = UIColor.white;
         
         
         titleArray = NSArray(objects: "要闻","视频");
@@ -109,6 +117,20 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
             buttonArray.add(button);
         }
         
+    }
+    
+    
+    // MARK: - 搜索按钮的事件回调
+    @objc func searchButtonAction(button:UIButton) -> Void
+    {
+        print("搜索按钮被点击了")
+        
+    }
+    
+    // MARK: - 添加按钮事件回调
+    @objc func addButtonAction(button:UIButton) -> Void
+    {
+        print("添加按钮被点击了")
     }
     
     // MARK: - 顶部titleView按钮的点击事件回调

@@ -59,6 +59,18 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     func setupSubviews() -> Void 
     {
+        let searchButton = UIButton()
+        searchButton.setImage(kImage(named: "search_icon_btn_black"), for: UIControlState.normal)
+        searchButton.setImage(kImage(named: "night-search_icon_btn_black"), for: UIControlState.highlighted)
+        searchButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        searchButton.setTitle("发现", for: UIControlState.normal)
+        searchButton.frame = CGRect(x: -10, y: 0, width: 90, height: 44)
+        searchButton.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 0)
+        searchButton.addTarget(self, action: #selector(searchButtonAction(button:)), for: UIControlEvents.touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: searchButton);
+        
+        self.navigationItem.title = "推荐"
+        
         recommendTableView = UITableView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         recommendTableView?.delegate = self
         recommendTableView?.dataSource = self
@@ -66,6 +78,13 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
         recommendTableView?.register(ETTRecommendPictureCell.self, forCellReuseIdentifier: reusedRecommendPictureId)
         recommendTableView?.register(ETTRecommendVideoCell.self, forCellReuseIdentifier: reusedRecommendVideoId)
         self.view.addSubview(recommendTableView!)
+    }
+    
+    // MARK: - 搜索按钮的事件回调
+    @objc func searchButtonAction(button:UIButton) -> Void
+    {
+        print("搜索按钮被点击了")
+        
     }
     
     func refreshGetNewData() -> Void

@@ -288,7 +288,7 @@ class ETTVideoNewsCell: ETTTableViewCell {
         })
         
         VRemainTimeLabel = UILabel();
-        VRemainTimeLabel?.textColor = kRandomColor();
+        VRemainTimeLabel?.textColor = kSubTitleColor;
         VRemainTimeLabel?.textAlignment = NSTextAlignment.left;
         VRemainTimeLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
         VBackgroundImageView?.addSubview(VRemainTimeLabel!);
