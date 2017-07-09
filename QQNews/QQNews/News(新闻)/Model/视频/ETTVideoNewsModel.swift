@@ -38,6 +38,7 @@ class ETTVideoNewsModel: NSObject
     var specialID:String?
     var FadCid:String?
     var graphicLiveID:String?
+    var bigImageString:String?
     
     
     

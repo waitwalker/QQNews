@@ -47,10 +47,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
             //recommendDataArray = dataArr;
             for item:ETTRecommendModel in dataArr
             {
-                print(item.title as Any)
                 recommendDataArray.add(item)
-                
-                
             }
             recommendTableView?.reloadData()
         } else
@@ -96,7 +93,6 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
                     //self.DataBase.insertObject(recommendModel: item as! ETTRecommendModel)
                 }
                 
-                print(self.recommendDataArray)
                 self.recommendTableView?.reloadData()
             })
             

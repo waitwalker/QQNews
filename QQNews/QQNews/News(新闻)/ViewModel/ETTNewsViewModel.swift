@@ -37,7 +37,6 @@ class ETTNewsViewModel: NSObject {
                     {
                         for (subJson:JSON) in newsList
                         {
-                            print(JSON)
                             let importNewsModel = ETTImportNewsModel();
                             
                             importNewsModel.title = JSON["title"].string;
@@ -87,16 +86,11 @@ class ETTNewsViewModel: NSObject {
     
     func getVideoNewsData(videoNewsCallBack:@escaping videoListCallBack) -> Void
     {
-        let URI:String = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f0105aa6744&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNVideoDetailListViewController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom=icon";
+        let URI:String = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f08e1e8a9cf&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon";
         
         let urlString = String(format: "%@%@", kHost,URI)
         
-        
-        let videoString:String = "http://r.inews.qq.com/getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f08e1e8a9cf&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon";
-        
-        print("请求地址",urlString);
-        
-        Alamofire.request(videoString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (dataResponse) in
+        Alamofire.request(urlString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (dataResponse) in
             switch dataResponse.result.isSuccess{
                 
             case true: 
@@ -114,7 +108,6 @@ class ETTNewsViewModel: NSObject {
                         {
                             let videoNewsModel = ETTVideoNewsModel();
                             videoNewsModel.isSensitive = JSON["isSensitive"].int;
-                            
                             
                             videoNewsModel.toneScore = JSON["toneScore"].string;
                             videoNewsModel.weiboid = JSON["weiboid"].string;
@@ -167,6 +160,13 @@ class ETTNewsViewModel: NSObject {
                             videoNewsModel.comment = JSON["comment"].string;
                             videoNewsModel.media_id = JSON["media_id"].string;
                             videoNewsModel.article_pos = JSON["article_pos"].int;
+                            videoNewsModel.chlsicon = JSON["chlsicon"].stringValue;
+                            videoNewsModel.chlicon = JSON["chlicon"].stringValue;
+                            
+                            if let bigImageString = JSON["bigImage"].arrayValue.first?.rawString()
+                            {
+                                videoNewsModel.bigImageString = bigImageString;
+                            }
                             
                             let videoChannelModel = ETTVideoChannelModel();
                             

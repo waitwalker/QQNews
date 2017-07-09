@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class ETTVideoNewsViewController: ETTViewController,UITableViewDataSource,UITableViewDelegate {
 
@@ -22,23 +23,47 @@ class ETTVideoNewsViewController: ETTViewController,UITableViewDataSource,UITabl
         super.viewDidLoad()
         
         self.setupSubviews();
-        let newsViewModel = ETTNewsViewModel();
-        newsViewModel.getVideoNewsData { (videoListArray) in
-            
-            self.videoDataArray = videoListArray;
-            print(self.videoDataArray.count)
-            self.VTableView?.reloadData();
-        }
+        self.refreshGetNewData()
         
     }
+    
+    func refreshGetNewData() -> Void
+    {
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(networkRequest))
+        header?.setTitle("下拉刷新", for: MJRefreshState.idle)
+        header?.setTitle("松手刷新", for: MJRefreshState.pulling)
+        header?.setTitle("加载中...", for: MJRefreshState.refreshing)
+        header?.beginRefreshing()
+        self.VTableView?.mj_header = header
+    }
+    
+    @objc func networkRequest() -> Void
+    {
+        print("开始刷新")
+        let delayTime = DispatchTime.now() + DispatchTimeInterval.seconds(2)
+        
+        DispatchQueue.main.asyncAfter(deadline: delayTime) {
+            
+            newsViewModel.getVideoNewsData(videoNewsCallBack: { (dataArray) in
+                for item in dataArray
+                {
+                    self.videoDataArray.insert(item, at: 0)
+                }
+                self.VTableView?.reloadData()
+            })
+            self.VTableView?.mj_header.endRefreshing()
+        }
+    }
+    
+    
 
     func setupSubviews() -> Void 
     {
-        VTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height));
+        VTableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 64 - 50));
         VTableView?.delegate = self;
         VTableView?.dataSource = self;
         VTableView?.register(ETTVideoNewsCell.self, forCellReuseIdentifier: reusedIdentifiyVideo);
-        VTableView?.backgroundColor = UIColor.orange;
+        VTableView?.backgroundColor = UIColor.white;
         self.view.addSubview(VTableView!);
     }
     
@@ -66,6 +91,11 @@ class ETTVideoNewsViewController: ETTViewController,UITableViewDataSource,UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat 
     {
         return 300;
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

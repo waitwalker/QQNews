@@ -64,7 +64,6 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     func setupTopViews() -> Void
     {
         let searchImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 44));
-        searchImageView.backgroundColor = UIColor.red;
         searchImageView.isUserInteractionEnabled = true;
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: searchImageView);
         
@@ -95,7 +94,6 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         
         for index in 0...(titleArray.count - 1) {
             
-            print(titleArray[index])
             let buttonX:CGFloat = CGFloat(index) * kButtonWidth;
             let buttonY:CGFloat = 0;
             let buttonWidth:CGFloat = kButtonWidth;
@@ -143,7 +141,7 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
         
         for index in 0...(titleArray.count - 1) {
             let subviews = UIView(frame: CGRect(x: kScreenWidth * CGFloat(index), y: 0, width: kScreenWidth, height: kScreenHeight));
-            subviews.backgroundColor = kRandomColor();
+            subviews.backgroundColor = UIColor.white
             middleScrollView?.addSubview(subviews);
         }
         self.addSubviewsInMiddleScrollView();
