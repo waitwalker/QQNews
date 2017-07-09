@@ -22,20 +22,20 @@ class ETTNewsPictureCell: ETTTableViewCell {
     let kSubTitleFont:CGFloat = 14.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
-    var recommendModel:ETTRecommendModel?
+    var beijingNewsModel:ETTNewsModel?
     {
         didSet
         {
-            titleLabel?.text = recommendModel?.title;
+            titleLabel?.text = beijingNewsModel?.title;
             commentNumLabel?.sizeToFit()
-            var imageString = recommendModel?.thumbnailsBigString
+            var imageString = beijingNewsModel?.thumbnailsBigString
             if imageString == nil
             {
-                imageString = (recommendModel?.thumbnailsString)!
+                imageString = (beijingNewsModel?.thumbnailsString)!
             }
             
             picturesImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"))
-            pictureNumLabel?.text = String(format: "%d图", (recommendModel?.imagecount)!)
+            pictureNumLabel?.text = String(format: "%d图", (beijingNewsModel?.imagecount)!)
         }
     }
     

@@ -27,23 +27,23 @@ class ETTNewsVideoCell: ETTTableViewCell {
     let kSubTitleFont:CGFloat = 14.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
-    var recommendModel:ETTRecommendModel?
+    var beijingNewsModel:ETTNewsModel?
     {
         didSet
         {
-            vTitleLabel?.text = recommendModel?.title
+            vTitleLabel?.text = beijingNewsModel?.title
             print("视频标题是",vTitleLabel?.text as Any)
-            vTimeLabel?.text = recommendModel?.videoTotalTime
+            vTimeLabel?.text = beijingNewsModel?.videoTotalTime
             vCommentLabel?.sizeToFit()
-            var imageString = recommendModel?.thumbnailsBigString
+            var imageString = beijingNewsModel?.thumbnailsBigString
             if imageString == nil
             {
-                imageString = (recommendModel?.thumbnailsString)!
+                imageString = (beijingNewsModel?.thumbnailsString)!
             }
             
             vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
-            vVideoNumLabel?.text = String(format: "%d视频", (recommendModel?.videoNum)!)
-            vRemainTimeLabel?.text = recommendModel?.videoTotalTime
+            vVideoNumLabel?.text = String(format: "%d视频", (beijingNewsModel?.videoNum)!)
+            vRemainTimeLabel?.text = beijingNewsModel?.videoTotalTime
         }
     }
     

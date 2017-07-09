@@ -217,8 +217,393 @@ class ETTNewsViewModel: NSObject {
                 break
             }
         }
-            
+        
+    }
+    
+    // MARK: - 获取北京列表数据
+    typealias beijingDataCallBack = (_ beijingArray:NSMutableArray)->Void
+    func getBeijingData(callBack:@escaping beijingDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        Alamofire.request(URLString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result.isSuccess
+            {
+            case true:
+                if let value = response.result.value
+                {
+                    let json = JSON(value)
+                    
+                    let dataArray = NSMutableArray();
+                    
+                    
+                    if let newslist = json["newslist"].array
+                    {
+                        for (subJson:JSON) in newslist
+                        {
+                            let newsModel = ETTNewsModel()
+                            newsModel.title = JSON["title"].string;
+                            newsModel.thumbnails = JSON["thumbnails"].array;
+                            if let string = JSON["thumbnails"].array?.first?.rawString()
+                            {
+                                newsModel.thumbnailsString = string;
+                            };
+                            
+                            if let bigString = JSON["thumbnails_qqnews_photo"].array?.first?.rawString()
+                            {
+                                newsModel.thumbnailsBigString = bigString
+                            }
+                            
+                            newsModel.thumbnails_big = JSON["thumbnails_big"].array;
+                            newsModel.thumbnails_qqnews = JSON["thumbnails_qqnews"].array;
+                            newsModel.thumbnails_qqnews_photo = JSON["thumbnails_qqnews_photo"].array;
+                            newsModel.bigImage = JSON["bigImage"].array;
+                            newsModel.imagecount = JSON["imagecount"].int32Value;
+                            newsModel.videoTotalTime = JSON["videoTotalTime"].string;
+                            newsModel.source = JSON["source"].string;
+                            newsModel.videoNum = JSON["videoNum"].int32Value;
+                            
+                            dataArray.add(newsModel);
+                            
+                        }
+                    }
+                    callBack(dataArray)
+                }
+                
+                
+                break
+                
+                
+            case false:
+                
+                
+                break
+            }
         }
     }
+    
+    // MARK: - 获取政务数据
+    typealias governmentDataCallBack = (_ governmentArray:NSMutableArray)->Void
+    func getGovernmentData(callBack:@escaping governmentDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取宠物数据
+    typealias petDataCallBack = (_ petArray:NSMutableArray)->Void
+    func getPetData(callBack:@escaping petDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取足球数据
+    typealias footballDataCallBack = (_ footballArray:NSMutableArray)->Void
+    func getFootballyData(callBack:@escaping footballDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取韩流数据
+    typealias koreanDataCallBack = (_ koreanArray:NSMutableArray)->Void
+    func getKoreanData(callBack:@escaping koreanDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取综艺数据
+    typealias varietyDataCallBack = (_ varietyArray:NSMutableArray)->Void
+    func getVarietyData(callBack:@escaping varietyDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取美容数据
+    typealias beautyDataCallBack = (_ beautyArray:NSMutableArray)->Void
+    func getBeautyData(callBack:@escaping beautyDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取教育数据
+    typealias educationDataCallBack = (_ educationArray:NSMutableArray)->Void
+    func getEducationyData(callBack:@escaping educationDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取电影数据
+    typealias movieDataCallBack = (_ movieArray:NSMutableArray)->Void
+    func getMovieData(callBack:@escaping movieDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取数码数据
+    typealias digitalDataCallBack = (_ digitalArray:NSMutableArray)->Void
+    func getDigitalData(callBack:@escaping digitalDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取图片数据
+    typealias pictureDataCallBack = (_ pictureArray:NSMutableArray)->Void
+    func getPictureData(callBack:@escaping pictureDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取游戏数据
+    typealias gameDataCallBack = (_ gameArray:NSMutableArray)->Void
+    func getGameData(callBack:@escaping gameDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取时尚数据
+    typealias fashionDataCallBack = (_ fashionArray:NSMutableArray)->Void
+    func getFashionData(callBack:@escaping fashionDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取国际数据
+    typealias internationDataCallBack = (_ internationArray:NSMutableArray)->Void
+    func getInternationData(callBack:@escaping internationDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取军事数据
+    typealias militaryDataCallBack = (_ militaryArray:NSMutableArray)->Void
+    func getMilitaryData(callBack:@escaping militaryDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取社会数据
+    typealias societyDataCallBack = (_ societyArray:NSMutableArray)->Void
+    func getSocietyData(callBack:@escaping societyDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    
+    // MARK: - 获取科技数据
+    typealias technologyDataCallBack = (_ technologyArray:NSMutableArray)->Void
+    func getTechnologyData(callBack:@escaping technologyDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取汽车数据
+    typealias autoDataCallBack = (_ sutoArray:NSMutableArray)->Void
+    func getAutoData(callBack:@escaping autoDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取NBA数据
+    typealias NBADataCallBack = (_ NBAArray:NSMutableArray)->Void
+    func getNBAData(callBack:@escaping NBADataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取体育数据
+    typealias sportDataCallBack = (_ sportArray:NSMutableArray)->Void
+    func getSportData(callBack:@escaping sportDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取娱乐数据
+    typealias entertainmentDataCallBack = (_ entertainmentArray:NSMutableArray)->Void
+    func getEntertainmentData(callBack:@escaping entertainmentDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    // MARK: - 获取财经数据
+    typealias financeDataCallBack = (_ financeArray:NSMutableArray)->Void
+    func getFinanceData(callBack:@escaping financeDataCallBack) -> Void
+    {
+        let URI = "getRecommendList?apptype=ios&startarticleid=2017070401870000&__qnr=1f0c766d15b3&isJailbreak=0&omgid=1f7ac4fc616e0942435905420becda0283e4001011250f&idfa=55148347-614B-419F-B9BD-47DAFD16F7E0&qqnews_refpage=QNCommonListChannelVideoController&device_model=iPhone9%2C2&appver=10.2_qqnews_5.3.6&network_type=wifi&omgbizid=04f69dc08c3b1342e7f9c1c102839988a163006011250f&screen_height=736&devid=E1C17BCC-02CA-4AD1-BEAB-6A04B12B68F5&screen_scale=3&screen_width=414&store=1&activefrom"
+        let URLString = kHost + URI
+        let dataArray = NSMutableArray()
+        
+        self.getNewsData(urlString: URLString, dataArray: dataArray)
+        
+        callBack(dataArray)
+    }
+    
+    func getNewsData(urlString:String, dataArray:NSMutableArray) -> Void
+    {
+        Alamofire.request(urlString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            switch response.result.isSuccess
+            {
+            case true:
+                if let value = response.result.value
+                {
+                    let json = JSON(value)
+                    
+                    if let newslist = json["newslist"].array
+                    {
+                        for (subJson:JSON) in newslist
+                        {
+                            let newsModel = ETTNewsModel()
+                            newsModel.title = JSON["title"].string;
+                            newsModel.thumbnails = JSON["thumbnails"].array;
+                            if let string = JSON["thumbnails"].array?.first?.rawString()
+                            {
+                                newsModel.thumbnailsString = string;
+                            };
+                            
+                            if let bigString = JSON["thumbnails_qqnews_photo"].array?.first?.rawString()
+                            {
+                                newsModel.thumbnailsBigString = bigString
+                            }
+                            
+                            newsModel.thumbnails_big = JSON["thumbnails_big"].array;
+                            newsModel.thumbnails_qqnews = JSON["thumbnails_qqnews"].array;
+                            newsModel.thumbnails_qqnews_photo = JSON["thumbnails_qqnews_photo"].array;
+                            newsModel.bigImage = JSON["bigImage"].array;
+                            newsModel.imagecount = JSON["imagecount"].int32Value;
+                            newsModel.videoTotalTime = JSON["videoTotalTime"].string;
+                            newsModel.source = JSON["source"].string;
+                            newsModel.videoNum = JSON["videoNum"].int32Value;
+                            
+                            dataArray.add(newsModel);
+                            
+                        }
+                    }
+                }
+                break
+            case false:
+                break
+            }
+        }
+    }
+    
+}
     
 
