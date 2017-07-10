@@ -86,7 +86,24 @@ class ETTNewsVideoCell: ETTTableViewCell {
         }
     }
     
-    
+    // MARK: - 体育数据模型
+    var sportNewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            vTitleLabel?.text = sportNewsModel?.title
+            vTimeLabel?.text = sportNewsModel?.videoTotalTime
+            vCommentLabel?.sizeToFit()
+            var imageString = sportNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (sportNewsModel?.thumbnailsString)!
+            }
+            vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
+            vVideoNumLabel?.text = String(format: "%d视频", (sportNewsModel?.videoNum)!)
+            vRemainTimeLabel?.text = sportNewsModel?.videoTotalTime
+        }
+    }
     
     
     

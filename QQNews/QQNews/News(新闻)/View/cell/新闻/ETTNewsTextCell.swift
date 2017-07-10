@@ -76,6 +76,23 @@ class ETTNewsTextCell: ETTTableViewCell {
         }
     }
     
+    // MARK: - 体育数据模型
+    var sportNewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            titleLabel?.text = sportNewsModel?.title;
+            topicLabel?.text = sportNewsModel?.source
+            topicLabel?.sizeToFit()
+            commentNumLabel?.sizeToFit()
+            var imageString = sportNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (sportNewsModel?.thumbnailsString)!
+            }
+            pictureImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"));
+        }
+    }
     
     
     
