@@ -67,7 +67,24 @@ class ETTNewsVideoCell: ETTTableViewCell {
         }
     }
     
-    
+    // MARK: - 娱乐数据模型
+    var entertainmentNewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            vTitleLabel?.text = entertainmentNewsModel?.title
+            vTimeLabel?.text = entertainmentNewsModel?.videoTotalTime
+            vCommentLabel?.sizeToFit()
+            var imageString = entertainmentNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (entertainmentNewsModel?.thumbnailsString)!
+            }
+            vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
+            vVideoNumLabel?.text = String(format: "%d视频", (entertainmentNewsModel?.videoNum)!)
+            vRemainTimeLabel?.text = entertainmentNewsModel?.videoTotalTime
+        }
+    }
     
     
     

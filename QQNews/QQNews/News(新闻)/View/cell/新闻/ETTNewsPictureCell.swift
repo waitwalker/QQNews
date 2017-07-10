@@ -58,6 +58,23 @@ class ETTNewsPictureCell: ETTTableViewCell {
         }
     }
     
+    // MARK: - 娱乐数据模型
+    var entertainmentNewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            titleLabel?.text = entertainmentNewsModel?.title;
+            commentNumLabel?.sizeToFit()
+            var imageString = entertainmentNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (entertainmentNewsModel?.thumbnailsString)!
+            }
+            
+            picturesImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"))
+            pictureNumLabel?.text = String(format: "%d图", (entertainmentNewsModel?.imagecount)!)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

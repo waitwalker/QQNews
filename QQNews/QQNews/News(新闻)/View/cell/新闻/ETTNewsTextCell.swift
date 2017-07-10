@@ -58,6 +58,25 @@ class ETTNewsTextCell: ETTTableViewCell {
         }
     }
     
+    // MARK: - 娱乐数据模型
+    var entertainmentNewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            titleLabel?.text = entertainmentNewsModel?.title;
+            topicLabel?.text = entertainmentNewsModel?.source
+            topicLabel?.sizeToFit()
+            commentNumLabel?.sizeToFit()
+            var imageString = entertainmentNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (entertainmentNewsModel?.thumbnailsString)!
+            }
+            pictureImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"));
+        }
+    }
+    
+    
     
     
     
