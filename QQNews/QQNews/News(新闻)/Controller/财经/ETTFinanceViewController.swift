@@ -132,17 +132,17 @@ class ETTFinanceViewController: ETTViewController,UITableViewDataSource,UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let beijingNewsModel = NDataArray[indexPath.item] as! ETTNewsModel;
-        if beijingNewsModel.videoTotalTime == nil
+        let financeNewsModel = NDataArray[indexPath.item] as! ETTNewsModel;
+        if financeNewsModel.videoTotalTime == nil
         {
-            if beijingNewsModel.imagecount! > 0
+            if financeNewsModel.imagecount! > 0
             {
                 var cell = tableView.dequeueReusableCell(withIdentifier: reusedNPictureId) as? ETTNewsPictureCell
                 if cell == nil
                 {
                     cell = ETTNewsPictureCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedNPictureId)
                 }
-                cell?.beijingNewsModel = NDataArray[indexPath.item] as? ETTNewsModel
+                cell?.financeNewsModel = NDataArray[indexPath.item] as? ETTNewsModel
                 
                 return cell!
             } else
@@ -152,7 +152,7 @@ class ETTFinanceViewController: ETTViewController,UITableViewDataSource,UITableV
                 {
                     cell = ETTNewsTextCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedNTextId)
                 }
-                cell?.beijingNewsModel = NDataArray[indexPath.item] as? ETTNewsModel
+                cell?.financeNewsModel = NDataArray[indexPath.item] as? ETTNewsModel
                 
                 return cell!
             }
@@ -164,7 +164,7 @@ class ETTFinanceViewController: ETTViewController,UITableViewDataSource,UITableV
                 cell = ETTNewsVideoCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedNVideoId)
             }
             
-            cell?.beijingNewsModel = NDataArray[indexPath.item] as? ETTNewsModel
+            cell?.financeNewsModel = NDataArray[indexPath.item] as? ETTNewsModel
             
             return cell!
             
@@ -174,9 +174,9 @@ class ETTFinanceViewController: ETTViewController,UITableViewDataSource,UITableV
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        let beijingNewsModel = NDataArray[indexPath.item] as! ETTNewsModel;
+        let financeNewsModel = NDataArray[indexPath.item] as! ETTNewsModel;
         
-        if beijingNewsModel.imagecount! > 0 || beijingNewsModel.videoTotalTime != nil
+        if financeNewsModel.imagecount! > 0 || financeNewsModel.videoTotalTime != nil
         {
             return 300;
         } else

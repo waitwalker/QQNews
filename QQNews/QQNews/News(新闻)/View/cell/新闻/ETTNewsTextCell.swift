@@ -22,6 +22,7 @@ class ETTNewsTextCell: ETTTableViewCell {
     let kSubTitleFont:CGFloat = 14.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
+    // MARK: - 北京数据模型
     var beijingNewsModel:ETTNewsModel?
     {
         didSet
@@ -35,11 +36,29 @@ class ETTNewsTextCell: ETTTableViewCell {
             {
                 imageString = (beijingNewsModel?.thumbnailsString)!
             }
-            
             pictureImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"));
         }
-        
     }
+    
+    // MARK: - 财经数据模型
+    var financeNewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            titleLabel?.text = financeNewsModel?.title;
+            topicLabel?.text = financeNewsModel?.source
+            topicLabel?.sizeToFit()
+            commentNumLabel?.sizeToFit()
+            var imageString = financeNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (financeNewsModel?.thumbnailsString)!
+            }
+            pictureImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"));
+        }
+    }
+    
+    
     
     
     override func awakeFromNib() {

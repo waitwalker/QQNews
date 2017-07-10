@@ -27,6 +27,7 @@ class ETTNewsVideoCell: ETTTableViewCell {
     let kSubTitleFont:CGFloat = 14.0;
     let kSubTitleColor:UIColor = UIColor.black;
     
+    // MARK: - 北京数据模型
     var beijingNewsModel:ETTNewsModel?
     {
         didSet
@@ -40,14 +41,31 @@ class ETTNewsVideoCell: ETTTableViewCell {
             {
                 imageString = (beijingNewsModel?.thumbnailsString)!
             }
-            
             vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
             vVideoNumLabel?.text = String(format: "%d视频", (beijingNewsModel?.videoNum)!)
             vRemainTimeLabel?.text = beijingNewsModel?.videoTotalTime
         }
     }
     
-    
+    // MARK: - 财经数据模型
+    var financeNewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            vTitleLabel?.text = financeNewsModel?.title
+            print("视频标题是",vTitleLabel?.text as Any)
+            vTimeLabel?.text = financeNewsModel?.videoTotalTime
+            vCommentLabel?.sizeToFit()
+            var imageString = financeNewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (financeNewsModel?.thumbnailsString)!
+            }
+            vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
+            vVideoNumLabel?.text = String(format: "%d视频", (financeNewsModel?.videoNum)!)
+            vRemainTimeLabel?.text = financeNewsModel?.videoTotalTime
+        }
+    }
     
     
     
