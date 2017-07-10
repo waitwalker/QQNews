@@ -94,7 +94,23 @@ class ETTNewsTextCell: ETTTableViewCell {
         }
     }
     
-    
+    // MARK: - NBA数据模型
+    var NBANewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            titleLabel?.text = NBANewsModel?.title;
+            topicLabel?.text = NBANewsModel?.source
+            topicLabel?.sizeToFit()
+            commentNumLabel?.sizeToFit()
+            var imageString = NBANewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (NBANewsModel?.thumbnailsString)!
+            }
+            pictureImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"));
+        }
+    }
     
     
     override func awakeFromNib() {

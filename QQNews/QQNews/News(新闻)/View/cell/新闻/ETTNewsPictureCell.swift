@@ -94,6 +94,24 @@ class ETTNewsPictureCell: ETTTableViewCell {
         }
     }
     
+    // MARK: - NBA数据模型
+    var NBANewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            titleLabel?.text = NBANewsModel?.title;
+            commentNumLabel?.sizeToFit()
+            var imageString = NBANewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (NBANewsModel?.thumbnailsString)!
+            }
+            
+            picturesImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage.init(named: "qq_placeholder"))
+            pictureNumLabel?.text = String(format: "%d图", (NBANewsModel?.imagecount)!)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

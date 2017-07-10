@@ -105,6 +105,25 @@ class ETTNewsVideoCell: ETTTableViewCell {
         }
     }
     
+    // MARK: - NBA数据模型
+    var NBANewsModel:ETTNewsModel?
+    {
+        didSet
+        {
+            vTitleLabel?.text = NBANewsModel?.title
+            vTimeLabel?.text = NBANewsModel?.videoTotalTime
+            vCommentLabel?.sizeToFit()
+            var imageString = NBANewsModel?.thumbnailsBigString
+            if imageString == nil
+            {
+                imageString = (NBANewsModel?.thumbnailsString)!
+            }
+            vBackgroundImageView?.sd_setImage(with: URL.init(string: imageString!), placeholderImage: UIImage(named:kPlace_holder))
+            vVideoNumLabel?.text = String(format: "%d视频", (NBANewsModel?.videoNum)!)
+            vRemainTimeLabel?.text = NBANewsModel?.videoTotalTime
+        }
+    }
+    
     
     
     override func awakeFromNib() {
