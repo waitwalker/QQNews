@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1341DE1F166C49007EC41B /* ETTLiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341DD1F166C49007EC41B /* ETTLiveCell.swift */; };
+		1A1341E01F166C5D007EC41B /* ETTLiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341DF1F166C5D007EC41B /* ETTLiveModel.swift */; };
+		1A1341E41F166C82007EC41B /* ETTLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341E31F166C82007EC41B /* ETTLiveViewModel.swift */; };
+		1A1341E61F166D3B007EC41B /* ETTChoiceLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341E51F166D3B007EC41B /* ETTChoiceLiveViewController.swift */; };
 		1A3DD6521F12577E0059E1DA /* ETTNewsTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3DD6511F12577E0059E1DA /* ETTNewsTextCell.swift */; };
 		1A3DD6541F12578E0059E1DA /* ETTNewsVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3DD6531F12578E0059E1DA /* ETTNewsVideoCell.swift */; };
 		1A3DD6561F1257A80059E1DA /* ETTNewsPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3DD6551F1257A80059E1DA /* ETTNewsPictureCell.swift */; };
@@ -142,6 +146,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A1341DD1F166C49007EC41B /* ETTLiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiveCell.swift; sourceTree = "<group>"; };
+		1A1341DF1F166C5D007EC41B /* ETTLiveModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiveModel.swift; sourceTree = "<group>"; };
+		1A1341E31F166C82007EC41B /* ETTLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiveViewModel.swift; sourceTree = "<group>"; };
+		1A1341E51F166D3B007EC41B /* ETTChoiceLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTChoiceLiveViewController.swift; sourceTree = "<group>"; };
 		1A3DD6511F12577E0059E1DA /* ETTNewsTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsTextCell.swift; sourceTree = "<group>"; };
 		1A3DD6531F12578E0059E1DA /* ETTNewsVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsVideoCell.swift; sourceTree = "<group>"; };
 		1A3DD6551F1257A80059E1DA /* ETTNewsPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsPictureCell.swift; sourceTree = "<group>"; };
@@ -267,6 +275,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1341D91F166BF2007EC41B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1A1341E71F166D41007EC41B /* 精选 */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1A1341DA1F166C0F007EC41B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1A1341DD1F166C49007EC41B /* ETTLiveCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1A1341DB1F166C17007EC41B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A1341DF1F166C5D007EC41B /* ETTLiveModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1A1341DC1F166C25007EC41B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A1341E31F166C82007EC41B /* ETTLiveViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1A1341E71F166D41007EC41B /* 精选 */ = {
+			isa = PBXGroup;
+			children = (
+				1A1341E51F166D3B007EC41B /* ETTChoiceLiveViewController.swift */,
+			);
+			path = "精选";
+			sourceTree = "<group>";
+		};
 		1A3DD64A1F1256FA0059E1DA /* 新闻 */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +785,10 @@
 			isa = PBXGroup;
 			children = (
 				CAB415731EF25D8400553CE0 /* ETTLiveViewController.swift */,
+				1A1341DC1F166C25007EC41B /* ViewModel */,
+				1A1341DB1F166C17007EC41B /* Model */,
+				1A1341DA1F166C0F007EC41B /* View */,
+				1A1341D91F166BF2007EC41B /* Controller */,
 			);
 			path = "Live(直播)";
 			sourceTree = "<group>";
@@ -1100,9 +1152,11 @@
 				1A885C581F12746A000B22E8 /* ETTMilitaryViewController.swift in Sources */,
 				1AC9AB311F0D0ED5003F594A /* FMDatabasePool.m in Sources */,
 				CA1434221EF24E3400A76EFC /* ETTView.swift in Sources */,
+				1A1341E41F166C82007EC41B /* ETTLiveViewModel.swift in Sources */,
 				CAB415721EF25D7600553CE0 /* ETTRecommendViewController.swift in Sources */,
 				1A3DD65B1F12598D0059E1DA /* ETTNewsVideoChannelModel.swift in Sources */,
 				CAE1DDC51F0A45AF004B1287 /* ETTRecommendVideoChannelModel.swift in Sources */,
+				1A1341E01F166C5D007EC41B /* ETTLiveModel.swift in Sources */,
 				1A3DD68B1F125D2B0059E1DA /* ETTInternationViewController.swift in Sources */,
 				1A3DD65F1F1259B60059E1DA /* ETTNewsCardModel.swift in Sources */,
 				1AA084EB1F08F5C8005DD495 /* ETTImportVideoModel.swift in Sources */,
@@ -1121,12 +1175,14 @@
 				1A3DD6541F12578E0059E1DA /* ETTNewsVideoCell.swift in Sources */,
 				CA1434241EF24E4000A76EFC /* ETTViewController.swift in Sources */,
 				CA894CFA1F00FF440062A72A /* ETTVideoModel.swift in Sources */,
+				1A1341DE1F166C49007EC41B /* ETTLiveCell.swift in Sources */,
 				CAB415701EF25D4300553CE0 /* ETTNewsViewController.swift in Sources */,
 				CA894CFE1F01015D0062A72A /* ETTCardModel.swift in Sources */,
 				1A3DD65D1F1259A00059E1DA /* ETTNewsVideoModel.swift in Sources */,
 				CA0DEAEA1EFCBCE0001958DE /* ETTImportNewsVideoCell.swift in Sources */,
 				1A3DD6561F1257A80059E1DA /* ETTNewsPictureCell.swift in Sources */,
 				CAE1DDB21F0A40DC004B1287 /* ETTRecommendTextCell.swift in Sources */,
+				1A1341E61F166D3B007EC41B /* ETTChoiceLiveViewController.swift in Sources */,
 				CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */,
 				CA2BE1651EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift in Sources */,
 				1A8C9AA51EF2D06300C808EC /* ETTMeViewModel.swift in Sources */,
