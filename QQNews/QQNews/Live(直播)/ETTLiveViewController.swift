@@ -10,6 +10,9 @@ import UIKit
 
 class ETTLiveViewController: ETTViewController,UIScrollViewDelegate {
     
+    var choiceVC = ETTChoiceLiveViewController()
+    
+    
     var importNewsVC = ETTImportNewsViewController();
     
     var videoNewsVC = ETTVideoNewsViewController();
@@ -149,9 +152,9 @@ class ETTLiveViewController: ETTViewController,UIScrollViewDelegate {
                 do {
                     let subview = middleScrollView?.subviews[index];
                     
-                    importNewsVC.view.frame = (subview!.bounds);
+                    choiceVC.view.frame = (subview!.bounds);
                     
-                    subview?.addSubview(importNewsVC.view);
+                    subview?.addSubview(choiceVC.view);
                 }
                 
                 break;

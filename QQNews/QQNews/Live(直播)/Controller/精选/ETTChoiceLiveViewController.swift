@@ -8,13 +8,58 @@
 
 import UIKit
 
-class ETTChoiceLiveViewController: ETTViewController {
+class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITableViewDataSource
+{
+    
+    var choiceTableView:UITableView?
+    
+    let reusedChoiceId:String = "reusedChoiceId"
+    
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.setupSubview()
     }
+    
+    // MARK: - 初始化子控件
+    func setupSubview() -> Void
+    {
+        choiceTableView = UITableView(frame: self.view.bounds)
+        choiceTableView?.delegate = self
+        choiceTableView?.dataSource = self
+        choiceTableView?.register(ETTLiveCell.self, forCellReuseIdentifier: reusedChoiceId)
+        self.view.addSubview(choiceTableView!)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1;
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 20;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        var cell = tableView.dequeueReusableCell(withIdentifier: reusedChoiceId) as? ETTLiveCell
+        if cell == nil
+        {
+            cell = ETTLiveCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedChoiceId)
+        }
+        cell?.textLabel?.text = String(format: "%d", indexPath.item)
+        return cell!
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 240
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
