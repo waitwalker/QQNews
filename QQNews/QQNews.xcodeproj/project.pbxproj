@@ -99,6 +99,7 @@
 		CAE1DDC11F0A4586004B1287 /* ETTRecommendCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE1DDC01F0A4586004B1287 /* ETTRecommendCardModel.swift */; };
 		CAE1DDC31F0A459B004B1287 /* ETTRecommendVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE1DDC21F0A459B004B1287 /* ETTRecommendVideoModel.swift */; };
 		CAE1DDC51F0A45AF004B1287 /* ETTRecommendVideoChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE1DDC41F0A45AF004B1287 /* ETTRecommendVideoChannelModel.swift */; };
+		CAF1EBCA1F1C68450061B140 /* ETTLiveInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF1EBC91F1C68450061B140 /* ETTLiveInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -253,6 +254,7 @@
 		CAE1DDC01F0A4586004B1287 /* ETTRecommendCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendCardModel.swift; sourceTree = "<group>"; };
 		CAE1DDC21F0A459B004B1287 /* ETTRecommendVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendVideoModel.swift; sourceTree = "<group>"; };
 		CAE1DDC41F0A45AF004B1287 /* ETTRecommendVideoChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTRecommendVideoChannelModel.swift; sourceTree = "<group>"; };
+		CAF1EBC91F1C68450061B140 /* ETTLiveInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiveInfoModel.swift; sourceTree = "<group>"; };
 		D4C05E9AB1AF05884B542017 /* Pods-QQNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -295,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				1A1341DF1F166C5D007EC41B /* ETTLiveModel.swift */,
+				CAF1EBC91F1C68450061B140 /* ETTLiveInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1215,6 +1218,7 @@
 				1AC9AB331F0D0ED5003F594A /* FMResultSet.m in Sources */,
 				CAE1DDBC1F0A4215004B1287 /* ETTRecommendPictureCell.swift in Sources */,
 				1A885C3D1F125F29000B22E8 /* ETTAutoViewController.swift in Sources */,
+				CAF1EBCA1F1C68450061B140 /* ETTLiveInfoModel.swift in Sources */,
 				CAE1DDB71F0A4162004B1287 /* ETTRecommendModel.swift in Sources */,
 				CA1434031EF24CD500A76EFC /* AppDelegate.swift in Sources */,
 				1AA084E71F08F30B005DD495 /* ETTImportCardModel.swift in Sources */,
