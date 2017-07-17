@@ -49,26 +49,24 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
     }
     
     // MARK: - 发送网络请求获取新数据
-    func networkRequest() -> Void 
+    @objc func networkRequest() -> Void
     {
         let delayTime = DispatchTime.now() + DispatchTimeInterval.seconds(2)
         let queue = DispatchQueue.init(label: "com.etiantian.queue", qos: DispatchQoS.default, attributes: DispatchQueue.Attributes.concurrent, autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.never, target: nil)
         
-        DispatchQueue.asyncAfter(queue)
-        {
-            liveViewModel.getChoiceData(callBack: { (dataArray) in
-                for item in dataArray
+        liveViewModel.getChoiceData(callBack: { (dataArray) in
+            for item in dataArray
+            {
+                self.choiceDataArray.insert(item, at: 0)
+            }
+            DispatchQueue.main.async
                 {
-                    self.choiceDataArray.insert(item, at: 0)
-                }
-                DispatchQueue.main.async 
-                    {
                     self.choiceTableView?.reloadData()
                     self.choiceTableView?.mj_header.endRefreshing()
-                }
-                
-            })
-        }
+            }
+            
+        })
+        
         
     }
     
@@ -89,7 +87,7 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
         {
             cell = ETTLiveCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedChoiceId)
         }
-        cell?.choiceLiveModel = self.choiceDataArray[indexPath.item] as ETTLiveViewModel
+        cell?.choiceLiveModel = (self.choiceDataArray[indexPath.item] as! ETTLiveModel)
         return cell!
         
     }

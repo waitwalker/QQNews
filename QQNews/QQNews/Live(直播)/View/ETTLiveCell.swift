@@ -34,9 +34,9 @@ class ETTLiveCell: ETTTableViewCell {
             {
                 LLiveImageView?.isHidden = true
             }
-            LAudienceNumLabel?.text = String(format: "%d", choiceLiveModel?.live_info?.online_total)
+            LAudienceNumLabel?.text = String(format: "%d", (choiceLiveModel?.live_info?.online_total)!)
             LAudienceNumLabel?.sizeToFit()
-            LHotNumLabel?.text = String(format: "%d", choiceLiveModel?.live_info?.up_num)
+            LHotNumLabel?.text = String(format: "%d", (choiceLiveModel?.live_info?.up_num)!)
             LHotNumLabel?.sizeToFit()
             
         }
@@ -137,7 +137,7 @@ class ETTLiveCell: ETTTableViewCell {
             make?.width.equalTo()(60)
         })
         
-        if !LLiveImageView?.isHidden
+        if !(LLiveImageView?.isHidden)!
         {
             let _ = LAudienceImageView?.mas_makeConstraints({ (make) in
                 make?.left.equalTo()(self.LLiveImageView?.mas_right)?.offset()(20)

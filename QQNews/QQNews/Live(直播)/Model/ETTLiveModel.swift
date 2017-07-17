@@ -25,18 +25,18 @@ class ETTLiveModel: NSObject
     var articletype:String?    //String    102
     var media_id:String?    //String    
     var showType_video:String?    //String    normal
-    var thumbnails_qqnews_photo:Array    //Array
+    var thumbnails_qqnews_photo:Array<Any> = []    //Array
     var thumbnails_qqnews_photoString:String?
-    var thumbnails_qqnews:Array    //Array
+    var thumbnails_qqnews:Array<Any> = []    //Array
     var thumbnails_qqnewsString:String?
-    var thumbnails:Array    //Array
+    var thumbnails:Array<Any> = []    //Array
     var thumbnailsString:String?
     var qishu:String?    //String    
-    var source:String    //String    央视财经
-    var imagecount:Int    //Integer    0
-    var comment:String    //String    
+    var source:String?    //String    央视财经
+    var imagecount:Int?    //Integer    0
+    var comment:String?    //String
     var flag:String?   //String    6
-    var tag:Array   // Array    
+    var tag:Array<Any>?   // Array
     var abstract:String?    //String    
     var pushCommentCount:Int?    //Integer    0
     var graphicLiveID:String?    //String    
@@ -72,7 +72,7 @@ class ETTLiveModel: NSObject
     var forbidRedPacket:Int?    //Integer    1
     var toneScore:String?    //String    3
     var qualityScore:String?    //Null    null
-    var bigImage:Array?    //Array
+    var bigImage:Array<Any>?    //Array
     var bigImageString:String?
     var realChlName:String?    //String    
 }
