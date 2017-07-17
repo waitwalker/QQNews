@@ -25,7 +25,20 @@ class ETTLiveCell: ETTTableViewCell {
     {
         didSet
         {
+            LTitleLabel?.text = choiceLiveModel?.title
+            LSourceLabel?.text = choiceLiveModel?.source
+            if choiceLiveModel?.is_live == 1
+            {
+                LLiveImageView?.isHidden = false
+            } else
+            {
+                LLiveImageView?.isHidden = true
+            }
+            LAudienceNumLabel?.text = String(format: "%d", choiceLiveModel?.live_info?.online_total)
             LAudienceNumLabel?.sizeToFit()
+            LHotNumLabel?.text = String(format: "%d", choiceLiveModel?.live_info?.up_num)
+            LHotNumLabel?.sizeToFit()
+            
         }
     }
     
