@@ -33,19 +33,26 @@ class ETTLiveViewModel: NSObject
                         
                         if let newslist = idlistFirst["newslist"].array
                         {
-                            
-                            
+                            for (subJson:JSON) in newslist
+                            {
+                                let liveModel = ETTLiveModel()
+                                liveModel.title = JSON["title"]
+                                liveModel.source = JSON["source"]
+                                let live_infoModel = ETTLiveInfoModel()
+                                live_infoModel.online_total = JSON["live_info"]["online_total"]
+                                live_infoModel.up_num = JSON["up_num"]["up_num"]
+                                live_infoModel.orderLive_num = JSON["orderLive_num"]["orderLive_num"]
+                                liveModel.live_info = live_infoModel
+                                dataArray.add(liveModel)
+                            }
                         }
-                        
-                        
-                        
                     }
                     
                     
                 break;
                 
                 case false:
-                
+                    print("精选网络请求错误")
                 break;
             }
             

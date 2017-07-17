@@ -18,3 +18,4 @@ class ETTLiveInfoModel: NSObject
     var online_total:Int?    //Integer    2
     var up_num:Int?    //Integer    2
     var orderLive_num:Int?    //Integer    2
+}
