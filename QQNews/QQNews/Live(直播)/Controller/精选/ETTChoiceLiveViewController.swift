@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITableViewDataSource
 {
@@ -14,6 +15,9 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
     var choiceTableView:UITableView?
     
     let reusedChoiceId:String = "reusedChoiceId"
+    
+    let choiceDataArray = NSMutableArray()
+    
     
 
     override func viewDidLoad()
@@ -33,6 +37,41 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
         self.view.addSubview(choiceTableView!)
     }
     
+    // MARK: - 刷新获取新数据
+    func refreshGetNewData() -> Void 
+    {
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(networkRequest))
+        header?.setTitle("下拉刷新", for: MJRefreshState.idle)
+        header?.setTitle("松手刷新", for: MJRefreshState.pulling)
+        header?.setTitle("加载中...", for: MJRefreshState.refreshing)
+        header?.beginRefreshing()
+        self.choiceTableView?.mj_header = header
+    }
+    
+    // MARK: - 发送网络请求获取新数据
+    func networkRequest() -> Void 
+    {
+        let delayTime = DispatchTime.now() + DispatchTimeInterval.seconds(2)
+        let queue = DispatchQueue.init(label: "com.etiantian.queue", qos: DispatchQoS.default, attributes: DispatchQueue.Attributes.concurrent, autoreleaseFrequency: DispatchQueue.AutoreleaseFrequency.never, target: nil)
+        
+        DispatchQueue.asyncAfter(queue)
+        {
+            liveViewModel.getChoiceData(callBack: { (dataArray) in
+                for item in dataArray
+                {
+                    self.choiceDataArray.insert(item, at: 0)
+                }
+                DispatchQueue.main.async 
+                    {
+                    self.choiceTableView?.reloadData()
+                    self.choiceTableView?.mj_header.endRefreshing()
+                }
+                
+            })
+        }
+        
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int
     {
         return 1;
@@ -40,7 +79,7 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 20;
+        return self.choiceDataArray.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -50,7 +89,7 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
         {
             cell = ETTLiveCell.init(style: UITableViewCellStyle.default, reuseIdentifier: reusedChoiceId)
         }
-        cell?.textLabel?.text = String(format: "%d", indexPath.item)
+        cell?.choiceLiveModel = self.choiceDataArray[indexPath.item] as ETTLiveViewModel
         return cell!
         
     }
@@ -66,15 +105,5 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

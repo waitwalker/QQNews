@@ -26,7 +26,7 @@ let newsViewModel = ETTNewsViewModel();
 let recommendViewModel = ETTRecommendViewModel();
 
 /// 直播viewModel
-let liveModel = ETTLiveModel()
+let liveViewModel = ETTLiveViewModel()
 
 
 
