@@ -143,7 +143,7 @@ class ETTLiveViewModel: NSObject
     typealias literatureCallBack = (_ dataArray:NSMutableArray) ->Void
     func getLiteratureData(callBack:@escaping literatureCallBack) -> Void
     {
-        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e440f7642&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
+        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e4faa6232&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         Alamofire.request(URLString, method: HTTPMethod.post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
             switch responseData.result.isSuccess
@@ -204,7 +204,7 @@ class ETTLiveViewModel: NSObject
     typealias entertainmentCallBack = (_ dataArray:NSMutableArray) ->Void
     func getEntertainmentData(callBack:@escaping entertainmentCallBack) -> Void
     {
-        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e440f7642&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
+        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e4fc54f99&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         Alamofire.request(URLString, method: HTTPMethod.post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
             switch responseData.result.isSuccess
@@ -265,7 +265,7 @@ class ETTLiveViewModel: NSObject
     typealias financeCallBack = (_ dataArray:NSMutableArray) ->Void
     func getFinanceData(callBack:@escaping financeCallBack) -> Void
     {
-        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e440f7642&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
+        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e4fda84a2&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         Alamofire.request(URLString, method: HTTPMethod.post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
             switch responseData.result.isSuccess
@@ -327,7 +327,7 @@ class ETTLiveViewModel: NSObject
     typealias TVStationCallBack = (_ dataArray:NSMutableArray) ->Void
     func getTVStationData(callBack:@escaping TVStationCallBack) -> Void
     {
-        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e440f7642&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
+        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e4ff42e10&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         Alamofire.request(URLString, method: HTTPMethod.post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
             switch responseData.result.isSuccess
@@ -388,7 +388,7 @@ class ETTLiveViewModel: NSObject
     typealias sportCallBack = (_ dataArray:NSMutableArray) ->Void
     func getSportData(callBack:@escaping sportCallBack) -> Void
     {
-        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e440f7642&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
+        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e5005f2fd&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         Alamofire.request(URLString, method: HTTPMethod.post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
             switch responseData.result.isSuccess
@@ -449,7 +449,7 @@ class ETTLiveViewModel: NSObject
     typealias slowHorizonCallBack = (_ dataArray:NSMutableArray) ->Void
     func getSlowHorizonData(callBack:@escaping slowHorizonCallBack) -> Void
     {
-        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e440f7642&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
+        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e5015d533&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         Alamofire.request(URLString, method: HTTPMethod.post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
             switch responseData.result.isSuccess
@@ -510,7 +510,7 @@ class ETTLiveViewModel: NSObject
     typealias lifeCallBack = (_ dataArray:NSMutableArray) ->Void
     func getLifeData(callBack:@escaping lifeCallBack) -> Void
     {
-        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e440f7642&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
+        let URI = "getLiveNewsIndexAndItems?apptype=ios&startarticleid=&__qnr=1f1e502bf403&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNLiveVideoViewController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon"
         let URLString = kHost + URI
         Alamofire.request(URLString, method: HTTPMethod.post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
             switch responseData.result.isSuccess

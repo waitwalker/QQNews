@@ -12,6 +12,13 @@
 		1A1341E41F166C82007EC41B /* ETTLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341E31F166C82007EC41B /* ETTLiveViewModel.swift */; };
 		1A1341E61F166D3B007EC41B /* ETTChoiceLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1341E51F166D3B007EC41B /* ETTChoiceLiveViewController.swift */; };
 		1A1CB6921F1E40FB00866F1F /* ETTInformationLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CB6911F1E40FB00866F1F /* ETTInformationLiveViewController.swift */; };
+		1A1CB69D1F1E4AD800866F1F /* ETTTVStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CB69C1F1E4AD800866F1F /* ETTTVStationViewController.swift */; };
+		1A1CB69F1F1E4AE700866F1F /* ETTSportLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CB69E1F1E4AE700866F1F /* ETTSportLViewController.swift */; };
+		1A1CB6A31F1E4B0A00866F1F /* ETTSlowHorizonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CB6A21F1E4B0A00866F1F /* ETTSlowHorizonViewController.swift */; };
+		1A1CB6A61F1E4B1E00866F1F /* ETTLifeLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CB6A51F1E4B1E00866F1F /* ETTLifeLViewController.swift */; };
+		1A1CB6A81F1E4B6000866F1F /* ETTEntertainmentLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CB6A71F1E4B6000866F1F /* ETTEntertainmentLViewController.swift */; };
+		1A1CB6AA1F1E4B6D00866F1F /* ETTFinanceLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CB6A91F1E4B6D00866F1F /* ETTFinanceLViewController.swift */; };
+		1A1CB6AD1F1E4E9700866F1F /* ETTLiteratureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1CB6AC1F1E4E9700866F1F /* ETTLiteratureViewController.swift */; };
 		1A3DD6521F12577E0059E1DA /* ETTNewsTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3DD6511F12577E0059E1DA /* ETTNewsTextCell.swift */; };
 		1A3DD6541F12578E0059E1DA /* ETTNewsVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3DD6531F12578E0059E1DA /* ETTNewsVideoCell.swift */; };
 		1A3DD6561F1257A80059E1DA /* ETTNewsPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3DD6551F1257A80059E1DA /* ETTNewsPictureCell.swift */; };
@@ -153,6 +160,13 @@
 		1A1341E31F166C82007EC41B /* ETTLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiveViewModel.swift; sourceTree = "<group>"; };
 		1A1341E51F166D3B007EC41B /* ETTChoiceLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTChoiceLiveViewController.swift; sourceTree = "<group>"; };
 		1A1CB6911F1E40FB00866F1F /* ETTInformationLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTInformationLiveViewController.swift; sourceTree = "<group>"; };
+		1A1CB69C1F1E4AD800866F1F /* ETTTVStationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTTVStationViewController.swift; sourceTree = "<group>"; };
+		1A1CB69E1F1E4AE700866F1F /* ETTSportLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTSportLViewController.swift; sourceTree = "<group>"; };
+		1A1CB6A21F1E4B0A00866F1F /* ETTSlowHorizonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTSlowHorizonViewController.swift; sourceTree = "<group>"; };
+		1A1CB6A51F1E4B1E00866F1F /* ETTLifeLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLifeLViewController.swift; sourceTree = "<group>"; };
+		1A1CB6A71F1E4B6000866F1F /* ETTEntertainmentLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTEntertainmentLViewController.swift; sourceTree = "<group>"; };
+		1A1CB6A91F1E4B6D00866F1F /* ETTFinanceLViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTFinanceLViewController.swift; sourceTree = "<group>"; };
+		1A1CB6AC1F1E4E9700866F1F /* ETTLiteratureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTLiteratureViewController.swift; sourceTree = "<group>"; };
 		1A3DD6511F12577E0059E1DA /* ETTNewsTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsTextCell.swift; sourceTree = "<group>"; };
 		1A3DD6531F12578E0059E1DA /* ETTNewsVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsVideoCell.swift; sourceTree = "<group>"; };
 		1A3DD6551F1257A80059E1DA /* ETTNewsPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTNewsPictureCell.swift; sourceTree = "<group>"; };
@@ -282,8 +296,15 @@
 		1A1341D91F166BF2007EC41B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1A1CB6901F1E407B00866F1F /* 资讯 */,
 				1A1341E71F166D41007EC41B /* 精选 */,
+				1A1CB6901F1E407B00866F1F /* 资讯 */,
+				1A1CB6AB1F1E4E7300866F1F /* 文艺 */,
+				1A1CB6951F1E4A7C00866F1F /* 娱乐 */,
+				1A1CB6961F1E4A8600866F1F /* 财经 */,
+				1A1CB6991F1E4A9300866F1F /* 电视台 */,
+				1A1CB6A01F1E4AEB00866F1F /* 体育 */,
+				1A1CB6A11F1E4AF800866F1F /* 慢视界 */,
+				1A1CB6A41F1E4B0C00866F1F /* 生活 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +348,62 @@
 				1A1CB6911F1E40FB00866F1F /* ETTInformationLiveViewController.swift */,
 			);
 			path = "资讯";
+			sourceTree = "<group>";
+		};
+		1A1CB6951F1E4A7C00866F1F /* 娱乐 */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CB6A71F1E4B6000866F1F /* ETTEntertainmentLViewController.swift */,
+			);
+			path = "娱乐";
+			sourceTree = "<group>";
+		};
+		1A1CB6961F1E4A8600866F1F /* 财经 */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CB6A91F1E4B6D00866F1F /* ETTFinanceLViewController.swift */,
+			);
+			path = "财经";
+			sourceTree = "<group>";
+		};
+		1A1CB6991F1E4A9300866F1F /* 电视台 */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CB69C1F1E4AD800866F1F /* ETTTVStationViewController.swift */,
+			);
+			path = "电视台";
+			sourceTree = "<group>";
+		};
+		1A1CB6A01F1E4AEB00866F1F /* 体育 */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CB69E1F1E4AE700866F1F /* ETTSportLViewController.swift */,
+			);
+			path = "体育";
+			sourceTree = "<group>";
+		};
+		1A1CB6A11F1E4AF800866F1F /* 慢视界 */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CB6A21F1E4B0A00866F1F /* ETTSlowHorizonViewController.swift */,
+			);
+			path = "慢视界";
+			sourceTree = "<group>";
+		};
+		1A1CB6A41F1E4B0C00866F1F /* 生活 */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CB6A51F1E4B1E00866F1F /* ETTLifeLViewController.swift */,
+			);
+			path = "生活";
+			sourceTree = "<group>";
+		};
+		1A1CB6AB1F1E4E7300866F1F /* 文艺 */ = {
+			isa = PBXGroup;
+			children = (
+				1A1CB6AC1F1E4E9700866F1F /* ETTLiteratureViewController.swift */,
+			);
+			path = "文艺";
 			sourceTree = "<group>";
 		};
 		1A3DD64A1F1256FA0059E1DA /* 新闻 */ = {
@@ -1174,6 +1251,7 @@
 				1A3DD68B1F125D2B0059E1DA /* ETTInternationViewController.swift in Sources */,
 				1A3DD65F1F1259B60059E1DA /* ETTNewsCardModel.swift in Sources */,
 				1AA084EB1F08F5C8005DD495 /* ETTImportVideoModel.swift in Sources */,
+				1A1CB6AA1F1E4B6D00866F1F /* ETTFinanceLViewController.swift in Sources */,
 				1A3DD6521F12577E0059E1DA /* ETTNewsTextCell.swift in Sources */,
 				CAC19B491EF77F1600AE78BC /* ETTMeHeaderCell.swift in Sources */,
 				1A8C9A9E1EF2C15200C808EC /* ETTMeModel.swift in Sources */,
@@ -1197,6 +1275,7 @@
 				CA0DEAEA1EFCBCE0001958DE /* ETTImportNewsVideoCell.swift in Sources */,
 				1A3DD6561F1257A80059E1DA /* ETTNewsPictureCell.swift in Sources */,
 				CAE1DDB21F0A40DC004B1287 /* ETTRecommendTextCell.swift in Sources */,
+				1A1CB6A61F1E4B1E00866F1F /* ETTLifeLViewController.swift in Sources */,
 				1A1341E61F166D3B007EC41B /* ETTChoiceLiveViewController.swift in Sources */,
 				CA260A0E1EF273FD00DE23B9 /* ETTTableViewCell.swift in Sources */,
 				CA2BE1651EFBBA700006F1C7 /* ETTImportNewsPictureCell.swift in Sources */,
@@ -1205,12 +1284,16 @@
 				CAD85E621F0B8E6100455164 /* ETTDataBase.swift in Sources */,
 				1A885C351F125E9D000B22E8 /* ETTSocietyViewController.swift in Sources */,
 				1A3DD6811F125CFC0059E1DA /* ETTNBAViewController.swift in Sources */,
+				1A1CB6A81F1E4B6000866F1F /* ETTEntertainmentLViewController.swift in Sources */,
 				CA8EB03F1EFD1F0E005DCA0E /* ETTImportNewsViewController.swift in Sources */,
 				1AA084E51F08EFC2005DD495 /* ETTImportNewsModel.swift in Sources */,
+				1A1CB69F1F1E4AE700866F1F /* ETTSportLViewController.swift in Sources */,
+				1A1CB6A31F1E4B0A00866F1F /* ETTSlowHorizonViewController.swift in Sources */,
 				CA9643D01EF2794A00F2D1D2 /* ETTConst.swift in Sources */,
 				CA894CFC1F00FF810062A72A /* ETTVideoChannelModel.swift in Sources */,
 				CA0DEAF11EFCF171001958DE /* ETTVideoNewsCell.swift in Sources */,
 				1A885C3F1F125F54000B22E8 /* ETTTechnologyViewController.swift in Sources */,
+				1A1CB69D1F1E4AD800866F1F /* ETTTVStationViewController.swift in Sources */,
 				1A885C431F125F8C000B22E8 /* ETTMovieViewController.swift in Sources */,
 				1A885C491F125FDA000B22E8 /* ETTVarietyViewController.swift in Sources */,
 				1A3DD68F1F125D3E0059E1DA /* ETTGameViewController.swift in Sources */,
@@ -1223,6 +1306,7 @@
 				1AC9AB321F0D0ED5003F594A /* FMDatabaseQueue.m in Sources */,
 				CAE1DDC11F0A4586004B1287 /* ETTRecommendCardModel.swift in Sources */,
 				1A3DD6591F1258960059E1DA /* ETTNewsModel.swift in Sources */,
+				1A1CB6AD1F1E4E9700866F1F /* ETTLiteratureViewController.swift in Sources */,
 				1A885C4B1F125FE9000B22E8 /* ETTKoreanViewController.swift in Sources */,
 				CA66A81D1F00D0B400F9767A /* ETTVideoNewsViewController.swift in Sources */,
 				1AC9AB301F0D0ED5003F594A /* FMDatabaseAdditions.m in Sources */,

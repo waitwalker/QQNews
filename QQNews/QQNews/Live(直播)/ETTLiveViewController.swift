@@ -12,25 +12,16 @@ class ETTLiveViewController: ETTViewController,UIScrollViewDelegate {
     
     var choiceVC = ETTChoiceLiveViewController()
     var informationVC = ETTInformationLiveViewController()
+    var literatureVC = ETTLiteratureViewController()
+    var entertainmentLVC = ETTEntertainmentLViewController()
+    var financeLVC = ETTFinanceLViewController()
+    var TVStationVC = ETTTVStationViewController()
+    var sportLVC = ETTSportLViewController()
     
     
-    var importNewsVC = ETTImportNewsViewController();
+    var slowHorizonVC = ETTSlowHorizonViewController();
     
-    var videoNewsVC = ETTVideoNewsViewController();
-    
-    var beijingNewsVC = ETTBeijingViewController();
-    
-    var financeNewsVC = ETTFinanceViewController();
-    
-    var entertainmentNewsVC = ETTEntertainmentViewController();
-    
-    var sportNewsVC = ETTSportViewController();
-    
-    var NBANewsVC = ETTNBAViewController();
-    
-    var autoNewsVC = ETTAutoViewController();
-    
-    var technologyNewsVC = ETTTechnologyViewController();
+    var lifeLVC = ETTLifeLViewController();
     
     
     // MARK: - 属性变量
@@ -171,51 +162,51 @@ class ETTLiveViewController: ETTViewController,UIScrollViewDelegate {
             case 2:
                 let subview = middleScrollView?.subviews[index];
                 
-                beijingNewsVC.view.frame = (subview!.bounds);
+                literatureVC.view.frame = (subview!.bounds);
                 
-                subview?.addSubview(beijingNewsVC.view);
+                subview?.addSubview(literatureVC.view);
                 break;
             case 3:
                 let subview = middleScrollView?.subviews[index];
                 
-                financeNewsVC.view.frame = (subview!.bounds);
+                entertainmentLVC.view.frame = (subview!.bounds);
                 
-                subview?.addSubview(financeNewsVC.view);
+                subview?.addSubview(entertainmentLVC.view);
                 break;
             case 4:
                 let subview = middleScrollView?.subviews[index];
                 
-                entertainmentNewsVC.view.frame = (subview!.bounds);
+                financeLVC.view.frame = (subview!.bounds);
                 
-                subview?.addSubview(entertainmentNewsVC.view);
+                subview?.addSubview(financeLVC.view);
                 break;
             case 5:
                 let subview = middleScrollView?.subviews[index];
                 
-                sportNewsVC.view.frame = (subview!.bounds);
+                TVStationVC.view.frame = (subview!.bounds);
                 
-                subview?.addSubview(sportNewsVC.view);
+                subview?.addSubview(TVStationVC.view);
                 break;
             case 6:
                 let subview = middleScrollView?.subviews[index];
                 
-                NBANewsVC.view.frame = (subview!.bounds);
+                sportLVC.view.frame = (subview!.bounds);
                 
-                subview?.addSubview(NBANewsVC.view);
+                subview?.addSubview(sportLVC.view);
                 break;
             case 7:
                 let subview = middleScrollView?.subviews[index];
                 
-                autoNewsVC.view.frame = (subview!.bounds);
+                slowHorizonVC.view.frame = (subview!.bounds);
                 
-                subview?.addSubview(autoNewsVC.view);
+                subview?.addSubview(slowHorizonVC.view);
                 break;
             case 8:
                 let subview = middleScrollView?.subviews[index];
                 
-                technologyNewsVC.view.frame = (subview!.bounds);
+                lifeLVC.view.frame = (subview!.bounds);
                 
-                subview?.addSubview(technologyNewsVC.view);
+                subview?.addSubview(lifeLVC.view);
                 break;
                 
             default :
