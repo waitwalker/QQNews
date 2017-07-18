@@ -63,6 +63,7 @@
 		1AC9AB331F0D0ED5003F594A /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9AB2D1F0D0ED5003F594A /* FMResultSet.m */; };
 		1AC9AB341F0D0ED5003F594A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AC9AB2E1F0D0ED5003F594A /* Info.plist */; };
 		1AC9AB351F0D105C003F594A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA68DAF1F0CE06D009EC336 /* libsqlite3.tbd */; };
+		1AE472271F1E53460090D50A /* Explanation in Resources */ = {isa = PBXBuildFile; fileRef = 1AE472261F1E53460090D50A /* Explanation */; };
 		1AF750EA1EF50AB400E6F89F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */; };
 		3D7EF950E1F5171AEEFC2335 /* Pods_QQNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */; };
 		CA0DEAEA1EFCBCE0001958DE /* ETTImportNewsVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0DEAE91EFCBCE0001958DE /* ETTImportNewsVideoCell.swift */; };
@@ -218,6 +219,7 @@
 		1AC9AB2C1F0D0ED5003F594A /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		1AC9AB2D1F0D0ED5003F594A /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		1AC9AB2E1F0D0ED5003F594A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AE472261F1E53460090D50A /* Explanation */ = {isa = PBXFileReference; lastKnownFileType = text; path = Explanation; sourceTree = "<group>"; };
 		1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/QQNews-djbeguobsumntqhexjcaacdtrqac/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QQNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853BA44DAAFAE4326190F43B /* Pods-QQNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QQNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-QQNews/Pods-QQNews.release.xcconfig"; sourceTree = "<group>"; };
@@ -713,6 +715,14 @@
 			path = "../../../../../../Downloads/FMDB-Swift-master/FMDB-Swift/FMDB-Swift/FMDB/fmdb";
 			sourceTree = "<group>";
 		};
+		1AE472251F1E53260090D50A /* 说明文件 */ = {
+			isa = PBXGroup;
+			children = (
+				1AE472261F1E53460090D50A /* Explanation */,
+			);
+			path = "说明文件";
+			sourceTree = "<group>";
+		};
 		5514CD5670B97DB53FC8372E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +790,7 @@
 		CA1434011EF24CD500A76EFC /* QQNews */ = {
 			isa = PBXGroup;
 			children = (
+				1AE472251F1E53260090D50A /* 说明文件 */,
 				CA5CB19B1EFA348A004CC9BA /* Login */,
 				CA14341E1EF24DB300A76EFC /* News(新闻) */,
 				CA14341F1EF24DB300A76EFC /* Recommend(推荐) */,
@@ -1170,6 +1181,7 @@
 			files = (
 				CA14340D1EF24CD500A76EFC /* LaunchScreen.storyboard in Resources */,
 				1A8C9AA31EF2C5DB00C808EC /* MeData.json in Resources */,
+				1AE472271F1E53460090D50A /* Explanation in Resources */,
 				CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */,
 				1AC9AB341F0D0ED5003F594A /* Info.plist in Resources */,
 				CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */,
