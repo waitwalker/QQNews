@@ -25,6 +25,8 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
         super.viewDidLoad()
         
         self.setupSubview()
+        
+        self.refreshGetNewData()
     }
     
     // MARK: - 初始化子控件
