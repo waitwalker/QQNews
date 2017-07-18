@@ -69,7 +69,7 @@ class ETTLoginViewController: ETTViewController {
         let supportLabel:UILabel = UILabel(frame: CGRect(x: supportLabelX, y: supportLabelY, width: supportLabelWidth, height: supportLabelHeight));
         supportLabel.text = "支持QQ或微信登录";
         supportLabel.font = UIFont.systemFont(ofSize: 15.0);
-        supportLabel.textColor = kETTColor(r: 202.0, g: 202.0, b: 202.0);
+        supportLabel.textColor = kColor(r: 202.0, g: 202.0, b: 202.0);
         supportLabel.textAlignment = NSTextAlignment.center;
         self.view.addSubview(supportLabel);
         
@@ -78,7 +78,7 @@ class ETTLoginViewController: ETTViewController {
         let QQContentViewHeight:CGFloat = 50.0;
         let QQContentViewY:CGFloat = supportLabel.frame.maxY + 50.0;
         QQContentView = UIButton(frame: CGRect(x: QQContentViewX, y: QQContentViewY, width: QQContentViewWidth, height: QQContentViewHeight));
-        QQContentView?.backgroundColor = kETTColor(r: 38.0, g: 184.0, b: 242.0);
+        QQContentView?.backgroundColor = kColor(r: 38.0, g: 184.0, b: 242.0);
         QQContentView?.isUserInteractionEnabled = true;
         QQContentView?.addTarget(self, action: #selector(QQLoginAction(button:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(QQContentView!);
@@ -109,7 +109,7 @@ class ETTLoginViewController: ETTViewController {
         let WeChatContentViewY:CGFloat = QQContentView!.frame.maxY + 20.0;
         WeChatContentView = UIButton(frame: CGRect(x: WeChatContentViewX, y: WeChatContentViewY, width: WeChatContentViewWidth, height: WeChatContentViewHeight));
         WeChatContentView?.addTarget(self, action: #selector(WeChatLoginAction(button:)), for: UIControlEvents.touchUpInside);
-        WeChatContentView?.backgroundColor = kETTColor(r: 78.0, g: 191.0, b: 82.0);
+        WeChatContentView?.backgroundColor = kColor(r: 78.0, g: 191.0, b: 82.0);
         self.view.addSubview(WeChatContentView!);
         
         let WeChatImageViewX:CGFloat = 70.0;

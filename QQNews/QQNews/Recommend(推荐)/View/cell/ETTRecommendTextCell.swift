@@ -86,7 +86,7 @@ class ETTRecommendTextCell: ETTTableViewCell {
         })
         
         topicLabel = UILabel();
-        topicLabel?.textColor = kETTColor(r: 13, g: 126, b: 213);
+        topicLabel?.textColor = kColor(r: 13, g: 126, b: 213);
         topicLabel?.textAlignment = NSTextAlignment.left;
         topicLabel?.font = UIFont.systemFont(ofSize: kSubTitleFont);
         self.contentView.addSubview(topicLabel!);

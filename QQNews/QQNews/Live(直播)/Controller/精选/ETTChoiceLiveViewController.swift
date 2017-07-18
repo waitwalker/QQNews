@@ -99,7 +99,11 @@ class ETTChoiceLiveViewController: ETTViewController,UITableViewDelegate,UITable
         return 240
     }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         

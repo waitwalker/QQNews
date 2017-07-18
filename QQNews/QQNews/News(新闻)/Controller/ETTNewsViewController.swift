@@ -70,9 +70,9 @@ class ETTNewsViewController: ETTViewController,UIScrollViewDelegate {
     let kButtonWidth:CGFloat = 50.0;
     let kSelectedButtonTitleFontSize:CGFloat = 20.0;
     let kNormalButtonTitleFontSize:CGFloat = 18.0;
-    let kSelectedButtonTitleColor:UIColor = kETTColor(r: 0, g: 0, b: 0);
-    let kNormalButtonTitleColor:UIColor = kETTColor(r: 127, g: 127, b: 127);
-    let kLineViewBackgroundColor:UIColor = kETTColor(r: 0, g: 103, b: 208);
+    let kSelectedButtonTitleColor:UIColor = kColor(r: 0, g: 0, b: 0);
+    let kNormalButtonTitleColor:UIColor = kColor(r: 127, g: 127, b: 127);
+    let kLineViewBackgroundColor:UIColor = kColor(r: 0, g: 103, b: 208);
     
     
     

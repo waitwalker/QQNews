@@ -11,6 +11,7 @@ import UIKit
 class ETTLiveViewController: ETTViewController,UIScrollViewDelegate {
     
     var choiceVC = ETTChoiceLiveViewController()
+    var informationVC = ETTInformationLiveViewController()
     
     
     var importNewsVC = ETTImportNewsViewController();
@@ -41,9 +42,9 @@ class ETTLiveViewController: ETTViewController,UIScrollViewDelegate {
     let kButtonWidth:CGFloat = 65.0;
     let kSelectedButtonTitleFontSize:CGFloat = 18.0;
     let kNormalButtonTitleFontSize:CGFloat = 16.0;
-    let kSelectedButtonTitleColor:UIColor = kETTColor(r: 0, g: 0, b: 0);
-    let kNormalButtonTitleColor:UIColor = kETTColor(r: 127, g: 127, b: 127);
-    let kLineViewBackgroundColor:UIColor = kETTColor(r: 0, g: 103, b: 208);
+    let kSelectedButtonTitleColor:UIColor = kColor(r: 0, g: 0, b: 0);
+    let kNormalButtonTitleColor:UIColor = kColor(r: 127, g: 127, b: 127);
+    let kLineViewBackgroundColor:UIColor = kColor(r: 0, g: 103, b: 208);
     
     
     
@@ -162,9 +163,9 @@ class ETTLiveViewController: ETTViewController,UIScrollViewDelegate {
                 do {
                     let subview = middleScrollView?.subviews[index];
                     
-                    videoNewsVC.view.frame = (subview!.bounds);
+                    informationVC.view.frame = (subview!.bounds);
                     
-                    subview?.addSubview(videoNewsVC.view);
+                    subview?.addSubview(informationVC.view);
                 }
                 break;
             case 2:

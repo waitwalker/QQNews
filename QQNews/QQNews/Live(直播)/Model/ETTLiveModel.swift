@@ -29,7 +29,7 @@ class ETTLiveModel: NSObject
     var thumbnails_qqnews_photoString:String?
     var thumbnails_qqnews:Array<Any> = []    //Array
     var thumbnails_qqnewsString:String?
-    var thumbnails:Array<Any> = []    //Array
+    var thumbnails:Array<Any>?   //Array
     var thumbnailsString:String?
     var qishu:String?    //String    
     var source:String?    //String    央视财经
