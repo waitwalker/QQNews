@@ -18,7 +18,7 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     var recommendTableView:UITableView?
     var recommendDataArray = NSMutableArray();
     
-    let DataBase = ETTDataBase.sharedInstance
+//    let DataBase = ETTDataBase.sharedInstance
     
     
     let reusedRecommendTextId:String = "reusedRecommendCellId"
@@ -40,21 +40,21 @@ class ETTRecommendViewController: ETTViewController,UITableViewDelegate,UITableV
     
     func getDataFromDataBase() -> Void 
     {
-        let dataArr = DataBase.queryObject()
-        
-        if (dataArr.count > 0) {
-            
-            //recommendDataArray = dataArr;
-            for item:ETTRecommendModel in dataArr
-            {
-                recommendDataArray.add(item)
-            }
-            recommendTableView?.reloadData()
-        } else
-        {
-            self.refreshGetNewData()
-        }
-        
+//        let dataArr = DataBase.queryObject()
+//        
+//        if (dataArr.count > 0) {
+//            
+//            //recommendDataArray = dataArr;
+//            for item:ETTRecommendModel in dataArr
+//            {
+//                recommendDataArray.add(item)
+//            }
+//            recommendTableView?.reloadData()
+//        } else
+//        {
+//            self.refreshGetNewData()
+//        }
+        self.refreshGetNewData()
     }
     
     func setupSubviews() -> Void 

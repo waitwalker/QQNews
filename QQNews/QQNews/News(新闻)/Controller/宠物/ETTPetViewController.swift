@@ -16,7 +16,7 @@ class ETTPetViewController: ETTViewController,UITableViewDataSource,UITableViewD
     var NTableView:UITableView?
     var NDataArray = NSMutableArray();
     
-    let DataBase = ETTDataBase.sharedInstance
+//    let DataBase = ETTDataBase.sharedInstance
     
     
     let reusedNTextId:String = "reusedNCellId"
@@ -38,21 +38,21 @@ class ETTPetViewController: ETTViewController,UITableViewDataSource,UITableViewD
     
     func getDataFromDataBase() -> Void
     {
-        let dataArr = DataBase.queryObject()
-        
-        if (dataArr.count > 0) {
-            
-            //recommendDataArray = dataArr;
-            for item:ETTRecommendModel in dataArr
-            {
-                NDataArray.add(item)
-            }
-            NTableView?.reloadData()
-        } else
-        {
-            self.refreshGetNewData()
-        }
-        
+//        let dataArr = DataBase.queryObject()
+//        
+//        if (dataArr.count > 0) {
+//            
+//            //recommendDataArray = dataArr;
+//            for item:ETTRecommendModel in dataArr
+//            {
+//                NDataArray.add(item)
+//            }
+//            NTableView?.reloadData()
+//        } else
+//        {
+//            self.refreshGetNewData()
+//        }
+        self.refreshGetNewData()
     }
     
     func setupSubviews() -> Void

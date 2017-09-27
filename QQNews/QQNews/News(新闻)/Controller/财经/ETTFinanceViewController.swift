@@ -14,7 +14,7 @@ class ETTFinanceViewController: ETTViewController,UITableViewDataSource,UITableV
     var NTableView:UITableView?
     var NDataArray = NSMutableArray();
     
-    let DataBase = ETTDataBase.sharedInstance
+//    let DataBase = ETTDataBase.sharedInstance
     
     
     let reusedNTextId:String = "reusedNCellId"
@@ -36,21 +36,21 @@ class ETTFinanceViewController: ETTViewController,UITableViewDataSource,UITableV
     
     func getDataFromDataBase() -> Void
     {
-        let dataArr = DataBase.queryObject()
-        
-        if (dataArr.count > 0) {
-            
-            //recommendDataArray = dataArr;
-            for item:ETTRecommendModel in dataArr
-            {
-                NDataArray.add(item)
-            }
-            NTableView?.reloadData()
-        } else
-        {
-            self.refreshGetNewData()
-        }
-        
+//        let dataArr = DataBase.queryObject()
+//        
+//        if (dataArr.count > 0) {
+//            
+//            //recommendDataArray = dataArr;
+//            for item:ETTRecommendModel in dataArr
+//            {
+//                NDataArray.add(item)
+//            }
+//            NTableView?.reloadData()
+//        } else
+//        {
+//            self.refreshGetNewData()
+//        }
+        self.refreshGetNewData()
     }
     
     func setupSubviews() -> Void

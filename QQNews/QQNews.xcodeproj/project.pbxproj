@@ -56,12 +56,6 @@
 		1AA084E71F08F30B005DD495 /* ETTImportCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA084E61F08F30B005DD495 /* ETTImportCardModel.swift */; };
 		1AA084EB1F08F5C8005DD495 /* ETTImportVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA084EA1F08F5C8005DD495 /* ETTImportVideoModel.swift */; };
 		1AA084ED1F08F5F6005DD495 /* ETTImportVideoChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA084EC1F08F5F6005DD495 /* ETTImportVideoChannelModel.swift */; };
-		1AC9AB2F1F0D0ED5003F594A /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9AB241F0D0ED5003F594A /* FMDatabase.m */; };
-		1AC9AB301F0D0ED5003F594A /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9AB261F0D0ED5003F594A /* FMDatabaseAdditions.m */; };
-		1AC9AB311F0D0ED5003F594A /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9AB281F0D0ED5003F594A /* FMDatabasePool.m */; };
-		1AC9AB321F0D0ED5003F594A /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9AB2A1F0D0ED5003F594A /* FMDatabaseQueue.m */; };
-		1AC9AB331F0D0ED5003F594A /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC9AB2D1F0D0ED5003F594A /* FMResultSet.m */; };
-		1AC9AB341F0D0ED5003F594A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1AC9AB2E1F0D0ED5003F594A /* Info.plist */; };
 		1AC9AB351F0D105C003F594A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA68DAF1F0CE06D009EC336 /* libsqlite3.tbd */; };
 		1AE472271F1E53460090D50A /* Explanation in Resources */ = {isa = PBXBuildFile; fileRef = 1AE472261F1E53460090D50A /* Explanation */; };
 		1AF750EA1EF50AB400E6F89F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */; };
@@ -206,19 +200,6 @@
 		1AA084EA1F08F5C8005DD495 /* ETTImportVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportVideoModel.swift; sourceTree = "<group>"; };
 		1AA084EC1F08F5F6005DD495 /* ETTImportVideoChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTImportVideoChannelModel.swift; sourceTree = "<group>"; };
 		1ABDBB251F013D0600BA589A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		1AC9AB201F0D0EA7003F594A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		1AC9AB231F0D0ED5003F594A /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		1AC9AB241F0D0ED5003F594A /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		1AC9AB251F0D0ED5003F594A /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		1AC9AB261F0D0ED5003F594A /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		1AC9AB271F0D0ED5003F594A /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		1AC9AB281F0D0ED5003F594A /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		1AC9AB291F0D0ED5003F594A /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		1AC9AB2A1F0D0ED5003F594A /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		1AC9AB2B1F0D0ED5003F594A /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		1AC9AB2C1F0D0ED5003F594A /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		1AC9AB2D1F0D0ED5003F594A /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		1AC9AB2E1F0D0ED5003F594A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AE472261F1E53460090D50A /* Explanation */ = {isa = PBXFileReference; lastKnownFileType = text; path = Explanation; sourceTree = "<group>"; };
 		1AF750E91EF50AB400E6F89F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/QQNews-djbeguobsumntqhexjcaacdtrqac/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		6D3BAB18E5DEA225F30FD0A7 /* Pods_QQNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QQNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -646,7 +627,6 @@
 		1A8C9A991EF2C00700C808EC /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				1AC9AB221F0D0ED5003F594A /* fmdb */,
 				CAC19B4A1EF797FD00AE78BC /* GPUImage */,
 			);
 			path = Libs;
@@ -690,29 +670,8 @@
 		1AC9AB211F0D0EB4003F594A /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				1AC9AB201F0D0EA7003F594A /* Header.h */,
 			);
 			path = Header;
-			sourceTree = "<group>";
-		};
-		1AC9AB221F0D0ED5003F594A /* fmdb */ = {
-			isa = PBXGroup;
-			children = (
-				1AC9AB231F0D0ED5003F594A /* FMDatabase.h */,
-				1AC9AB241F0D0ED5003F594A /* FMDatabase.m */,
-				1AC9AB251F0D0ED5003F594A /* FMDatabaseAdditions.h */,
-				1AC9AB261F0D0ED5003F594A /* FMDatabaseAdditions.m */,
-				1AC9AB271F0D0ED5003F594A /* FMDatabasePool.h */,
-				1AC9AB281F0D0ED5003F594A /* FMDatabasePool.m */,
-				1AC9AB291F0D0ED5003F594A /* FMDatabaseQueue.h */,
-				1AC9AB2A1F0D0ED5003F594A /* FMDatabaseQueue.m */,
-				1AC9AB2B1F0D0ED5003F594A /* FMDB.h */,
-				1AC9AB2C1F0D0ED5003F594A /* FMResultSet.h */,
-				1AC9AB2D1F0D0ED5003F594A /* FMResultSet.m */,
-				1AC9AB2E1F0D0ED5003F594A /* Info.plist */,
-			);
-			name = fmdb;
-			path = "../../../../../../Downloads/FMDB-Swift-master/FMDB-Swift/FMDB-Swift/FMDB/fmdb";
 			sourceTree = "<group>";
 		};
 		1AE472251F1E53260090D50A /* 说明文件 */ = {
@@ -1183,7 +1142,6 @@
 				1A8C9AA31EF2C5DB00C808EC /* MeData.json in Resources */,
 				1AE472271F1E53460090D50A /* Explanation in Resources */,
 				CA14340A1EF24CD500A76EFC /* Assets.xcassets in Resources */,
-				1AC9AB341F0D0ED5003F594A /* Info.plist in Resources */,
 				CA1434081EF24CD500A76EFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1248,12 +1206,10 @@
 				CA5CB1A11EFA355C004CC9BA /* ETTLoginViewController.swift in Sources */,
 				1A885C531F12602A000B22E8 /* ETTGovernmentViewController.swift in Sources */,
 				CA1434261EF24E7A00A76EFC /* ETTTabBarController.swift in Sources */,
-				1AC9AB2F1F0D0ED5003F594A /* FMDatabase.m in Sources */,
 				CAE1DDC31F0A459B004B1287 /* ETTRecommendVideoModel.swift in Sources */,
 				1A885C451F125FA6000B22E8 /* ETTEducationViewController.swift in Sources */,
 				1A3DD6791F125CCB0059E1DA /* ETTBeijingViewController.swift in Sources */,
 				1A885C581F12746A000B22E8 /* ETTMilitaryViewController.swift in Sources */,
-				1AC9AB311F0D0ED5003F594A /* FMDatabasePool.m in Sources */,
 				CA1434221EF24E3400A76EFC /* ETTView.swift in Sources */,
 				1A1341E41F166C82007EC41B /* ETTLiveViewModel.swift in Sources */,
 				CAB415721EF25D7600553CE0 /* ETTRecommendViewController.swift in Sources */,
@@ -1315,15 +1271,12 @@
 				CA2BE1631EFB957D0006F1C7 /* ETTNewsViewModel.swift in Sources */,
 				CAE1DDBF1F0A427C004B1287 /* ETTRecommendViewModel.swift in Sources */,
 				CA9643CE1EF2785200F2D1D2 /* ETTMacro.swift in Sources */,
-				1AC9AB321F0D0ED5003F594A /* FMDatabaseQueue.m in Sources */,
 				CAE1DDC11F0A4586004B1287 /* ETTRecommendCardModel.swift in Sources */,
 				1A3DD6591F1258960059E1DA /* ETTNewsModel.swift in Sources */,
 				1A1CB6AD1F1E4E9700866F1F /* ETTLiteratureViewController.swift in Sources */,
 				1A885C4B1F125FE9000B22E8 /* ETTKoreanViewController.swift in Sources */,
 				CA66A81D1F00D0B400F9767A /* ETTVideoNewsViewController.swift in Sources */,
-				1AC9AB301F0D0ED5003F594A /* FMDatabaseAdditions.m in Sources */,
 				CA260A101EF2749C00DE23B9 /* ETTMeCell.swift in Sources */,
-				1AC9AB331F0D0ED5003F594A /* FMResultSet.m in Sources */,
 				CAE1DDBC1F0A4215004B1287 /* ETTRecommendPictureCell.swift in Sources */,
 				1A885C3D1F125F29000B22E8 /* ETTAutoViewController.swift in Sources */,
 				CAF1EBCA1F1C68450061B140 /* ETTLiveInfoModel.swift in Sources */,
@@ -1465,14 +1418,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = NV5J27ZQZQ;
+				DEVELOPMENT_TEAM = N5ZJ5W7ZL3;
 				INFOPLIST_FILE = QQNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LIBTOOLFLAGS = "-fobjc-arc -ObjC $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etiantian.QQNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "QQNews/Common(公共)/Header/Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1484,14 +1437,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = NV5J27ZQZQ;
+				DEVELOPMENT_TEAM = N5ZJ5W7ZL3;
 				INFOPLIST_FILE = QQNews/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LIBTOOLFLAGS = "-fobjc-arc -ObjC $(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.etiantian.QQNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "QQNews/Common(公共)/Header/Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
