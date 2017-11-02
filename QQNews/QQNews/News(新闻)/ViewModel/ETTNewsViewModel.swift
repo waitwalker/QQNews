@@ -18,11 +18,7 @@ class ETTNewsViewModel: NSObject {
     {
         let URI:String = "getQQNewsUnreadList?apptype=ios&startarticleid=&__qnr=1f08e8d71890&global_info=0%7C&omgid=014f6bb2bb7c904d07aad9dcff6aabd976f1001011221e&idfa=30216CDE-F722-49CF-84A2-15EDEE3BB30E&qqnews_refpage=QNCommonListChannelVideoController&isJailbreak=0&appver=10.3.2_qqnews_5.3.7&network_type=wifi&device_model=iPhone7%2C1&omgbizid=e6034a6a2850844febd8b82c1e5dc7b29290006011250f&screen_height=736&devid=7C632112-BA40-425A-8610-780904BF2C5B&screen_scale=3&screen_width=414&store=1&activefrom=icon";
         let URLString = kHost + URI;
-        
-        
         print("请求地址",URLString);
-        
-        
         Alamofire.request(URLString, method: .post, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             switch response.result.isSuccess
             {
@@ -37,45 +33,34 @@ class ETTNewsViewModel: NSObject {
                     {
                         for (subJson:JSON) in newsList
                         {
-                            let importNewsModel = ETTImportNewsModel();
-                            
-                            importNewsModel.title = JSON["title"].string;
-                            importNewsModel.thumbnails = JSON["thumbnails"].array;
+                            let importNewsModel = ETTImportNewsModel()
+                            importNewsModel.title = JSON["title"].string
+                            importNewsModel.thumbnails = JSON["thumbnails"].array
                             if let string = JSON["thumbnails"].array?.first?.rawString()
                             {
-                                importNewsModel.thumbnailsString = string;
-                            };
+                                importNewsModel.thumbnailsString = string
+                            }
                             importNewsModel.thumbnails_big = JSON["thumbnails_big"].array;
                             importNewsModel.thumbnails_qqnews = JSON["thumbnails_qqnews"].array;
                             importNewsModel.thumbnails_qqnews_photo = JSON["thumbnails_qqnews_photo"].array;
-                            importNewsModel.bigImage = JSON["bigImage"].array;
-                            importNewsModel.imagecount = JSON["imagecount"].intValue;
+                            importNewsModel.bigImage = JSON["bigImage"].array
+                            importNewsModel.imagecount = JSON["imagecount"].intValue
                             if let bigString = JSON["thumbnails_qqnews_photo"].array?.first?.rawString()
                             {
                                 importNewsModel.thumbnailsBigString = bigString
                             }
-                            importNewsModel.videoTotalTime = JSON["videoTotalTime"].string;
-                            importNewsModel.source = JSON["source"].string;
-                            importNewsModel.videoNum = JSON["videoNum"].intValue;
-                            
-                            
-                            dataArray.add(importNewsModel);
-                            
-                            
+                            importNewsModel.videoTotalTime = JSON["videoTotalTime"].string
+                            importNewsModel.source = JSON["source"].string
+                            importNewsModel.videoNum = JSON["videoNum"].intValue
+                            dataArray.add(importNewsModel)
                         }
-                        
                     }
-                    
-                    callBack(dataArray);
-                    
+                    callBack(dataArray)
                 }
-                
-                break;
+                break
                 
             case false:
-                
-                break;
-                
+                break
             }
         }
     }
